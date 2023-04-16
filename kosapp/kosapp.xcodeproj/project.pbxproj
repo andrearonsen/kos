@@ -18,6 +18,9 @@
 		65C77B5629EB109800C8969A /* kosappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B5529EB109800C8969A /* kosappTests.swift */; };
 		65C77B6029EB109800C8969A /* kosappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B5F29EB109800C8969A /* kosappUITests.swift */; };
 		65C77B6229EB109800C8969A /* kosappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B6129EB109800C8969A /* kosappUITestsLaunchTests.swift */; };
+		65C77B7329EBC14800C8969A /* dict35.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B7029EBC14800C8969A /* dict35.txt */; };
+		65C77B7429EBC14800C8969A /* dict34.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B7129EBC14800C8969A /* dict34.txt */; };
+		65C77B7529EBC14800C8969A /* dict36.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B7229EBC14800C8969A /* dict36.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		65C77B5B29EB109800C8969A /* kosappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kosappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C77B5F29EB109800C8969A /* kosappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosappUITests.swift; sourceTree = "<group>"; };
 		65C77B6129EB109800C8969A /* kosappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		65C77B7029EBC14800C8969A /* dict35.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dict35.txt; path = ../../../dict/dict35.txt; sourceTree = "<group>"; };
+		65C77B7129EBC14800C8969A /* dict34.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dict34.txt; path = ../../../dict/dict34.txt; sourceTree = "<group>"; };
+		65C77B7229EBC14800C8969A /* dict36.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dict36.txt; path = ../../../dict/dict36.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 		65C77B3A29EB109700C8969A /* kosapp */ = {
 			isa = PBXGroup;
 			children = (
+				65C77B6F29EBC12200C8969A /* Documents */,
 				65C77B3B29EB109700C8969A /* AppDelegate.swift */,
 				65C77B3D29EB109700C8969A /* GameScene.sks */,
 				65C77B3F29EB109700C8969A /* Actions.sks */,
@@ -129,6 +136,16 @@
 				65C77B6129EB109800C8969A /* kosappUITestsLaunchTests.swift */,
 			);
 			path = kosappUITests;
+			sourceTree = "<group>";
+		};
+		65C77B6F29EBC12200C8969A /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				65C77B7129EBC14800C8969A /* dict34.txt */,
+				65C77B7029EBC14800C8969A /* dict35.txt */,
+				65C77B7229EBC14800C8969A /* dict36.txt */,
+			);
+			path = Documents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,8 +254,11 @@
 			files = (
 				65C77B4729EB109700C8969A /* Main.storyboard in Resources */,
 				65C77B3E29EB109700C8969A /* GameScene.sks in Resources */,
+				65C77B7429EBC14800C8969A /* dict34.txt in Resources */,
 				65C77B4929EB109800C8969A /* Assets.xcassets in Resources */,
 				65C77B4C29EB109800C8969A /* LaunchScreen.storyboard in Resources */,
+				65C77B7529EBC14800C8969A /* dict36.txt in Resources */,
+				65C77B7329EBC14800C8969A /* dict35.txt in Resources */,
 				65C77B4029EB109700C8969A /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
