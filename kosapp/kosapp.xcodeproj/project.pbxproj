@@ -22,6 +22,9 @@
 		65C77B7429EBC14800C8969A /* dict34.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B7129EBC14800C8969A /* dict34.txt */; };
 		65C77B7529EBC14800C8969A /* dict36.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B7229EBC14800C8969A /* dict36.txt */; };
 		65C77B7829EBD3A000C8969A /* dict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B7729EBD3A000C8969A /* dict.swift */; };
+		65C77B7A29EC3F4500C8969A /* generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B7929EC3F4500C8969A /* generator.swift */; };
+		65C77B7C29EC3F5200C8969A /* matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B7B29EC3F5200C8969A /* matrix.swift */; };
+		65C77B7E29EC439B00C8969A /* board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B7D29EC439B00C8969A /* board.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		65C77B7129EBC14800C8969A /* dict34.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dict34.txt; path = ../../../dict/dict34.txt; sourceTree = "<group>"; };
 		65C77B7229EBC14800C8969A /* dict36.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dict36.txt; path = ../../../dict/dict36.txt; sourceTree = "<group>"; };
 		65C77B7729EBD3A000C8969A /* dict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dict.swift; sourceTree = "<group>"; };
+		65C77B7929EC3F4500C8969A /* generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generator.swift; sourceTree = "<group>"; };
+		65C77B7B29EC3F5200C8969A /* matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix.swift; sourceTree = "<group>"; };
+		65C77B7D29EC439B00C8969A /* board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = board.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +116,7 @@
 		65C77B3A29EB109700C8969A /* kosapp */ = {
 			isa = PBXGroup;
 			children = (
-				65C77B7629EBD37B00C8969A /* dict */,
+				65C77B7629EBD37B00C8969A /* domain */,
 				65C77B6F29EBC12200C8969A /* Documents */,
 				65C77B3B29EB109700C8969A /* AppDelegate.swift */,
 				65C77B3D29EB109700C8969A /* GameScene.sks */,
@@ -151,12 +157,15 @@
 			path = Documents;
 			sourceTree = "<group>";
 		};
-		65C77B7629EBD37B00C8969A /* dict */ = {
+		65C77B7629EBD37B00C8969A /* domain */ = {
 			isa = PBXGroup;
 			children = (
 				65C77B7729EBD3A000C8969A /* dict.swift */,
+				65C77B7929EC3F4500C8969A /* generator.swift */,
+				65C77B7B29EC3F5200C8969A /* matrix.swift */,
+				65C77B7D29EC439B00C8969A /* board.swift */,
 			);
-			path = dict;
+			path = domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,9 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C77B7E29EC439B00C8969A /* board.swift in Sources */,
 				65C77B4229EB109700C8969A /* GameScene.swift in Sources */,
 				65C77B7829EBD3A000C8969A /* dict.swift in Sources */,
+				65C77B7C29EC3F5200C8969A /* matrix.swift in Sources */,
 				65C77B4429EB109700C8969A /* GameViewController.swift in Sources */,
+				65C77B7A29EC3F4500C8969A /* generator.swift in Sources */,
 				65C77B3C29EB109700C8969A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

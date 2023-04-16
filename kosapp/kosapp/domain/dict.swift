@@ -14,11 +14,8 @@ struct Dictionary {
         return self.words.count
     }
     
-    func pickWords(nrWords: Int) -> [String] {
-        if nrWords < 0 || nrWords > self.countWords() {
-            fatalError("Invalid nr of words")
-        }
-        return self.words // TODO
+    func shuffleWords() -> [String] {
+        return self.words.shuffled()
     }
 }
 
