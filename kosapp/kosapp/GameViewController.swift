@@ -14,20 +14,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let fileUrl = Bundle.main.url(forResource: "dict34", withExtension: "txt") else {
-            fatalError("Not able to create URL")
-        }
-        
-        var dict = ""
-        do {
-            dict = try String(contentsOf: fileUrl)
-        } catch {
-            assertionFailure("Failed reading from URL: \(fileUrl), Error: " + error.localizedDescription)
-        }
-        let words = dict
-             .split(separator: "\n")
-             .map(String.init)
-        print(words.count)
+        let dictCat = readDictionaryCatalog()
+        print(dictCat.forNumberOfInputLetters(nrInputLetters: 4).countWords())
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
