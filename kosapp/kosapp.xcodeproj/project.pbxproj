@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		65C77B3C29EB109700C8969A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B3B29EB109700C8969A /* AppDelegate.swift */; };
+		65C77B3E29EB109700C8969A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B3D29EB109700C8969A /* GameScene.sks */; };
+		65C77B4029EB109700C8969A /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B3F29EB109700C8969A /* Actions.sks */; };
+		65C77B4229EB109700C8969A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B4129EB109700C8969A /* GameScene.swift */; };
+		65C77B4429EB109700C8969A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B4329EB109700C8969A /* GameViewController.swift */; };
+		65C77B4729EB109700C8969A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B4529EB109700C8969A /* Main.storyboard */; };
+		65C77B4929EB109800C8969A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B4829EB109800C8969A /* Assets.xcassets */; };
+		65C77B4C29EB109800C8969A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B4A29EB109800C8969A /* LaunchScreen.storyboard */; };
+		65C77B5629EB109800C8969A /* kosappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B5529EB109800C8969A /* kosappTests.swift */; };
+		65C77B6029EB109800C8969A /* kosappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B5F29EB109800C8969A /* kosappUITests.swift */; };
+		65C77B6229EB109800C8969A /* kosappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B6129EB109800C8969A /* kosappUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65C77B5229EB109800C8969A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65C77B3029EB109700C8969A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65C77B3729EB109700C8969A;
+			remoteInfo = kosapp;
+		};
+		65C77B5C29EB109800C8969A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65C77B3029EB109700C8969A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65C77B3729EB109700C8969A;
+			remoteInfo = kosapp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		65C77B3829EB109700C8969A /* kosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C77B3B29EB109700C8969A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		65C77B3D29EB109700C8969A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		65C77B3F29EB109700C8969A /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		65C77B4129EB109700C8969A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		65C77B4329EB109700C8969A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		65C77B4629EB109700C8969A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65C77B4829EB109800C8969A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65C77B4B29EB109800C8969A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		65C77B5129EB109800C8969A /* kosappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kosappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C77B5529EB109800C8969A /* kosappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosappTests.swift; sourceTree = "<group>"; };
+		65C77B5B29EB109800C8969A /* kosappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kosappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C77B5F29EB109800C8969A /* kosappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosappUITests.swift; sourceTree = "<group>"; };
+		65C77B6129EB109800C8969A /* kosappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65C77B3529EB109700C8969A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65C77B4E29EB109800C8969A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65C77B5829EB109800C8969A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65C77B2F29EB109700C8969A = {
+			isa = PBXGroup;
+			children = (
+				65C77B3A29EB109700C8969A /* kosapp */,
+				65C77B5429EB109800C8969A /* kosappTests */,
+				65C77B5E29EB109800C8969A /* kosappUITests */,
+				65C77B3929EB109700C8969A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		65C77B3929EB109700C8969A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65C77B3829EB109700C8969A /* kosapp.app */,
+				65C77B5129EB109800C8969A /* kosappTests.xctest */,
+				65C77B5B29EB109800C8969A /* kosappUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65C77B3A29EB109700C8969A /* kosapp */ = {
+			isa = PBXGroup;
+			children = (
+				65C77B3B29EB109700C8969A /* AppDelegate.swift */,
+				65C77B3D29EB109700C8969A /* GameScene.sks */,
+				65C77B3F29EB109700C8969A /* Actions.sks */,
+				65C77B4129EB109700C8969A /* GameScene.swift */,
+				65C77B4329EB109700C8969A /* GameViewController.swift */,
+				65C77B4529EB109700C8969A /* Main.storyboard */,
+				65C77B4829EB109800C8969A /* Assets.xcassets */,
+				65C77B4A29EB109800C8969A /* LaunchScreen.storyboard */,
+			);
+			path = kosapp;
+			sourceTree = "<group>";
+		};
+		65C77B5429EB109800C8969A /* kosappTests */ = {
+			isa = PBXGroup;
+			children = (
+				65C77B5529EB109800C8969A /* kosappTests.swift */,
+			);
+			path = kosappTests;
+			sourceTree = "<group>";
+		};
+		65C77B5E29EB109800C8969A /* kosappUITests */ = {
+			isa = PBXGroup;
+			children = (
+				65C77B5F29EB109800C8969A /* kosappUITests.swift */,
+				65C77B6129EB109800C8969A /* kosappUITestsLaunchTests.swift */,
+			);
+			path = kosappUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65C77B3729EB109700C8969A /* kosapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65C77B6529EB109800C8969A /* Build configuration list for PBXNativeTarget "kosapp" */;
+			buildPhases = (
+				65C77B3429EB109700C8969A /* Sources */,
+				65C77B3529EB109700C8969A /* Frameworks */,
+				65C77B3629EB109700C8969A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kosapp;
+			productName = kosapp;
+			productReference = 65C77B3829EB109700C8969A /* kosapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65C77B5029EB109800C8969A /* kosappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65C77B6829EB109800C8969A /* Build configuration list for PBXNativeTarget "kosappTests" */;
+			buildPhases = (
+				65C77B4D29EB109800C8969A /* Sources */,
+				65C77B4E29EB109800C8969A /* Frameworks */,
+				65C77B4F29EB109800C8969A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65C77B5329EB109800C8969A /* PBXTargetDependency */,
+			);
+			name = kosappTests;
+			productName = kosappTests;
+			productReference = 65C77B5129EB109800C8969A /* kosappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65C77B5A29EB109800C8969A /* kosappUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65C77B6B29EB109800C8969A /* Build configuration list for PBXNativeTarget "kosappUITests" */;
+			buildPhases = (
+				65C77B5729EB109800C8969A /* Sources */,
+				65C77B5829EB109800C8969A /* Frameworks */,
+				65C77B5929EB109800C8969A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65C77B5D29EB109800C8969A /* PBXTargetDependency */,
+			);
+			name = kosappUITests;
+			productName = kosappUITests;
+			productReference = 65C77B5B29EB109800C8969A /* kosappUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65C77B3029EB109700C8969A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					65C77B3729EB109700C8969A = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					65C77B5029EB109800C8969A = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 65C77B3729EB109700C8969A;
+					};
+					65C77B5A29EB109800C8969A = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 65C77B3729EB109700C8969A;
+					};
+				};
+			};
+			buildConfigurationList = 65C77B3329EB109700C8969A /* Build configuration list for PBXProject "kosapp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65C77B2F29EB109700C8969A;
+			productRefGroup = 65C77B3929EB109700C8969A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65C77B3729EB109700C8969A /* kosapp */,
+				65C77B5029EB109800C8969A /* kosappTests */,
+				65C77B5A29EB109800C8969A /* kosappUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65C77B3629EB109700C8969A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C77B4729EB109700C8969A /* Main.storyboard in Resources */,
+				65C77B3E29EB109700C8969A /* GameScene.sks in Resources */,
+				65C77B4929EB109800C8969A /* Assets.xcassets in Resources */,
+				65C77B4C29EB109800C8969A /* LaunchScreen.storyboard in Resources */,
+				65C77B4029EB109700C8969A /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65C77B4F29EB109800C8969A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65C77B5929EB109800C8969A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65C77B3429EB109700C8969A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C77B4229EB109700C8969A /* GameScene.swift in Sources */,
+				65C77B4429EB109700C8969A /* GameViewController.swift in Sources */,
+				65C77B3C29EB109700C8969A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65C77B4D29EB109800C8969A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C77B5629EB109800C8969A /* kosappTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65C77B5729EB109800C8969A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65C77B6229EB109800C8969A /* kosappUITestsLaunchTests.swift in Sources */,
+				65C77B6029EB109800C8969A /* kosappUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65C77B5329EB109800C8969A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65C77B3729EB109700C8969A /* kosapp */;
+			targetProxy = 65C77B5229EB109800C8969A /* PBXContainerItemProxy */;
+		};
+		65C77B5D29EB109800C8969A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65C77B3729EB109700C8969A /* kosapp */;
+			targetProxy = 65C77B5C29EB109800C8969A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		65C77B4529EB109700C8969A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65C77B4629EB109700C8969A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		65C77B4A29EB109800C8969A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65C77B4B29EB109800C8969A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65C77B6329EB109800C8969A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65C77B6429EB109800C8969A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65C77B6629EB109800C8969A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65C77B6729EB109800C8969A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		65C77B6929EB109800C8969A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kosapp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kosapp";
+			};
+			name = Debug;
+		};
+		65C77B6A29EB109800C8969A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosappTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kosapp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kosapp";
+			};
+			name = Release;
+		};
+		65C77B6C29EB109800C8969A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kosapp;
+			};
+			name = Debug;
+		};
+		65C77B6D29EB109800C8969A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosappUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kosapp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65C77B3329EB109700C8969A /* Build configuration list for PBXProject "kosapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65C77B6329EB109800C8969A /* Debug */,
+				65C77B6429EB109800C8969A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65C77B6529EB109800C8969A /* Build configuration list for PBXNativeTarget "kosapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65C77B6629EB109800C8969A /* Debug */,
+				65C77B6729EB109800C8969A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65C77B6829EB109800C8969A /* Build configuration list for PBXNativeTarget "kosappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65C77B6929EB109800C8969A /* Debug */,
+				65C77B6A29EB109800C8969A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65C77B6B29EB109800C8969A /* Build configuration list for PBXNativeTarget "kosappUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65C77B6C29EB109800C8969A /* Debug */,
+				65C77B6D29EB109800C8969A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65C77B3029EB109700C8969A /* Project object */;
+}
