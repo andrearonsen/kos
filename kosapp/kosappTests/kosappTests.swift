@@ -18,12 +18,21 @@ final class kosappTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testSimple() throws {
+        let dictCat = readDictionaryCatalog()
+        print(dictCat.forNumberOfInputLetters(nrInputLetters: 4).countWords())
+        var board = Board(width: 9, height: 6)
+        
+        let dir = board.canPlaceWord(row: 0, col: 0, word: "hallo")
+        board.placeWord(row: 0, col: 0, dir: dir, word: "hallo")
+        board.printBoard()
+    }
+    
+    func testGenerator() throws {
+        let dictCat = readDictionaryCatalog()
+        let dict = dictCat.forNumberOfInputLetters(nrInputLetters: 4)
+        var board = generate_placement(dict: dict, gridWidth: 5, gridHeight: 4, maxWords: 5)
+        board.printBoard()
     }
 
     func testPerformanceExample() throws {

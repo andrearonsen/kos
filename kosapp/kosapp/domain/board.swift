@@ -19,12 +19,12 @@ struct Board {
     var matrix: Matrix<String>
     
     init(width: Int, height: Int) {
-        self.matrix = Matrix<String>(rows: width, columns: height, defaultValue: emptyCell)
+        self.matrix = Matrix<String>(rows: height, columns: width, defaultValue: emptyCell)
     }
     
     func hasLetter(row: Int, col: Int, letter: String) -> Bool {
         let cell = self.matrix[row, col]
-        return cell == letter
+        return cell == letter.uppercased()
     }
     
     func isEmpty(row: Int, col: Int) -> Bool {
@@ -109,4 +109,5 @@ struct Board {
         }
         print(s)
     }
+
 }
