@@ -15,11 +15,31 @@ enum PlacementDirection {
     case NotPossible
 }
 
+struct WordPlacement {
+    var word: String
+    var dir: PlacementDirection
+    var row: Int
+    var col: Int
+    
+    init(word: String, dir: PlacementDirection, row: Int, col: Int) {
+        self.word = word
+        self.dir = dir
+        self.row = row
+        self.col = col
+    }
+    
+    func toString() -> String {
+        return "\(self.word) dir=\(self.dir) row=\(self.row) col=\(self.col)"
+    }
+}
+
 struct Board {
     var matrix: Matrix<String>
+    var words: [WordPlacement]
     
     init(width: Int, height: Int) {
         self.matrix = Matrix<String>(rows: height, columns: width, defaultValue: emptyCell)
+        self.words = []
     }
     
     func lastColIndex() -> Int {
@@ -81,9 +101,7 @@ struct Board {
         return PlacementDirection.NotPossible
     }
     
-    func canPlaceWordHorizontally(row: Int, col: Int, word: String) -> Bool {
-        print("Horizontal: " + word)
-        
+    func canPlaceWordHorizontally(row: Int, col: Int, word: String) -> Bool {  
         if col + word.count > self.matrix.columns {
             return false
         }
@@ -116,8 +134,6 @@ struct Board {
     }
     
     func canPlaceWordVertically(row: Int, col: Int, word: String) -> Bool {
-        print("Vertical: " + word)
-        
         if row + word.count > self.matrix.rows {
             return false
         }
@@ -151,6 +167,7 @@ struct Board {
     
     mutating func placeWord(row: Int, col: Int, dir: PlacementDirection, word: String) {
         let w = word.uppercased()
+        let wp = WordPlacement(word: w, dir: dir, row: row, col: col)
         
         switch dir {
         case .Horizontal:
@@ -158,13 +175,56 @@ struct Board {
                 let currentCol = col + i
                 self.matrix[row, currentCol] = String(letter)
             }
+            self.words.append(wp)
         case .Vertical:
             for (i, letter) in w.enumerated() {
                 let currentRow = row + i
                 self.matrix[currentRow, col] = String(letter)
             }
+            self.words.append(wp)
         case .NotPossible:
             return
+        }
+    }
+    
+    mutating func placeFirstWordRandom(word: String) {
+        assert(self.words.isEmpty)
+        
+        let dir = randomPlacementDirection(word: word)
+        
+        switch dir {
+        case .Horizontal:
+            //let row = Int.random(in: 0...self.lastRowIndex())
+            let row = 0
+            let col = Int.random(in: 0...(self.matrix.columns - word.count))
+            self.placeWord(row: row, col: col, dir: dir, word: word)
+        case .Vertical:
+            let row = Int.random(in: 0...(self.matrix.rows - word.count))
+            //let col = Int.random(in: 0...self.lastColIndex())
+            let col = 0
+            self.placeWord(row: row, col: col, dir: dir, word: word)
+        default:
+            fatalError("Invalid placement direction")
+        }
+    }
+    
+    func randomPlacementDirection(word: String) -> PlacementDirection {
+        let wordlen = word.count
+        let canPlaceHorizontal = wordlen <= self.matrix.columns
+        let canPlaceVertical = wordlen <= self.matrix.rows
+        assert(canPlaceHorizontal || canPlaceVertical)
+        
+        if canPlaceHorizontal && !canPlaceVertical {
+            return .Horizontal
+        } else if !canPlaceHorizontal && canPlaceVertical {
+            return .Vertical
+        }
+        
+        let r = Int.random(in: 0...1000) % 2 == 0
+        if r {
+            return .Horizontal
+        } else {
+            return .Vertical
         }
     }
     
@@ -180,6 +240,14 @@ struct Board {
             s += "\n"
         }
         print(s)
+        print()
+        printWords()
+    }
+    
+    func printWords() {
+        for wp in self.words {
+            print(wp.toString())
+        }
     }
 
 }

@@ -11,8 +11,7 @@ func generate_placement(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWo
     var board = Board(width: gridWidth, height: gridHeight)
     var words = dict.shuffleWords()
     var word = words.removeLast()
-    board.placeWord(row: 0, col: 0, dir: .Horizontal, word: word)
-    print(word)
+    board.placeFirstWordRandom(word: word)
     var count = 1
     
 outer: while count < maxWords && !words.isEmpty {
@@ -26,7 +25,6 @@ outer: while count < maxWords && !words.isEmpty {
                         if placement != .NotPossible {
                             board.placeWord(row: y, col: x, dir: placement, word: word)
                             count += 1
-                            print(word)
                             continue outer
                         }
                         

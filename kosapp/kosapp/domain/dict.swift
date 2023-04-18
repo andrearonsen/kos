@@ -19,8 +19,7 @@ struct Dictionary {
     }
     
     func shuffleWords() -> [String] {
-        //return self.words.shuffled()
-        return self.words
+        return self.words.shuffled()
     }
 }
 
