@@ -10,12 +10,17 @@ import Foundation
 struct Dictionary {
     var words: [String]
     
+    init(words: [String]) {
+        self.words = words
+    }
+    
     func countWords() -> Int {
         return self.words.count
     }
     
     func shuffleWords() -> [String] {
-        return self.words.shuffled()
+        //return self.words.shuffled()
+        return self.words
     }
 }
 

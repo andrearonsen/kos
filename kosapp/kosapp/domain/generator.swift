@@ -10,12 +10,13 @@ import Foundation
 func generate_placement(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     var board = Board(width: gridWidth, height: gridHeight)
     var words = dict.shuffleWords()
-    var word = words.popLast()!
+    var word = words.removeLast()
     board.placeWord(row: 0, col: 0, dir: .Horizontal, word: word)
+    print(word)
     var count = 1
     
-    while count < maxWords && !words.isEmpty {
-        word = words.popLast()!
+outer: while count < maxWords && !words.isEmpty {
+        word = words.removeLast().uppercased()
         for c in word {
             let letter = String(c)
             for y in 0...gridHeight-1 {
@@ -26,7 +27,7 @@ func generate_placement(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWo
                             board.placeWord(row: y, col: x, dir: placement, word: word)
                             count += 1
                             print(word)
-                            continue
+                            continue outer
                         }
                         
                     }
