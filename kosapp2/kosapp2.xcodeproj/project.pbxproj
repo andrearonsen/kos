@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		652CBE5A29EE98CA0064DD67 /* kosapp2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CBE5929EE98CA0064DD67 /* kosapp2App.swift */; };
+		652CBE5C29EE98CA0064DD67 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CBE5B29EE98CA0064DD67 /* ContentView.swift */; };
+		652CBE5E29EE98CA0064DD67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652CBE5D29EE98CA0064DD67 /* Assets.xcassets */; };
+		652CBE6129EE98CA0064DD67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652CBE6029EE98CA0064DD67 /* Preview Assets.xcassets */; };
+		652CBE6B29EE98CA0064DD67 /* kosapp2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CBE6A29EE98CA0064DD67 /* kosapp2Tests.swift */; };
+		652CBE7529EE98CA0064DD67 /* kosapp2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CBE7429EE98CA0064DD67 /* kosapp2UITests.swift */; };
+		652CBE7729EE98CA0064DD67 /* kosapp2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652CBE7629EE98CA0064DD67 /* kosapp2UITestsLaunchTests.swift */; };
+		65A0870F29EE9B78008B61A0 /* dict35.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A0870C29EE9B78008B61A0 /* dict35.txt */; };
+		65A0871029EE9B78008B61A0 /* dict36.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A0870D29EE9B78008B61A0 /* dict36.txt */; };
+		65A0871129EE9B78008B61A0 /* dict34.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A0870E29EE9B78008B61A0 /* dict34.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		652CBE6729EE98CA0064DD67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 652CBE4E29EE98C90064DD67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 652CBE5529EE98C90064DD67;
+			remoteInfo = kosapp2;
+		};
+		652CBE7129EE98CA0064DD67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 652CBE4E29EE98C90064DD67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 652CBE5529EE98C90064DD67;
+			remoteInfo = kosapp2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		652CBE5629EE98C90064DD67 /* kosapp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kosapp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		652CBE5929EE98CA0064DD67 /* kosapp2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosapp2App.swift; sourceTree = "<group>"; };
+		652CBE5B29EE98CA0064DD67 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		652CBE5D29EE98CA0064DD67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		652CBE6029EE98CA0064DD67 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		652CBE6629EE98CA0064DD67 /* kosapp2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kosapp2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		652CBE6A29EE98CA0064DD67 /* kosapp2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosapp2Tests.swift; sourceTree = "<group>"; };
+		652CBE7029EE98CA0064DD67 /* kosapp2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kosapp2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		652CBE7429EE98CA0064DD67 /* kosapp2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosapp2UITests.swift; sourceTree = "<group>"; };
+		652CBE7629EE98CA0064DD67 /* kosapp2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosapp2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		65A0870C29EE9B78008B61A0 /* dict35.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict35.txt; sourceTree = "<group>"; };
+		65A0870D29EE9B78008B61A0 /* dict36.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict36.txt; sourceTree = "<group>"; };
+		65A0870E29EE9B78008B61A0 /* dict34.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict34.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		652CBE5329EE98C90064DD67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		652CBE6329EE98CA0064DD67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		652CBE6D29EE98CA0064DD67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		652CBE4D29EE98C90064DD67 = {
+			isa = PBXGroup;
+			children = (
+				65A0870B29EE9ACF008B61A0 /* Dictionaries */,
+				652CBE5829EE98C90064DD67 /* kosapp2 */,
+				652CBE6929EE98CA0064DD67 /* kosapp2Tests */,
+				652CBE7329EE98CA0064DD67 /* kosapp2UITests */,
+				652CBE5729EE98C90064DD67 /* Products */,
+				65A0876B29EEF63A008B61A0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		652CBE5729EE98C90064DD67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				652CBE5629EE98C90064DD67 /* kosapp2.app */,
+				652CBE6629EE98CA0064DD67 /* kosapp2Tests.xctest */,
+				652CBE7029EE98CA0064DD67 /* kosapp2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		652CBE5829EE98C90064DD67 /* kosapp2 */ = {
+			isa = PBXGroup;
+			children = (
+				652CBE5929EE98CA0064DD67 /* kosapp2App.swift */,
+				652CBE5B29EE98CA0064DD67 /* ContentView.swift */,
+				652CBE5D29EE98CA0064DD67 /* Assets.xcassets */,
+				652CBE5F29EE98CA0064DD67 /* Preview Content */,
+			);
+			path = kosapp2;
+			sourceTree = "<group>";
+		};
+		652CBE5F29EE98CA0064DD67 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				652CBE6029EE98CA0064DD67 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		652CBE6929EE98CA0064DD67 /* kosapp2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				652CBE6A29EE98CA0064DD67 /* kosapp2Tests.swift */,
+			);
+			path = kosapp2Tests;
+			sourceTree = "<group>";
+		};
+		652CBE7329EE98CA0064DD67 /* kosapp2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				652CBE7429EE98CA0064DD67 /* kosapp2UITests.swift */,
+				652CBE7629EE98CA0064DD67 /* kosapp2UITestsLaunchTests.swift */,
+			);
+			path = kosapp2UITests;
+			sourceTree = "<group>";
+		};
+		65A0870B29EE9ACF008B61A0 /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				65A0870E29EE9B78008B61A0 /* dict34.txt */,
+				65A0870C29EE9B78008B61A0 /* dict35.txt */,
+				65A0870D29EE9B78008B61A0 /* dict36.txt */,
+			);
+			path = Dictionaries;
+			sourceTree = "<group>";
+		};
+		65A0876B29EEF63A008B61A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		652CBE5529EE98C90064DD67 /* kosapp2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 652CBE7A29EE98CA0064DD67 /* Build configuration list for PBXNativeTarget "kosapp2" */;
+			buildPhases = (
+				652CBE5229EE98C90064DD67 /* Sources */,
+				652CBE5329EE98C90064DD67 /* Frameworks */,
+				652CBE5429EE98C90064DD67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kosapp2;
+			productName = kosapp2;
+			productReference = 652CBE5629EE98C90064DD67 /* kosapp2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		652CBE6529EE98CA0064DD67 /* kosapp2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 652CBE7D29EE98CA0064DD67 /* Build configuration list for PBXNativeTarget "kosapp2Tests" */;
+			buildPhases = (
+				652CBE6229EE98CA0064DD67 /* Sources */,
+				652CBE6329EE98CA0064DD67 /* Frameworks */,
+				652CBE6429EE98CA0064DD67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				652CBE6829EE98CA0064DD67 /* PBXTargetDependency */,
+			);
+			name = kosapp2Tests;
+			productName = kosapp2Tests;
+			productReference = 652CBE6629EE98CA0064DD67 /* kosapp2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		652CBE6F29EE98CA0064DD67 /* kosapp2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 652CBE8029EE98CA0064DD67 /* Build configuration list for PBXNativeTarget "kosapp2UITests" */;
+			buildPhases = (
+				652CBE6C29EE98CA0064DD67 /* Sources */,
+				652CBE6D29EE98CA0064DD67 /* Frameworks */,
+				652CBE6E29EE98CA0064DD67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				652CBE7229EE98CA0064DD67 /* PBXTargetDependency */,
+			);
+			name = kosapp2UITests;
+			productName = kosapp2UITests;
+			productReference = 652CBE7029EE98CA0064DD67 /* kosapp2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		652CBE4E29EE98C90064DD67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					652CBE5529EE98C90064DD67 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					652CBE6529EE98CA0064DD67 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 652CBE5529EE98C90064DD67;
+					};
+					652CBE6F29EE98CA0064DD67 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 652CBE5529EE98C90064DD67;
+					};
+				};
+			};
+			buildConfigurationList = 652CBE5129EE98C90064DD67 /* Build configuration list for PBXProject "kosapp2" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 652CBE4D29EE98C90064DD67;
+			productRefGroup = 652CBE5729EE98C90064DD67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				652CBE5529EE98C90064DD67 /* kosapp2 */,
+				652CBE6529EE98CA0064DD67 /* kosapp2Tests */,
+				652CBE6F29EE98CA0064DD67 /* kosapp2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		652CBE5429EE98C90064DD67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				652CBE6129EE98CA0064DD67 /* Preview Assets.xcassets in Resources */,
+				65A0871029EE9B78008B61A0 /* dict36.txt in Resources */,
+				65A0870F29EE9B78008B61A0 /* dict35.txt in Resources */,
+				65A0871129EE9B78008B61A0 /* dict34.txt in Resources */,
+				652CBE5E29EE98CA0064DD67 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		652CBE6429EE98CA0064DD67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		652CBE6E29EE98CA0064DD67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		652CBE5229EE98C90064DD67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				652CBE5C29EE98CA0064DD67 /* ContentView.swift in Sources */,
+				652CBE5A29EE98CA0064DD67 /* kosapp2App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		652CBE6229EE98CA0064DD67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				652CBE6B29EE98CA0064DD67 /* kosapp2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		652CBE6C29EE98CA0064DD67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				652CBE7529EE98CA0064DD67 /* kosapp2UITests.swift in Sources */,
+				652CBE7729EE98CA0064DD67 /* kosapp2UITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		652CBE6829EE98CA0064DD67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 652CBE5529EE98C90064DD67 /* kosapp2 */;
+			targetProxy = 652CBE6729EE98CA0064DD67 /* PBXContainerItemProxy */;
+		};
+		652CBE7229EE98CA0064DD67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 652CBE5529EE98C90064DD67 /* kosapp2 */;
+			targetProxy = 652CBE7129EE98CA0064DD67 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		652CBE7829EE98CA0064DD67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		652CBE7929EE98CA0064DD67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		652CBE7B29EE98CA0064DD67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"kosapp2/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosapp2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		652CBE7C29EE98CA0064DD67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"kosapp2/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosapp2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		652CBE7E29EE98CA0064DD67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosapp2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kosapp2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kosapp2";
+			};
+			name = Debug;
+		};
+		652CBE7F29EE98CA0064DD67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosapp2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kosapp2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kosapp2";
+			};
+			name = Release;
+		};
+		652CBE8129EE98CA0064DD67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosapp2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kosapp2;
+			};
+			name = Debug;
+		};
+		652CBE8229EE98CA0064DD67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosapp2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = kosapp2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		652CBE5129EE98C90064DD67 /* Build configuration list for PBXProject "kosapp2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				652CBE7829EE98CA0064DD67 /* Debug */,
+				652CBE7929EE98CA0064DD67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		652CBE7A29EE98CA0064DD67 /* Build configuration list for PBXNativeTarget "kosapp2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				652CBE7B29EE98CA0064DD67 /* Debug */,
+				652CBE7C29EE98CA0064DD67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		652CBE7D29EE98CA0064DD67 /* Build configuration list for PBXNativeTarget "kosapp2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				652CBE7E29EE98CA0064DD67 /* Debug */,
+				652CBE7F29EE98CA0064DD67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		652CBE8029EE98CA0064DD67 /* Build configuration list for PBXNativeTarget "kosapp2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				652CBE8129EE98CA0064DD67 /* Debug */,
+				652CBE8229EE98CA0064DD67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 652CBE4E29EE98C90064DD67 /* Project object */;
+}

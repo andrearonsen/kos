@@ -14,13 +14,11 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let dictCat = readDictionaryCatalog()
-//        print(dictCat.forNumberOfInputLetters(nrInputLetters: 4).countWords())
-//        var board = Board(width: 9, height: 6)
-//        
-//        let dir = board.canPlaceWord(row: 0, col: 0, word: "hallo")
-//        board.placeWord(row: 0, col: 0, dir: dir, word: "hallo")
-//        board.printBoard()
+        let dictCat = readDictionaryCatalog()
+        let dict = dictCat.forNumberOfInputLetters(nrInputLetters: 4)
+        let board = generate_board2(dict: dict, gridWidth: 5, gridHeight: 4, maxWords: 5)
+        board.printBoard()
+        board.printPuzzle()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'

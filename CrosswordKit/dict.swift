@@ -1,8 +1,8 @@
 //
 //  dict.swift
-//  kosapp
+//  CrosswordKit
 //
-//  Created by André Fagerlie Aronsen on 16/04/2023.
+//  Created by André Fagerlie Aronsen on 18/04/2023.
 //
 
 import Foundation
@@ -47,7 +47,7 @@ func readDictionaryCatalog() -> DictionaryCatalog {
 }
 
 func readDict(dictFile: String) -> Dictionary {
-    guard let fileUrl = Bundle.crossword.url(forResource: dictFile, withExtension: "txt") else {
+    guard let fileUrl = Bundle.main.url(forResource: dictFile, withExtension: "txt") else {
         fatalError("Not able to create URL")
     }
     
@@ -63,3 +63,4 @@ func readDict(dictFile: String) -> Dictionary {
     
     return Dictionary(words: words)
 }
+
