@@ -12,7 +12,7 @@ func generate_board(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords:
     var board = Board(width: gridWidth, height: gridHeight)
     var words = dict.shuffleWords()
     var word = words.removeLast()
-    board.placeFirstWordRandom(word: word)
+    board.placeFirstWordRandomDir(word: word)
     var count = 1
     
 outer: while count < maxWords && !words.isEmpty {
@@ -24,7 +24,7 @@ outer: while count < maxWords && !words.isEmpty {
                     if board.hasLetter(row: y, col: x, letter: letter) {
                         let placement = board.canPlaceWord(row: y, col: x, word: word)
                         if placement.dir != .NotPossible {
-                            board.placeWord(placement)
+                            board.placeWord(wp: placement)
                             count += 1
                             continue outer
                         }
@@ -32,6 +32,35 @@ outer: while count < maxWords && !words.isEmpty {
                     }
                 }
             }
+        }
+    }
+    
+    return board
+}
+
+func generate_board2(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
+    var board = Board(width: gridWidth, height: gridHeight)
+    var words = dict.shuffleWords()
+    var word = words.removeLast()
+    board.placeWord(wp: WordPlacement(word: word, dir: .Horizontal, row: 0, col: 0))
+    var count = 1
+    
+    while count < maxWords && !words.isEmpty {
+        word = words.removeLast().uppercased()
+        let placements = board.findAllPossibleWordPlacements(word: word)
+        var bestScore = 0.0
+        var bestBoard = board
+        for placement in placements {
+            let newBoard = board.placeWordClone(wp: placement)
+            let newScore = newBoard.score()
+            if newScore > bestScore {
+                bestScore = newScore
+                bestBoard = newBoard
+            }
+        }
+        if bestScore > 0 {
+            board = bestBoard
+            count += 1
         }
     }
     

@@ -20,9 +20,10 @@ final class kosappTests: XCTestCase {
     
     func testGenerator() throws {
         let dictCat = readDictionaryCatalog()
-        let dict = dictCat.forNumberOfInputLetters(nrInputLetters: 4)
-        let board = generate_board(dict: dict, gridWidth: 6, gridHeight: 5, maxWords: 4)
+        let dict = dictCat.forNumberOfInputLetters(nrInputLetters: 6)
+        let board = generate_board2(dict: dict, gridWidth: 9, gridHeight: 6, maxWords: 10)
         board.printBoard()
+        board.printPuzzle()
     }
 
 }

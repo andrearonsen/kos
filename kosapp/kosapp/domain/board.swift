@@ -50,6 +50,14 @@ struct Board {
         return self.matrix.rows - 1
     }
     
+    func nrRows() -> Int {
+        return matrix.rows
+    }
+    
+    func nrCols() -> Int {
+        return matrix.columns
+    }
+    
     func nrActualRows() -> Int {
         var count = 0
         for row in 0...lastRowIndex() {
@@ -234,8 +242,7 @@ struct Board {
             for y in 0...lastRowIndex() {
                 for x in 0...lastColIndex() {
                     if hasLetter(row: y, col: x, letter: letter) {
-                        let placement = canPlaceWordHorizontally(row: y, col: x, word: word)
-                        if canPlaceWordHorizontally(row: y, col: x, word: word) {
+                        if canPlaceWordHorizontally(row: y, col: x, word: w) {
                             let wp = WordPlacement(word: w, dir: .Horizontal, row: y, col: x)
                             possibilites.append(wp)
                         }
@@ -270,23 +277,25 @@ struct Board {
         }
     }
     
-    mutating func placeFirstWordRandom(word: String) {
+    func clone() -> Board {
+        var b = Board(width: nrCols(), height: nrRows())
+        for wp in self.words {
+            b.placeWord(wp: wp)
+        }
+        return b
+    }
+    
+    func placeWordClone(wp: WordPlacement) -> Board {
+        var b = self.clone()
+        b.placeWord(wp: wp)
+        return b
+    }
+    
+    mutating func placeFirstWordRandomDir(word: String) {
         assert(self.words.isEmpty)
         
         let dir = randomPlacementDirection(word: word)
-        
-        switch dir {
-        case .Horizontal:
-            let row = 0
-            let col = Int.random(in: 0...(matrix.columns - word.count))
-            placeWord(wp: WordPlacement(word: word, dir: .Horizontal, row: row, col: col))
-        case .Vertical:
-            let row = Int.random(in: 0...(matrix.rows - word.count))
-            let col = 0
-            placeWord(wp: WordPlacement(word: word, dir: .Vertical, row: row, col: col))
-        default:
-            fatalError("Invalid placement direction")
-        }
+        placeWord(wp: WordPlacement(word: word, dir: dir, row: 0, col: 0))
     }
     
     func randomPlacementDirection(word: String) -> PlacementDirection {
@@ -323,12 +332,38 @@ struct Board {
         print(s)
         print()
         printWords()
+        printScore()
+    }
+    
+    func printPuzzle() {
+        var s = ""
+        
+        for r in 0...lastRowIndex() {
+            for c in 0...lastColIndex() {
+                if isEmpty(row: r, col: c) {
+                    s += " "
+                } else {
+                    s += "\u{2593}"
+                }
+                s += " "
+               
+            }
+            s += "\n"
+        }
+        print(s)
+        print()
+        printWords()
+        printScore()
     }
     
     func printWords() {
         for wp in self.words {
             print(wp.toString())
         }
+    }
+    
+    func printScore() {
+        print("Score: \(score())")
     }
 
 }
