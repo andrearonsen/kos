@@ -7,7 +7,8 @@
 
 import Foundation
 
-func generate_placement(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
+// https://www.baeldung.com/cs/generate-crossword-puzzle
+func generate_board(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     var board = Board(width: gridWidth, height: gridHeight)
     var words = dict.shuffleWords()
     var word = words.removeLast()

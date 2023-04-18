@@ -50,6 +50,72 @@ struct Board {
         return self.matrix.rows - 1
     }
     
+    func nrActualRows() -> Int {
+        var count = 0
+        for row in 0...lastRowIndex() {
+            if !rowIsEmpty(row: row){
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func nrActualCols() -> Int {
+        var count = 0
+        for col in 0...lastColIndex() {
+            if !colIsEmpty(col: col){
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func rowIsEmpty(row: Int) -> Bool {
+        for col in 0...lastColIndex() {
+            if !isEmpty(row: row, col: col) {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func colIsEmpty(col: Int) -> Bool {
+        for row in 0...lastRowIndex() {
+            if !isEmpty(row: row, col: col) {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func score() -> Double {
+        let rows = nrActualRows()
+        let cols = nrActualCols()
+        var sizeRatio = Double(rows) / Double(cols)
+        if rows > cols {
+            sizeRatio = Double(cols) / Double(rows)
+        }
+        var filled = 0
+        var empty = 0
+        for y in 0...lastRowIndex() {
+//            if rowIsEmpty(row: y) {
+//                continue
+//            }
+            for x in 0...lastColIndex() {
+//                if colIsEmpty(col: x) {
+//                    continue
+//                }
+                if isEmpty(row: y, col: x) {
+                    empty += 1
+                } else {
+                    filled += 1
+                }
+            }
+        }
+        let filledRatio = Double(filled) / Double(empty)
+        return (sizeRatio * 10) + (filledRatio * 20)
+    }
+    
     func hasLetter(row: Int, col: Int, letter: String) -> Bool {
         let cell = self.matrix[row, col]
         return cell == letter.uppercased()
