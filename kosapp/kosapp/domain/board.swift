@@ -22,7 +22,7 @@ struct WordPlacement {
     var col: Int
     
     init(word: String, dir: PlacementDirection, row: Int, col: Int) {
-        self.word = word
+        self.word = word.uppercased()
         self.dir = dir
         self.row = row
         self.col = col
@@ -98,13 +98,7 @@ struct Board {
         var filled = 0
         var empty = 0
         for y in 0...lastRowIndex() {
-//            if rowIsEmpty(row: y) {
-//                continue
-//            }
             for x in 0...lastColIndex() {
-//                if colIsEmpty(col: x) {
-//                    continue
-//                }
                 if isEmpty(row: y, col: x) {
                     empty += 1
                 } else {
@@ -153,18 +147,18 @@ struct Board {
         return self.isEmpty(row: row+1, col: col)
     }
     
-    func canPlaceWord(row: Int, col: Int, word: String) -> PlacementDirection {
+    func canPlaceWord(row: Int, col: Int, word: String) -> WordPlacement {
         let w = word.uppercased()
         
         if canPlaceWordHorizontally(row: row, col: col, word: w) {
-            return PlacementDirection.Horizontal
+            return WordPlacement(word: w, dir: .Horizontal, row: row, col: col)
         }
         
         if canPlaceWordVertically(row: row, col: col, word: w) {
-            return PlacementDirection.Vertical
+            return WordPlacement(word: w, dir: .Vertical, row: row, col: col)
         }
         
-        return PlacementDirection.NotPossible
+        return WordPlacement(word: w, dir: .NotPossible, row: row, col: col)
     }
     
     func canPlaceWordHorizontally(row: Int, col: Int, word: String) -> Bool {  
@@ -231,21 +225,44 @@ struct Board {
         return true
     }
     
-    mutating func placeWord(row: Int, col: Int, dir: PlacementDirection, word: String) {
+    func findAllPossibleWordPlacements(word: String) -> [WordPlacement] {
         let w = word.uppercased()
-        let wp = WordPlacement(word: w, dir: dir, row: row, col: col)
+        var possibilites: [WordPlacement] = []
         
-        switch dir {
+        for c in w {
+            let letter = String(c)
+            for y in 0...lastRowIndex() {
+                for x in 0...lastColIndex() {
+                    if hasLetter(row: y, col: x, letter: letter) {
+                        let placement = canPlaceWordHorizontally(row: y, col: x, word: word)
+                        if canPlaceWordHorizontally(row: y, col: x, word: word) {
+                            let wp = WordPlacement(word: w, dir: .Horizontal, row: y, col: x)
+                            possibilites.append(wp)
+                        }
+                        if canPlaceWordVertically(row: y, col: x, word: w) {
+                            let wp = WordPlacement(word: w, dir: .Vertical, row: y, col: x)
+                            possibilites.append(wp)
+                        }
+                    }
+                }
+            }
+        }
+        
+        return possibilites
+    }
+    
+    mutating func placeWord(wp: WordPlacement) {
+        switch wp.dir {
         case .Horizontal:
-            for (i, letter) in w.enumerated() {
-                let currentCol = col + i
-                self.matrix[row, currentCol] = String(letter)
+            for (i, letter) in wp.word.enumerated() {
+                let currentCol = wp.col + i
+                self.matrix[wp.row, currentCol] = String(letter)
             }
             self.words.append(wp)
         case .Vertical:
-            for (i, letter) in w.enumerated() {
-                let currentRow = row + i
-                self.matrix[currentRow, col] = String(letter)
+            for (i, letter) in wp.word.enumerated() {
+                let currentRow = wp.row + i
+                self.matrix[currentRow, wp.col] = String(letter)
             }
             self.words.append(wp)
         case .NotPossible:
@@ -260,15 +277,13 @@ struct Board {
         
         switch dir {
         case .Horizontal:
-            //let row = Int.random(in: 0...self.lastRowIndex())
             let row = 0
-            let col = Int.random(in: 0...(self.matrix.columns - word.count))
-            self.placeWord(row: row, col: col, dir: dir, word: word)
+            let col = Int.random(in: 0...(matrix.columns - word.count))
+            placeWord(wp: WordPlacement(word: word, dir: .Horizontal, row: row, col: col))
         case .Vertical:
-            let row = Int.random(in: 0...(self.matrix.rows - word.count))
-            //let col = Int.random(in: 0...self.lastColIndex())
+            let row = Int.random(in: 0...(matrix.rows - word.count))
             let col = 0
-            self.placeWord(row: row, col: col, dir: dir, word: word)
+            placeWord(wp: WordPlacement(word: word, dir: .Vertical, row: row, col: col))
         default:
             fatalError("Invalid placement direction")
         }

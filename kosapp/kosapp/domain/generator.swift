@@ -7,7 +7,7 @@
 
 import Foundation
 
-// https://www.baeldung.com/cs/generate-crossword-puzzle
+// https://www.baeldung.com/cs/generate-crossword-puzzle (Algorithm 1)
 func generate_board(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     var board = Board(width: gridWidth, height: gridHeight)
     var words = dict.shuffleWords()
@@ -23,8 +23,8 @@ outer: while count < maxWords && !words.isEmpty {
                 for x in 0...gridWidth-1 {
                     if board.hasLetter(row: y, col: x, letter: letter) {
                         let placement = board.canPlaceWord(row: y, col: x, word: word)
-                        if placement != .NotPossible {
-                            board.placeWord(row: y, col: x, dir: placement, word: word)
+                        if placement.dir != .NotPossible {
+                            board.placeWord(placement)
                             count += 1
                             continue outer
                         }
