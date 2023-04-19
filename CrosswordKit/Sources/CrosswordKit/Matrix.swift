@@ -1,8 +1,8 @@
 //
-//  matrix.swift
-//  CrosswordKit
+//  Matrix.swift
+//  
 //
-//  Created by André Fagerlie Aronsen on 18/04/2023.
+//  Created by André Fagerlie Aronsen on 19/04/2023.
 //
 
 import Foundation

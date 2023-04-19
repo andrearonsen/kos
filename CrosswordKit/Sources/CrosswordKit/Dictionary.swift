@@ -1,8 +1,8 @@
 //
-//  dict.swift
-//  CrosswordKit
+//  Dictionary.swift
+//  
 //
-//  Created by André Fagerlie Aronsen on 18/04/2023.
+//  Created by André Fagerlie Aronsen on 19/04/2023.
 //
 
 import Foundation
@@ -40,15 +40,14 @@ public struct DictionaryCatalog {
 }
 
 public func readDictionaryCatalog() -> DictionaryCatalog {
-    let dict34 = readDict(dictFile: "dict34")
-    let dict35 = readDict(dictFile: "dict35")
-    let dict36 = readDict(dictFile: "dict36")
+    let dict34 = readDict(dictFile: "Dictionaries/dict34")
+    let dict35 = readDict(dictFile: "Dictionaries/dict35")
+    let dict36 = readDict(dictFile: "Dictionaries/dict36")
     return DictionaryCatalog(dict34: dict34, dict35: dict35, dict36: dict36)
 }
 
 func readDict(dictFile: String) -> Dictionary {
-    //let bundle = Bundle(for: DictionaryCatalog.Type)
-    guard let fileUrl = Bundle.main.url(forResource: dictFile, withExtension: "txt") else {
+    guard let fileUrl = Bundle.module.url(forResource: dictFile, withExtension: "txt") else {
         fatalError("Not able to create URL")
     }
     
