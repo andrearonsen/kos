@@ -9,6 +9,6 @@ final class CrosswordKitTests: XCTestCase {
         board.printBoard()
         board.printPuzzle()
         
-        XCTAssertEqual(CrosswordKit().text, "Hello, World!")
+        XCTAssertEqual(CrosswordKit().text, "Hello, CrosswordKit!")
     }
 }

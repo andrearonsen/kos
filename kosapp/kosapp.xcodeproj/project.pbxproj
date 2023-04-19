@@ -7,83 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		65C77B3C29EB109700C8969A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B3B29EB109700C8969A /* AppDelegate.swift */; };
-		65C77B3E29EB109700C8969A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B3D29EB109700C8969A /* GameScene.sks */; };
-		65C77B4029EB109700C8969A /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B3F29EB109700C8969A /* Actions.sks */; };
-		65C77B4229EB109700C8969A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B4129EB109700C8969A /* GameScene.swift */; };
-		65C77B4429EB109700C8969A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B4329EB109700C8969A /* GameViewController.swift */; };
-		65C77B4729EB109700C8969A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B4529EB109700C8969A /* Main.storyboard */; };
-		65C77B4929EB109800C8969A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B4829EB109800C8969A /* Assets.xcassets */; };
-		65C77B4C29EB109800C8969A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B4A29EB109800C8969A /* LaunchScreen.storyboard */; };
-		65C77B5629EB109800C8969A /* kosappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B5529EB109800C8969A /* kosappTests.swift */; };
-		65C77B6029EB109800C8969A /* kosappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B5F29EB109800C8969A /* kosappUITests.swift */; };
-		65C77B6229EB109800C8969A /* kosappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B6129EB109800C8969A /* kosappUITestsLaunchTests.swift */; };
-		65C77B7329EBC14800C8969A /* dict35.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B7029EBC14800C8969A /* dict35.txt */; };
-		65C77B7429EBC14800C8969A /* dict34.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B7129EBC14800C8969A /* dict34.txt */; };
-		65C77B7529EBC14800C8969A /* dict36.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65C77B7229EBC14800C8969A /* dict36.txt */; };
-		65C77B7829EBD3A000C8969A /* dict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B7729EBD3A000C8969A /* dict.swift */; };
-		65C77B7A29EC3F4500C8969A /* generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B7929EC3F4500C8969A /* generator.swift */; };
-		65C77B7C29EC3F5200C8969A /* matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B7B29EC3F5200C8969A /* matrix.swift */; };
-		65C77B7E29EC439B00C8969A /* board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C77B7D29EC439B00C8969A /* board.swift */; };
+		65CE305429F0577100EF169D /* KosappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE305329F0577100EF169D /* KosappApp.swift */; };
+		65CE305629F0577100EF169D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE305529F0577100EF169D /* ContentView.swift */; };
+		65CE305829F0577200EF169D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CE305729F0577200EF169D /* Assets.xcassets */; };
+		65CE305B29F0577200EF169D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CE305A29F0577200EF169D /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		65C77B5229EB109800C8969A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 65C77B3029EB109700C8969A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65C77B3729EB109700C8969A;
-			remoteInfo = kosapp;
-		};
-		65C77B5C29EB109800C8969A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 65C77B3029EB109700C8969A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65C77B3729EB109700C8969A;
-			remoteInfo = kosapp;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		65C77B3829EB109700C8969A /* kosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		65C77B3B29EB109700C8969A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65C77B3D29EB109700C8969A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		65C77B3F29EB109700C8969A /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		65C77B4129EB109700C8969A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		65C77B4329EB109700C8969A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		65C77B4629EB109700C8969A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		65C77B4829EB109800C8969A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		65C77B4B29EB109800C8969A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		65C77B5129EB109800C8969A /* kosappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kosappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65C77B5529EB109800C8969A /* kosappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosappTests.swift; sourceTree = "<group>"; };
-		65C77B5B29EB109800C8969A /* kosappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kosappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65C77B5F29EB109800C8969A /* kosappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosappUITests.swift; sourceTree = "<group>"; };
-		65C77B6129EB109800C8969A /* kosappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kosappUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		65C77B7029EBC14800C8969A /* dict35.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dict35.txt; path = ../../../dict/dict35.txt; sourceTree = "<group>"; };
-		65C77B7129EBC14800C8969A /* dict34.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dict34.txt; path = ../../../dict/dict34.txt; sourceTree = "<group>"; };
-		65C77B7229EBC14800C8969A /* dict36.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dict36.txt; path = ../../../dict/dict36.txt; sourceTree = "<group>"; };
-		65C77B7729EBD3A000C8969A /* dict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dict.swift; sourceTree = "<group>"; };
-		65C77B7929EC3F4500C8969A /* generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generator.swift; sourceTree = "<group>"; };
-		65C77B7B29EC3F5200C8969A /* matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix.swift; sourceTree = "<group>"; };
-		65C77B7D29EC439B00C8969A /* board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = board.swift; sourceTree = "<group>"; };
+		6573D8EA29F064040006E89E /* CrosswordKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CrosswordKit; path = ../CrosswordKit; sourceTree = "<group>"; };
+		65768DCE29F0580B00D16926 /* CrosswordKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CrosswordKit; path = ../CrosswordKit; sourceTree = "<group>"; };
+		65CE305029F0577100EF169D /* Kosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65CE305329F0577100EF169D /* KosappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KosappApp.swift; sourceTree = "<group>"; };
+		65CE305529F0577100EF169D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		65CE305729F0577200EF169D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65CE305A29F0577200EF169D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		65C77B3529EB109700C8969A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65C77B4E29EB109800C8969A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65C77B5829EB109800C8969A /* Frameworks */ = {
+		65CE304D29F0577100EF169D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,161 +34,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		65C77B2F29EB109700C8969A = {
+		65768DCD29F0580B00D16926 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				65C77B3A29EB109700C8969A /* kosapp */,
-				65C77B5429EB109800C8969A /* kosappTests */,
-				65C77B5E29EB109800C8969A /* kosappUITests */,
-				65C77B3929EB109700C8969A /* Products */,
+				65768DCE29F0580B00D16926 /* CrosswordKit */,
+				6573D8EA29F064040006E89E /* CrosswordKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		65CE304729F0577100EF169D = {
+			isa = PBXGroup;
+			children = (
+				65768DCD29F0580B00D16926 /* Packages */,
+				65CE305229F0577100EF169D /* Kosapp */,
+				65CE305129F0577100EF169D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		65C77B3929EB109700C8969A /* Products */ = {
+		65CE305129F0577100EF169D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				65C77B3829EB109700C8969A /* kosapp.app */,
-				65C77B5129EB109800C8969A /* kosappTests.xctest */,
-				65C77B5B29EB109800C8969A /* kosappUITests.xctest */,
+				65CE305029F0577100EF169D /* Kosapp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		65C77B3A29EB109700C8969A /* kosapp */ = {
+		65CE305229F0577100EF169D /* Kosapp */ = {
 			isa = PBXGroup;
 			children = (
-				65C77B7629EBD37B00C8969A /* domain */,
-				65C77B6F29EBC12200C8969A /* Documents */,
-				65C77B3B29EB109700C8969A /* AppDelegate.swift */,
-				65C77B3D29EB109700C8969A /* GameScene.sks */,
-				65C77B3F29EB109700C8969A /* Actions.sks */,
-				65C77B4129EB109700C8969A /* GameScene.swift */,
-				65C77B4329EB109700C8969A /* GameViewController.swift */,
-				65C77B4529EB109700C8969A /* Main.storyboard */,
-				65C77B4829EB109800C8969A /* Assets.xcassets */,
-				65C77B4A29EB109800C8969A /* LaunchScreen.storyboard */,
+				65CE305329F0577100EF169D /* KosappApp.swift */,
+				65CE305529F0577100EF169D /* ContentView.swift */,
+				65CE305729F0577200EF169D /* Assets.xcassets */,
+				65CE305929F0577200EF169D /* Preview Content */,
 			);
-			path = kosapp;
+			path = Kosapp;
 			sourceTree = "<group>";
 		};
-		65C77B5429EB109800C8969A /* kosappTests */ = {
+		65CE305929F0577200EF169D /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				65C77B5529EB109800C8969A /* kosappTests.swift */,
+				65CE305A29F0577200EF169D /* Preview Assets.xcassets */,
 			);
-			path = kosappTests;
-			sourceTree = "<group>";
-		};
-		65C77B5E29EB109800C8969A /* kosappUITests */ = {
-			isa = PBXGroup;
-			children = (
-				65C77B5F29EB109800C8969A /* kosappUITests.swift */,
-				65C77B6129EB109800C8969A /* kosappUITestsLaunchTests.swift */,
-			);
-			path = kosappUITests;
-			sourceTree = "<group>";
-		};
-		65C77B6F29EBC12200C8969A /* Documents */ = {
-			isa = PBXGroup;
-			children = (
-				65C77B7129EBC14800C8969A /* dict34.txt */,
-				65C77B7029EBC14800C8969A /* dict35.txt */,
-				65C77B7229EBC14800C8969A /* dict36.txt */,
-			);
-			path = Documents;
-			sourceTree = "<group>";
-		};
-		65C77B7629EBD37B00C8969A /* domain */ = {
-			isa = PBXGroup;
-			children = (
-				65C77B7729EBD3A000C8969A /* dict.swift */,
-				65C77B7929EC3F4500C8969A /* generator.swift */,
-				65C77B7B29EC3F5200C8969A /* matrix.swift */,
-				65C77B7D29EC439B00C8969A /* board.swift */,
-			);
-			path = domain;
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		65C77B3729EB109700C8969A /* kosapp */ = {
+		65CE304F29F0577100EF169D /* Kosapp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65C77B6529EB109800C8969A /* Build configuration list for PBXNativeTarget "kosapp" */;
+			buildConfigurationList = 65CE305E29F0577200EF169D /* Build configuration list for PBXNativeTarget "Kosapp" */;
 			buildPhases = (
-				65C77B3429EB109700C8969A /* Sources */,
-				65C77B3529EB109700C8969A /* Frameworks */,
-				65C77B3629EB109700C8969A /* Resources */,
+				65CE304C29F0577100EF169D /* Sources */,
+				65CE304D29F0577100EF169D /* Frameworks */,
+				65CE304E29F0577100EF169D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = kosapp;
-			productName = kosapp;
-			productReference = 65C77B3829EB109700C8969A /* kosapp.app */;
+			name = Kosapp;
+			productName = Kosapp;
+			productReference = 65CE305029F0577100EF169D /* Kosapp.app */;
 			productType = "com.apple.product-type.application";
-		};
-		65C77B5029EB109800C8969A /* kosappTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65C77B6829EB109800C8969A /* Build configuration list for PBXNativeTarget "kosappTests" */;
-			buildPhases = (
-				65C77B4D29EB109800C8969A /* Sources */,
-				65C77B4E29EB109800C8969A /* Frameworks */,
-				65C77B4F29EB109800C8969A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				65C77B5329EB109800C8969A /* PBXTargetDependency */,
-			);
-			name = kosappTests;
-			productName = kosappTests;
-			productReference = 65C77B5129EB109800C8969A /* kosappTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		65C77B5A29EB109800C8969A /* kosappUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65C77B6B29EB109800C8969A /* Build configuration list for PBXNativeTarget "kosappUITests" */;
-			buildPhases = (
-				65C77B5729EB109800C8969A /* Sources */,
-				65C77B5829EB109800C8969A /* Frameworks */,
-				65C77B5929EB109800C8969A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				65C77B5D29EB109800C8969A /* PBXTargetDependency */,
-			);
-			name = kosappUITests;
-			productName = kosappUITests;
-			productReference = 65C77B5B29EB109800C8969A /* kosappUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		65C77B3029EB109700C8969A /* Project object */ = {
+		65CE304829F0577100EF169D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					65C77B3729EB109700C8969A = {
+					65CE304F29F0577100EF169D = {
 						CreatedOnToolsVersion = 14.3;
-					};
-					65C77B5029EB109800C8969A = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = 65C77B3729EB109700C8969A;
-					};
-					65C77B5A29EB109800C8969A = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = 65C77B3729EB109700C8969A;
 					};
 				};
 			};
-			buildConfigurationList = 65C77B3329EB109700C8969A /* Build configuration list for PBXProject "kosapp" */;
+			buildConfigurationList = 65CE304B29F0577100EF169D /* Build configuration list for PBXProject "Kosapp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -255,118 +122,42 @@
 				en,
 				Base,
 			);
-			mainGroup = 65C77B2F29EB109700C8969A;
-			productRefGroup = 65C77B3929EB109700C8969A /* Products */;
+			mainGroup = 65CE304729F0577100EF169D;
+			productRefGroup = 65CE305129F0577100EF169D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				65C77B3729EB109700C8969A /* kosapp */,
-				65C77B5029EB109800C8969A /* kosappTests */,
-				65C77B5A29EB109800C8969A /* kosappUITests */,
+				65CE304F29F0577100EF169D /* Kosapp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		65C77B3629EB109700C8969A /* Resources */ = {
+		65CE304E29F0577100EF169D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65C77B4729EB109700C8969A /* Main.storyboard in Resources */,
-				65C77B3E29EB109700C8969A /* GameScene.sks in Resources */,
-				65C77B7429EBC14800C8969A /* dict34.txt in Resources */,
-				65C77B4929EB109800C8969A /* Assets.xcassets in Resources */,
-				65C77B4C29EB109800C8969A /* LaunchScreen.storyboard in Resources */,
-				65C77B7529EBC14800C8969A /* dict36.txt in Resources */,
-				65C77B7329EBC14800C8969A /* dict35.txt in Resources */,
-				65C77B4029EB109700C8969A /* Actions.sks in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65C77B4F29EB109800C8969A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65C77B5929EB109800C8969A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				65CE305B29F0577200EF169D /* Preview Assets.xcassets in Resources */,
+				65CE305829F0577200EF169D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		65C77B3429EB109700C8969A /* Sources */ = {
+		65CE304C29F0577100EF169D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65C77B7E29EC439B00C8969A /* board.swift in Sources */,
-				65C77B4229EB109700C8969A /* GameScene.swift in Sources */,
-				65C77B7829EBD3A000C8969A /* dict.swift in Sources */,
-				65C77B7C29EC3F5200C8969A /* matrix.swift in Sources */,
-				65C77B4429EB109700C8969A /* GameViewController.swift in Sources */,
-				65C77B7A29EC3F4500C8969A /* generator.swift in Sources */,
-				65C77B3C29EB109700C8969A /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65C77B4D29EB109800C8969A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65C77B5629EB109800C8969A /* kosappTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		65C77B5729EB109800C8969A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				65C77B6229EB109800C8969A /* kosappUITestsLaunchTests.swift in Sources */,
-				65C77B6029EB109800C8969A /* kosappUITests.swift in Sources */,
+				65CE305629F0577100EF169D /* ContentView.swift in Sources */,
+				65CE305429F0577100EF169D /* KosappApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		65C77B5329EB109800C8969A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65C77B3729EB109700C8969A /* kosapp */;
-			targetProxy = 65C77B5229EB109800C8969A /* PBXContainerItemProxy */;
-		};
-		65C77B5D29EB109800C8969A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65C77B3729EB109700C8969A /* kosapp */;
-			targetProxy = 65C77B5C29EB109800C8969A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		65C77B4529EB109700C8969A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65C77B4629EB109700C8969A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		65C77B4A29EB109800C8969A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65C77B4B29EB109800C8969A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		65C77B6329EB109800C8969A /* Debug */ = {
+		65CE305C29F0577200EF169D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -426,7 +217,7 @@
 			};
 			name = Debug;
 		};
-		65C77B6429EB109800C8969A /* Release */ = {
+		65CE305D29F0577200EF169D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -480,26 +271,27 @@
 			};
 			name = Release;
 		};
-		65C77B6629EB109800C8969A /* Debug */ = {
+		65CE305F29F0577200EF169D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Kosapp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosapp;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.Kosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -507,145 +299,56 @@
 			};
 			name = Debug;
 		};
-		65C77B6729EB109800C8969A /* Release */ = {
+		65CE306029F0577200EF169D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Kosapp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.word-games";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosapp;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.Kosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		65C77B6929EB109800C8969A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosappTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kosapp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kosapp";
-			};
-			name = Debug;
-		};
-		65C77B6A29EB109800C8969A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosappTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kosapp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/kosapp";
-			};
-			name = Release;
-		};
-		65C77B6C29EB109800C8969A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosappUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = kosapp;
-			};
-			name = Debug;
-		};
-		65C77B6D29EB109800C8969A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.kosappUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = kosapp;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		65C77B3329EB109700C8969A /* Build configuration list for PBXProject "kosapp" */ = {
+		65CE304B29F0577100EF169D /* Build configuration list for PBXProject "Kosapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				65C77B6329EB109800C8969A /* Debug */,
-				65C77B6429EB109800C8969A /* Release */,
+				65CE305C29F0577200EF169D /* Debug */,
+				65CE305D29F0577200EF169D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65C77B6529EB109800C8969A /* Build configuration list for PBXNativeTarget "kosapp" */ = {
+		65CE305E29F0577200EF169D /* Build configuration list for PBXNativeTarget "Kosapp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				65C77B6629EB109800C8969A /* Debug */,
-				65C77B6729EB109800C8969A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65C77B6829EB109800C8969A /* Build configuration list for PBXNativeTarget "kosappTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65C77B6929EB109800C8969A /* Debug */,
-				65C77B6A29EB109800C8969A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		65C77B6B29EB109800C8969A /* Build configuration list for PBXNativeTarget "kosappUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				65C77B6C29EB109800C8969A /* Debug */,
-				65C77B6D29EB109800C8969A /* Release */,
+				65CE305F29F0577200EF169D /* Debug */,
+				65CE306029F0577200EF169D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 65C77B3029EB109700C8969A /* Project object */;
+	rootObject = 65CE304829F0577100EF169D /* Project object */;
 }

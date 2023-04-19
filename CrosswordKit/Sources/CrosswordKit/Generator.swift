@@ -7,10 +7,6 @@
 
 import Foundation
 
-public func hallois() -> String {
-    return "hhhh"
-}
-
 // https://www.baeldung.com/cs/generate-crossword-puzzle (Algorithm 1)
 public func generate_board(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     var board = Board(width: gridWidth, height: gridHeight)
