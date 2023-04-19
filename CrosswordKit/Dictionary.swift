@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Dictionary {
+public struct Dictionary {
     var words: [String]
     
     init(words: [String]) {
@@ -23,12 +23,12 @@ struct Dictionary {
     }
 }
 
-struct DictionaryCatalog {
+public struct DictionaryCatalog {
     var dict34: Dictionary
     var dict35: Dictionary
     var dict36: Dictionary
     
-    func forNumberOfInputLetters(nrInputLetters: Int) -> Dictionary {
+    public func forNumberOfInputLetters(nrInputLetters: Int) -> Dictionary {
         switch nrInputLetters {
         case 4: return self.dict34
         case 5: return self.dict35
@@ -39,7 +39,7 @@ struct DictionaryCatalog {
     }
 }
 
-func readDictionaryCatalog() -> DictionaryCatalog {
+public func readDictionaryCatalog() -> DictionaryCatalog {
     let dict34 = readDict(dictFile: "dict34")
     let dict35 = readDict(dictFile: "dict35")
     let dict36 = readDict(dictFile: "dict36")
@@ -47,6 +47,7 @@ func readDictionaryCatalog() -> DictionaryCatalog {
 }
 
 func readDict(dictFile: String) -> Dictionary {
+    //let bundle = Bundle(for: DictionaryCatalog.Type)
     guard let fileUrl = Bundle.main.url(forResource: dictFile, withExtension: "txt") else {
         fatalError("Not able to create URL")
     }

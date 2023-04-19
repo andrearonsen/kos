@@ -8,19 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		65A0878229EEF7E9008B61A0 /* CrosswordKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 65A0878129EEF7E9008B61A0 /* CrosswordKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		65A0878929EEF826008B61A0 /* dict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0878829EEF826008B61A0 /* dict.swift */; };
-		65A0878B29EEF830008B61A0 /* board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0878A29EEF830008B61A0 /* board.swift */; };
-		65A0878D29EEF83A008B61A0 /* matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0878C29EEF83A008B61A0 /* matrix.swift */; };
-		65A0878F29EEF84F008B61A0 /* generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0878E29EEF84F008B61A0 /* generator.swift */; };
+		65A0878929EEF826008B61A0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0878829EEF826008B61A0 /* Dictionary.swift */; };
+		65A0878B29EEF830008B61A0 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0878A29EEF830008B61A0 /* Board.swift */; };
+		65A0878D29EEF83A008B61A0 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0878C29EEF83A008B61A0 /* Matrix.swift */; };
+		65A0878F29EEF84F008B61A0 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0878E29EEF84F008B61A0 /* Generator.swift */; };
+		65A0879729EFB06C008B61A0 /* dict34.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A0879629EFB06C008B61A0 /* dict34.txt */; };
+		65A0879929EFB109008B61A0 /* dict35.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A0879829EFB109008B61A0 /* dict35.txt */; };
+		65A0879B29EFB11C008B61A0 /* dict36.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A0879A29EFB11C008B61A0 /* dict36.txt */; };
+		65A087A329EFB14E008B61A0 /* CrosswordKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A087A229EFB14E008B61A0 /* CrosswordKitTests.swift */; };
+		65A087A429EFB14E008B61A0 /* CrosswordKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A0877E29EEF7E9008B61A0 /* CrosswordKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65A087A529EFB14E008B61A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65A0877529EEF7E9008B61A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65A0877D29EEF7E9008B61A0;
+			remoteInfo = CrosswordKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		65A0877E29EEF7E9008B61A0 /* CrosswordKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CrosswordKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A0878129EEF7E9008B61A0 /* CrosswordKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrosswordKit.h; sourceTree = "<group>"; };
-		65A0878829EEF826008B61A0 /* dict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dict.swift; sourceTree = "<group>"; };
-		65A0878A29EEF830008B61A0 /* board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = board.swift; sourceTree = "<group>"; };
-		65A0878C29EEF83A008B61A0 /* matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix.swift; sourceTree = "<group>"; };
-		65A0878E29EEF84F008B61A0 /* generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generator.swift; sourceTree = "<group>"; };
+		65A0878829EEF826008B61A0 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		65A0878A29EEF830008B61A0 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		65A0878C29EEF83A008B61A0 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		65A0878E29EEF84F008B61A0 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		65A0879629EFB06C008B61A0 /* dict34.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = dict34.txt; sourceTree = "<group>"; };
+		65A0879829EFB109008B61A0 /* dict35.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = dict35.txt; sourceTree = "<group>"; };
+		65A0879A29EFB11C008B61A0 /* dict36.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = dict36.txt; sourceTree = "<group>"; };
+		65A087A029EFB14E008B61A0 /* CrosswordKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrosswordKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A087A229EFB14E008B61A0 /* CrosswordKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordKitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +51,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		65A0879D29EFB14E008B61A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A087A429EFB14E008B61A0 /* CrosswordKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		65A0877429EEF7E9008B61A0 = {
 			isa = PBXGroup;
 			children = (
-				65A0878E29EEF84F008B61A0 /* generator.swift */,
-				65A0878C29EEF83A008B61A0 /* matrix.swift */,
-				65A0878A29EEF830008B61A0 /* board.swift */,
-				65A0878829EEF826008B61A0 /* dict.swift */,
+				65A0879529EFB041008B61A0 /* Dictionaries */,
+				65A0878E29EEF84F008B61A0 /* Generator.swift */,
+				65A0878C29EEF83A008B61A0 /* Matrix.swift */,
+				65A0878A29EEF830008B61A0 /* Board.swift */,
+				65A0878829EEF826008B61A0 /* Dictionary.swift */,
 				65A0878029EEF7E9008B61A0 /* CrosswordKit */,
+				65A087A129EFB14E008B61A0 /* CrosswordKitTests */,
 				65A0877F29EEF7E9008B61A0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				65A0877E29EEF7E9008B61A0 /* CrosswordKit.framework */,
+				65A087A029EFB14E008B61A0 /* CrosswordKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +91,24 @@
 				65A0878129EEF7E9008B61A0 /* CrosswordKit.h */,
 			);
 			path = CrosswordKit;
+			sourceTree = "<group>";
+		};
+		65A0879529EFB041008B61A0 /* Dictionaries */ = {
+			isa = PBXGroup;
+			children = (
+				65A0879629EFB06C008B61A0 /* dict34.txt */,
+				65A0879829EFB109008B61A0 /* dict35.txt */,
+				65A0879A29EFB11C008B61A0 /* dict36.txt */,
+			);
+			path = Dictionaries;
+			sourceTree = "<group>";
+		};
+		65A087A129EFB14E008B61A0 /* CrosswordKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				65A087A229EFB14E008B61A0 /* CrosswordKitTests.swift */,
+			);
+			path = CrosswordKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +143,24 @@
 			productReference = 65A0877E29EEF7E9008B61A0 /* CrosswordKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		65A0879F29EFB14E008B61A0 /* CrosswordKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65A087A729EFB14E008B61A0 /* Build configuration list for PBXNativeTarget "CrosswordKitTests" */;
+			buildPhases = (
+				65A0879C29EFB14E008B61A0 /* Sources */,
+				65A0879D29EFB14E008B61A0 /* Frameworks */,
+				65A0879E29EFB14E008B61A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65A087A629EFB14E008B61A0 /* PBXTargetDependency */,
+			);
+			name = CrosswordKitTests;
+			productName = CrosswordKitTests;
+			productReference = 65A087A029EFB14E008B61A0 /* CrosswordKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,11 +168,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					65A0877D29EEF7E9008B61A0 = {
 						CreatedOnToolsVersion = 14.3;
 						LastSwiftMigration = 1430;
+					};
+					65A0879F29EFB14E008B61A0 = {
+						CreatedOnToolsVersion = 14.3;
 					};
 				};
 			};
@@ -123,12 +194,23 @@
 			projectRoot = "";
 			targets = (
 				65A0877D29EEF7E9008B61A0 /* CrosswordKit */,
+				65A0879F29EFB14E008B61A0 /* CrosswordKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		65A0877C29EEF7E9008B61A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A0879B29EFB11C008B61A0 /* dict36.txt in Resources */,
+				65A0879929EFB109008B61A0 /* dict35.txt in Resources */,
+				65A0879729EFB06C008B61A0 /* dict34.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65A0879E29EFB14E008B61A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -142,14 +224,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65A0878D29EEF83A008B61A0 /* matrix.swift in Sources */,
-				65A0878F29EEF84F008B61A0 /* generator.swift in Sources */,
-				65A0878B29EEF830008B61A0 /* board.swift in Sources */,
-				65A0878929EEF826008B61A0 /* dict.swift in Sources */,
+				65A0878D29EEF83A008B61A0 /* Matrix.swift in Sources */,
+				65A0878F29EEF84F008B61A0 /* Generator.swift in Sources */,
+				65A0878B29EEF830008B61A0 /* Board.swift in Sources */,
+				65A0878929EEF826008B61A0 /* Dictionary.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65A0879C29EFB14E008B61A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A087A329EFB14E008B61A0 /* CrosswordKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65A087A629EFB14E008B61A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65A0877D29EEF7E9008B61A0 /* CrosswordKit */;
+			targetProxy = 65A087A529EFB14E008B61A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		65A0878329EEF7E9008B61A0 /* Debug */ = {
@@ -335,6 +433,36 @@
 			};
 			name = Release;
 		};
+		65A087A829EFB14E008B61A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.CrosswordKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65A087A929EFB14E008B61A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AndrettiRapido.CrosswordKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -352,6 +480,15 @@
 			buildConfigurations = (
 				65A0878629EEF7E9008B61A0 /* Debug */,
 				65A0878729EEF7E9008B61A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65A087A729EFB14E008B61A0 /* Build configuration list for PBXNativeTarget "CrosswordKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65A087A829EFB14E008B61A0 /* Debug */,
+				65A087A929EFB14E008B61A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

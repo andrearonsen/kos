@@ -7,8 +7,12 @@
 
 import Foundation
 
+public func hallois() -> String {
+    return "hhhh"
+}
+
 // https://www.baeldung.com/cs/generate-crossword-puzzle (Algorithm 1)
-func generate_board(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
+public func generate_board(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     var board = Board(width: gridWidth, height: gridHeight)
     var words = dict.shuffleWords()
     var word = words.removeLast()
@@ -38,7 +42,7 @@ outer: while count < maxWords && !words.isEmpty {
     return board
 }
 
-func generate_board2(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
+public func generate_board2(dict: Dictionary, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     var board = Board(width: gridWidth, height: gridHeight)
     var words = dict.shuffleWords()
     var word = words.removeLast()

@@ -33,7 +33,7 @@ struct WordPlacement {
     }
 }
 
-struct Board {
+public struct Board {
     var matrix: Matrix<String>
     var words: [WordPlacement]
     
@@ -318,7 +318,7 @@ struct Board {
         }
     }
     
-    func printBoard() {
+    public func printBoard() {
         var s = ""
         
         for r in 0...self.matrix.rows-1 {
@@ -335,7 +335,7 @@ struct Board {
         printScore()
     }
     
-    func printPuzzle() {
+    public func printPuzzle() {
         var s = ""
         
         for r in 0...lastRowIndex() {
