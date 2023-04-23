@@ -19,9 +19,12 @@ final class KosTests: XCTestCase {
     }
 
     func testExample() throws {
-        let dictCat = Kos.readDictionaryCatalog()
-        let dict = dictCat.forNumberOfInputLetters(nrInputLetters: 4)
-        let board = generate_board2(dict: dict, gridWidth: 5, gridHeight: 4, maxWords: 5)
+        let nrInputLetters = 4
+        let wlCat = Kos.readWordListCatalog()
+        let firstWord = wlCat.randomFirstWord(nrInputLetters: nrInputLetters)
+        print(firstWord)
+        let wl = wlCat.wordListForNumberOfInputLetters(nrInputLetters: nrInputLetters)
+        let board = generate_board2(firstWord: firstWord, wl: wl, gridWidth: 5, gridHeight: 4, maxWords: 5)
         board.printBoard()
         board.printPuzzle()
         

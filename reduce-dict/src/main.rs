@@ -9,16 +9,28 @@ fn main() {
     // let file_path = &args[1];
 
     let src_path = "/Users/andre/src/kos/dict/nsf2022.txt";
-    let dest_path = "/Users/andre/src/kos/dict";
+    let dest_path = "/Users/andre/src/kos/dict/";
 
-    // 4 letter input -> 3-4 letters words
-    create_sub_dict(src_path, dest_path, 3, 4);
+    // // 4 letter input -> 3-4 letters words
+    // create_sub_dict(src_path, dest_path, 3, 4);
+    //
+    // // 5 letter input -> 3-5 letters words
+    // create_sub_dict(src_path, dest_path, 3, 5);
+    //
+    // // 6 letter input -> 3-6 letters words
+    // create_sub_dict(src_path, dest_path, 3, 6);
 
-    // 5 letter input -> 3-5 letters words
-    create_sub_dict(src_path, dest_path, 3, 5);
+    // 3 letter input -> 3 letters words
+    create_sub_dict(src_path, dest_path, 3, 3);
 
-    // 6 letter input -> 3-6 letters words
-    create_sub_dict(src_path, dest_path, 3, 6);
+    // 4 letter input -> 4 letters words
+    create_sub_dict(src_path, dest_path, 4, 4);
+
+    // 5 letter input -> 5 letters words
+    create_sub_dict(src_path, dest_path, 5, 5);
+
+    // 6 letter input -> 6 letters words
+    create_sub_dict(src_path, dest_path, 6, 6);
 }
 
 fn create_sub_dict(src_path: &str, dest_path: &str, min_word_length: usize, max_word_length: usize) {
@@ -28,7 +40,7 @@ fn create_sub_dict(src_path: &str, dest_path: &str, min_word_length: usize, max_
 
     let dict = sub_dict(dict, min_word_length, max_word_length);
     println!("Writing {} words into sub-dict", dict.len());
-    let dict_path = format!("{}/dict{}{}.txt", dest_path, min_word_length, max_word_length);
+    let dict_path = format!("{}/wl{}{}.txt", dest_path, min_word_length, max_word_length);
     write_dict(&dict_path, dict);
 }
 
@@ -37,6 +49,9 @@ fn sub_dict(dict: Vec<String>, min_word_length: usize, max_word_length: usize) -
         .filter(|w| {
             let len = w.chars().count();
             len >= min_word_length && len <= max_word_length
+        })
+        .map(|w| {
+            w.to_uppercase()
         })
         .collect()
 }

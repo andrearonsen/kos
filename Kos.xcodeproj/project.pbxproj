@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65A8DDA029F56E4500D291C3 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DD9F29F56E4500D291C3 /* TileView.swift */; };
+		65A8DDA229F5725D00D291C3 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDA129F5725D00D291C3 /* Tile.swift */; };
+		65A8DDA629F57E3600D291C3 /* CrosswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDA529F57E3600D291C3 /* CrosswordView.swift */; };
+		65A8DDAB29F5879D00D291C3 /* wl6.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A8DDA729F5879D00D291C3 /* wl6.txt */; };
+		65A8DDAC29F5879D00D291C3 /* wl3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A8DDA829F5879D00D291C3 /* wl3.txt */; };
+		65A8DDAD29F5879D00D291C3 /* wl5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A8DDA929F5879D00D291C3 /* wl5.txt */; };
+		65A8DDAE29F5879D00D291C3 /* wl4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A8DDAA29F5879D00D291C3 /* wl4.txt */; };
 		65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7AD929F5528B008FB96E /* KosApp.swift */; };
 		65DC7ADC29F5528B008FB96E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7ADB29F5528B008FB96E /* ContentView.swift */; };
 		65DC7ADE29F5528C008FB96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7ADD29F5528C008FB96E /* Assets.xcassets */; };
@@ -20,12 +27,6 @@
 		65DC7B0E29F55332008FB96E /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7B0C29F55332008FB96E /* Generator.swift */; };
 		65DC7B1029F55336008FB96E /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7B0F29F55336008FB96E /* Matrix.swift */; };
 		65DC7B1129F55336008FB96E /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7B0F29F55336008FB96E /* Matrix.swift */; };
-		65DC7B1529F553BA008FB96E /* dict36.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7B1229F553BA008FB96E /* dict36.txt */; };
-		65DC7B1629F553BA008FB96E /* dict36.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7B1229F553BA008FB96E /* dict36.txt */; };
-		65DC7B1729F553BA008FB96E /* dict34.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7B1329F553BA008FB96E /* dict34.txt */; };
-		65DC7B1829F553BA008FB96E /* dict34.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7B1329F553BA008FB96E /* dict34.txt */; };
-		65DC7B1929F553BA008FB96E /* dict35.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7B1429F553BA008FB96E /* dict35.txt */; };
-		65DC7B1A29F553BA008FB96E /* dict35.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7B1429F553BA008FB96E /* dict35.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65A8DD9F29F56E4500D291C3 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		65A8DDA129F5725D00D291C3 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		65A8DDA529F57E3600D291C3 /* CrosswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordView.swift; sourceTree = "<group>"; };
+		65A8DDA729F5879D00D291C3 /* wl6.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wl6.txt; path = dict/wl6.txt; sourceTree = SOURCE_ROOT; };
+		65A8DDA829F5879D00D291C3 /* wl3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wl3.txt; path = dict/wl3.txt; sourceTree = SOURCE_ROOT; };
+		65A8DDA929F5879D00D291C3 /* wl5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wl5.txt; path = dict/wl5.txt; sourceTree = SOURCE_ROOT; };
+		65A8DDAA29F5879D00D291C3 /* wl4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wl4.txt; path = dict/wl4.txt; sourceTree = SOURCE_ROOT; };
 		65DC7AD629F5528B008FB96E /* Kos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DC7AD929F5528B008FB96E /* KosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KosApp.swift; sourceTree = "<group>"; };
 		65DC7ADB29F5528B008FB96E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,9 +58,6 @@
 		65DC7B0929F5532D008FB96E /* WordList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		65DC7B0C29F55332008FB96E /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		65DC7B0F29F55336008FB96E /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
-		65DC7B1229F553BA008FB96E /* dict36.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict36.txt; sourceTree = "<group>"; };
-		65DC7B1329F553BA008FB96E /* dict34.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict34.txt; sourceTree = "<group>"; };
-		65DC7B1429F553BA008FB96E /* dict35.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict35.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +132,7 @@
 				65DC7B0929F5532D008FB96E /* WordList.swift */,
 				65DC7B0C29F55332008FB96E /* Generator.swift */,
 				65DC7B0F29F55336008FB96E /* Matrix.swift */,
+				65A8DDA129F5725D00D291C3 /* Tile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				65DC7ADB29F5528B008FB96E /* ContentView.swift */,
+				65A8DD9F29F56E4500D291C3 /* TileView.swift */,
+				65A8DDA529F57E3600D291C3 /* CrosswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,9 +150,10 @@
 		65DC7B0529F552C9008FB96E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				65DC7B1329F553BA008FB96E /* dict34.txt */,
-				65DC7B1429F553BA008FB96E /* dict35.txt */,
-				65DC7B1229F553BA008FB96E /* dict36.txt */,
+				65A8DDA829F5879D00D291C3 /* wl3.txt */,
+				65A8DDAA29F5879D00D291C3 /* wl4.txt */,
+				65A8DDA929F5879D00D291C3 /* wl5.txt */,
+				65A8DDA729F5879D00D291C3 /* wl6.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -230,11 +239,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65DC7B1529F553BA008FB96E /* dict36.txt in Resources */,
 				65DC7AE129F5528C008FB96E /* Preview Assets.xcassets in Resources */,
+				65A8DDAE29F5879D00D291C3 /* wl4.txt in Resources */,
+				65A8DDAB29F5879D00D291C3 /* wl6.txt in Resources */,
 				65DC7ADE29F5528C008FB96E /* Assets.xcassets in Resources */,
-				65DC7B1929F553BA008FB96E /* dict35.txt in Resources */,
-				65DC7B1729F553BA008FB96E /* dict34.txt in Resources */,
+				65A8DDAC29F5879D00D291C3 /* wl3.txt in Resources */,
+				65A8DDAD29F5879D00D291C3 /* wl5.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,9 +252,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65DC7B1629F553BA008FB96E /* dict36.txt in Resources */,
-				65DC7B1A29F553BA008FB96E /* dict35.txt in Resources */,
-				65DC7B1829F553BA008FB96E /* dict34.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +265,9 @@
 				65DC7ADC29F5528B008FB96E /* ContentView.swift in Sources */,
 				65DC7B0A29F5532D008FB96E /* WordList.swift in Sources */,
 				65DC7B1029F55336008FB96E /* Matrix.swift in Sources */,
+				65A8DDA229F5725D00D291C3 /* Tile.swift in Sources */,
+				65A8DDA029F56E4500D291C3 /* TileView.swift in Sources */,
+				65A8DDA629F57E3600D291C3 /* CrosswordView.swift in Sources */,
 				65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */,
 				65DC7B0729F5531B008FB96E /* Board.swift in Sources */,
 				65DC7B0D29F55332008FB96E /* Generator.swift in Sources */,

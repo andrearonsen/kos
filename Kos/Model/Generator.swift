@@ -8,15 +8,14 @@
 import Foundation
 
 // https://www.baeldung.com/cs/generate-crossword-puzzle (Algorithm 1)
-public func generate_board(dict: WordList, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
+public func generate_board(firstWord: String, wl: WordList, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     var board = Board(width: gridWidth, height: gridHeight)
-    var words = dict.shuffleWords()
-    var word = words.removeLast()
-    board.placeFirstWordRandomDir(word: word)
+    var words = wl.shuffleAndFilterOnWord(word: firstWord)
+    board.placeFirstWordRandomDir(word: firstWord)
     var count = 1
     
 outer: while count < maxWords && !words.isEmpty {
-        word = words.removeLast().uppercased()
+        let word = words.removeLast().uppercased()
         for c in word {
             let letter = String(c)
             for y in 0...gridHeight-1 {
@@ -38,15 +37,14 @@ outer: while count < maxWords && !words.isEmpty {
     return board
 }
 
-public func generate_board2(dict: WordList, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
+public func generate_board2(firstWord: String, wl: WordList, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     var board = Board(width: gridWidth, height: gridHeight)
-    var words = dict.shuffleWords()
-    var word = words.removeLast()
-    board.placeWord(wp: WordPlacement(word: word, dir: .Horizontal, row: 0, col: 0))
+    var words = wl.shuffleAndFilterOnWord(word: firstWord)
+    board.placeWord(wp: WordPlacement(word: firstWord, dir: .Horizontal, row: 0, col: 0))
     var count = 1
     
     while count < maxWords && !words.isEmpty {
-        word = words.removeLast().uppercased()
+        let word = words.removeLast().uppercased()
         let placements = board.findAllPossibleWordPlacements(word: word)
         var bestScore = 0.0
         var bestBoard = board

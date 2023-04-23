@@ -7,6 +7,19 @@
 
 import Foundation
 
+extension String {
+    func containsOnlyLettersFrom(word: String) -> Bool {
+        let selfStr = self.uppercased()
+        let checkStr = word.uppercased()
+        for letter in checkStr {
+            if !selfStr.contains(letter) {
+                return false
+            }
+        }
+        return true
+    }
+}
+
 public struct WordList {
     var words: [String]
     
@@ -21,33 +34,62 @@ public struct WordList {
     func shuffleWords() -> [String] {
         return self.words.shuffled()
     }
+    
+    func pickRandomWord() -> String {
+        return self.shuffleWords().last!
+    }
+    
+    func shuffleAndFilterOnWord(word: String) -> [String] {
+        return self.words.filter { w in
+            w.containsOnlyLettersFrom(word: word) && w != word
+        }.shuffled()
+    }
+    
+    func mergeWith(other: WordList) -> WordList {
+        return WordList(
+            words: self.words + other.words
+        )
+    }
 }
 
-public struct WordListCatalog {
-    var dict34: WordList
-    var dict35: WordList
-    var dict36: WordList
+struct WordListCatalog {
+    var wl3: WordList
+    var wl4: WordList
+    var wl5: WordList
+    var wl6: WordList
     
-    public func forNumberOfInputLetters(nrInputLetters: Int) -> WordList {
+    func wordListForNumberOfInputLetters(nrInputLetters: Int) -> WordList {
         switch nrInputLetters {
-        case 4: return self.dict34
-        case 5: return self.dict35
-        case 6: return self.dict36
+        case 4: return self.wl3.mergeWith(other: wl4)
+        case 5: return self.wl3.mergeWith(other: wl4).mergeWith(other: wl5)
+        case 6: return self.wl3.mergeWith(other: wl4).mergeWith(other: wl5).mergeWith(other: wl6)
         default:
             fatalError("Invalid nr of input letters")
         }
     }
+    
+    func randomFirstWord(nrInputLetters: Int) -> String {
+        switch nrInputLetters {
+            case 4: return self.wl4.pickRandomWord()
+            case 5: return self.wl5.pickRandomWord()
+            case 6: return self.wl6.pickRandomWord()
+            default:
+                fatalError("Invalid nr of input letters")
+        }
+    }
 }
 
-public func readDictionaryCatalog() -> WordListCatalog {
-    let dict34 = readDict(dictFile: "dict34")
-    let dict35 = readDict(dictFile: "dict35")
-    let dict36 = readDict(dictFile: "dict36")
-    return WordListCatalog(dict34: dict34, dict35: dict35, dict36: dict36)
+
+func readWordListCatalog() -> WordListCatalog {
+    let wl3 = readWordList(wordListFile: "wl3")
+    let wl4 = readWordList(wordListFile: "wl4")
+    let wl5 = readWordList(wordListFile: "wl5")
+    let wl6 = readWordList(wordListFile: "wl6")
+    return WordListCatalog(wl3: wl3, wl4: wl4, wl5: wl5, wl6: wl6)
 }
 
-func readDict(dictFile: String) -> WordList {
-    guard let fileUrl = Bundle.main.url(forResource: dictFile, withExtension: "txt") else {
+func readWordList(wordListFile: String) -> WordList {
+    guard let fileUrl = Bundle.main.url(forResource: wordListFile, withExtension: "txt") else {
         fatalError("Not able to create URL")
     }
     
