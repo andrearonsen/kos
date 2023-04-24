@@ -14,6 +14,8 @@
 		65A8DDAC29F5879D00D291C3 /* wl3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A8DDA829F5879D00D291C3 /* wl3.txt */; };
 		65A8DDAD29F5879D00D291C3 /* wl5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A8DDA929F5879D00D291C3 /* wl5.txt */; };
 		65A8DDAE29F5879D00D291C3 /* wl4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A8DDAA29F5879D00D291C3 /* wl4.txt */; };
+		65A8DDB029F63B6100D291C3 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDAF29F63B6100D291C3 /* ModelData.swift */; };
+		65A8DDB229F640FB00D291C3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDB129F640FB00D291C3 /* Game.swift */; };
 		65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7AD929F5528B008FB96E /* KosApp.swift */; };
 		65DC7ADC29F5528B008FB96E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7ADB29F5528B008FB96E /* ContentView.swift */; };
 		65DC7ADE29F5528C008FB96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7ADD29F5528C008FB96E /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		65A8DDA829F5879D00D291C3 /* wl3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wl3.txt; path = dict/wl3.txt; sourceTree = SOURCE_ROOT; };
 		65A8DDA929F5879D00D291C3 /* wl5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wl5.txt; path = dict/wl5.txt; sourceTree = SOURCE_ROOT; };
 		65A8DDAA29F5879D00D291C3 /* wl4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wl4.txt; path = dict/wl4.txt; sourceTree = SOURCE_ROOT; };
+		65A8DDAF29F63B6100D291C3 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		65A8DDB129F640FB00D291C3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		65DC7AD629F5528B008FB96E /* Kos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DC7AD929F5528B008FB96E /* KosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KosApp.swift; sourceTree = "<group>"; };
 		65DC7ADB29F5528B008FB96E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		65DC7B0329F5529C008FB96E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				65A8DDAF29F63B6100D291C3 /* ModelData.swift */,
+				65A8DDB129F640FB00D291C3 /* Game.swift */,
 				65DC7B0629F5531B008FB96E /* Board.swift */,
 				65DC7B0929F5532D008FB96E /* WordList.swift */,
 				65DC7B0C29F55332008FB96E /* Generator.swift */,
@@ -268,7 +274,9 @@
 				65A8DDA229F5725D00D291C3 /* Tile.swift in Sources */,
 				65A8DDA029F56E4500D291C3 /* TileView.swift in Sources */,
 				65A8DDA629F57E3600D291C3 /* CrosswordView.swift in Sources */,
+				65A8DDB229F640FB00D291C3 /* Game.swift in Sources */,
 				65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */,
+				65A8DDB029F63B6100D291C3 /* ModelData.swift in Sources */,
 				65DC7B0729F5531B008FB96E /* Board.swift in Sources */,
 				65DC7B0D29F55332008FB96E /* Generator.swift in Sources */,
 			);

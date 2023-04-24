@@ -8,6 +8,8 @@
 import Foundation
 
 struct Tile {
+    // TODO Revealed concept instead of isEmpty
+    
     var character: String
     static let empty = Tile(character: "")
     static let A = Tile(character: "A")

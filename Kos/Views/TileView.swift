@@ -8,26 +8,24 @@
 import SwiftUI
 
 struct TileView: View {
-    @Binding var forTile: Tile
+    var forTile: Tile
     var tileSize: Int
     var filledColor: Color
     
     static let tileEmptyColor = Color.gray.opacity(0.5)
     
     var body: some View {
-        GeometryReader { geometry in
-            let fontSize = CGFloat(Double(tileSize) * 0.75)
-            if forTile.isEmpty() {
-                TileBackgroundView(size: tileSize, color: Self.tileEmptyColor)
-            } else {
-                ZStack {
-                    TileBackgroundView(size: tileSize, color: filledColor)
-                    Text(forTile.character)
-                        .bold()
-                        .font(.system(size: fontSize))
-                        .foregroundColor(.white)
-                        
-                }
+        let fontSize = CGFloat(Double(tileSize) * 0.75)
+        if forTile.isEmpty() {
+            TileBackgroundView(size: tileSize, color: Self.tileEmptyColor)
+        } else {
+            ZStack {
+                TileBackgroundView(size: tileSize, color: filledColor)
+                Text(forTile.character)
+                    .bold()
+                    .font(.system(size: fontSize))
+                    .foregroundColor(.white)
+                    
             }
         }
     }
@@ -47,6 +45,6 @@ struct TileBackgroundView: View {
 
 struct TileView_Previews: PreviewProvider {
     static var previews: some View {
-        TileView(forTile: .constant(Tile.A), tileSize: 40, filledColor: Color.purple)
+        TileView(forTile: Tile.A, tileSize: 40, filledColor: Color.purple)
     }
 }

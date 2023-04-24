@@ -33,13 +33,15 @@ struct WordPlacement {
     }
 }
 
-public struct Board {
+struct Board {
     var matrix: Matrix<String>
     var words: [WordPlacement]
+    let letters: [Character]
     
-    init(width: Int, height: Int) {
+    init(width: Int, height: Int, letters: [Character]) {
         self.matrix = Matrix<String>(rows: height, columns: width, defaultValue: emptyCell)
         self.words = []
+        self.letters = letters
     }
     
     func lastColIndex() -> Int {
@@ -278,12 +280,14 @@ public struct Board {
     }
     
     func clone() -> Board {
-        var b = Board(width: nrCols(), height: nrRows())
+        var b = Board(width: nrCols(), height: nrRows(), letters: letters)
         for wp in self.words {
             b.placeWord(wp: wp)
         }
         return b
     }
+    
+    // TODO func cloneAndFit() -> Board (remove empty rows and cols)
     
     func placeWordClone(wp: WordPlacement) -> Board {
         var b = self.clone()
@@ -318,7 +322,20 @@ public struct Board {
         }
     }
     
-    public func printBoard() {
+    func tiles() -> [[Tile]] {
+        var rows: [[Tile]] = []
+        for r in 0...self.matrix.rows-1 {
+            var tileRow: [Tile] = []
+            for c in 0...self.matrix.columns-1 {
+                let cell = self.matrix[r, c]
+                tileRow.append(Tile(character: cell))
+            }
+            rows.append(tileRow)
+        }
+        return rows
+    }
+    
+    func printBoard() {
         var s = ""
         
         for r in 0...self.matrix.rows-1 {
@@ -335,7 +352,7 @@ public struct Board {
         printScore()
     }
     
-    public func printPuzzle() {
+    func printPuzzle() {
         var s = ""
         
         for r in 0...lastRowIndex() {
