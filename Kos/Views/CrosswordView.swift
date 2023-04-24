@@ -15,28 +15,18 @@ struct CrosswordView: View {
             let width = geometry.size.width
             let nrCols = game.currentBoard.nrCols()
             let nrRows = game.currentBoard.nrRows()
-            let tileSize = Int(width / Double(nrCols))
+            let tileSize = Int(width / Double(nrCols + 2))
             let tileColor = game.currentColor
-            let tiles = game.currentBoard.tiles()
+            let tileRows = game.currentBoard.startTileRows()
+            
             Grid(alignment: .top, horizontalSpacing: 1, verticalSpacing: 1) {
-//                ForEach(tiles) { tileRow in
-//
-//                }
-                GridRow {
-                    ForEach(0..<2) { _ in
-                        TileView(forTile: Tile.empty, tileSize: tileSize, filledColor: tileColor) }
+                ForEach(tileRows) { tileRow in
+                    GridRow {
+                        ForEach(tileRow.tiles) { tileCell in
+                            TileView(tileCell: tileCell, tileSize: tileSize, filledColor: tileColor) }
+                        }
                     }
-                GridRow {
-                    ForEach(0..<5) { _ in
-                        TileView(forTile: Tile.A, tileSize: tileSize, filledColor: tileColor)
-                    }
-                }
-                GridRow {
-                    ForEach(0..<4) { _ in
-                        TileView(forTile: Tile.empty, tileSize: tileSize, filledColor: tileColor)
-                    }
-                }
-            }
+            }.padding(50)
     //        .gridCellUnsizedAxes(.vertical)
     //        .gridCellUnsizedAxes(.horizontal)
         }

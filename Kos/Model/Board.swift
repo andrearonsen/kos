@@ -44,6 +44,10 @@ struct Board {
         self.letters = letters
     }
     
+    func countWords() -> Int {
+        return words.count
+    }
+    
     func lastColIndex() -> Int {
         return self.matrix.columns - 1
     }
@@ -322,15 +326,22 @@ struct Board {
         }
     }
     
-    func tiles() -> [[Tile]] {
-        var rows: [[Tile]] = []
+    func startTileRows() -> [TileRow] {
+        var rows: [TileRow] = []
         for r in 0...self.matrix.rows-1 {
-            var tileRow: [Tile] = []
+            var tiles: [TileCell] = []
             for c in 0...self.matrix.columns-1 {
-                let cell = self.matrix[r, c]
-                tileRow.append(Tile(character: cell))
+                let tileCellId = r * 100 + c
+                if isEmpty(row: r, col: c) {
+                    let tile = Tile.empty
+                    tiles.append(TileCell(id: tileCellId, tile: tile))
+                } else {
+                    let cell = self.matrix[r, c]
+                    let tile = Tile(character: cell, state: .hidden)
+                    tiles.append(TileCell(id: tileCellId, tile: tile))
+                }
             }
-            rows.append(tileRow)
+            rows.append(TileRow(id: r, tiles: tiles))
         }
         return rows
     }

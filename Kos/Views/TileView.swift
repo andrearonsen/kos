@@ -8,27 +8,28 @@
 import SwiftUI
 
 struct TileView: View {
-    // TODO 3 states - Empty, Hidden, Revealed
-    
-    var forTile: Tile
+    var tileCell: TileCell
     var tileSize: Int
     var filledColor: Color
     
-    static let tileEmptyColor = Color.gray.opacity(0.5)
+    static let tileHiddenColor = Color.gray.opacity(0.5)
     
     var body: some View {
-        let fontSize = CGFloat(Double(tileSize) * 0.75)
-        if forTile.isEmpty() {
-            TileBackgroundView(size: tileSize, color: Self.tileEmptyColor)
-        } else {
-            ZStack {
-                TileBackgroundView(size: tileSize, color: filledColor)
-                Text(forTile.character)
-                    .bold()
-                    .font(.system(size: fontSize))
-                    .foregroundColor(.white)
-                    
-            }
+        switch tileCell.tile.state {
+            case .empty:
+                AirTileView(size: tileSize)
+            case .hidden:
+                TileBackgroundView(size: tileSize, color: Self.tileHiddenColor)
+            case .revealed:
+                let fontSize = CGFloat(Double(tileSize) * 0.75)
+                ZStack {
+                    TileBackgroundView(size: tileSize, color: filledColor)
+                    Text(tileCell.tile.character)
+                        .bold()
+                        .font(.system(size: fontSize))
+                        .foregroundColor(.white)
+                        
+                }
         }
     }
 }
@@ -45,8 +46,18 @@ struct TileBackgroundView: View {
     }
 }
 
+struct AirTileView: View {
+    var size: Int
+    
+    var body: some View {
+        Rectangle()
+            .opacity(0)
+            .frame(width: CGFloat(size), height: CGFloat(size))
+    }
+}
+
 struct TileView_Previews: PreviewProvider {
     static var previews: some View {
-        TileView(forTile: Tile.A, tileSize: 40, filledColor: Color.purple)
+        TileView(tileCell: TileCell(id: 0, tile: Tile.WRevealed), tileSize: 40, filledColor: Color.purple)
     }
 }
