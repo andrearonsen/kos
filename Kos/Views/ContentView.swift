@@ -9,11 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     @State var game: Game
+//    var backgroundImage: Image
     
     var body: some View {
-        VStack {
-            CrosswordView(game: game)
+        ZStack {
+            Background(image: Image("Pikachu"))
+            VStack {
+                CrosswordView(game: game)
+            }
         }
+        
     }
 }
 
