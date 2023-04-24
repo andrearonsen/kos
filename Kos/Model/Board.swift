@@ -52,32 +52,6 @@ struct Board {
         return words.count
     }
     
-    func checkWord(word: String) -> Bool {
-        for w in words {
-            if w.word == word {
-                return true
-            }
-        }
-        return false
-    }
-    
-    func checkAndRevealWord(word: String) -> Bool {
-        for w in revealedWords {
-            if w.word == word {
-                // Already revealed => Finished
-                return true
-            }
-        }
-        for w in words {
-            if w.word == word {
-                // Reveal word in tiles
-                
-                return true
-            }
-        }
-        return false
-    }
-    
     func lastColIndex() -> Int {
         return self.matrix.columns - 1
     }

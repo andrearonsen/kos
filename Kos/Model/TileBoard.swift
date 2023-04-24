@@ -16,8 +16,8 @@ struct TileBoardWord {
         if revealed {
             return
         }
-        for var lc in letterCells {
-            lc.tile.reveal()
+        for lc in letterCells {
+            lc.reveal()
         }
         revealed = true
     }
@@ -66,10 +66,10 @@ struct TileBoard {
         
         switch w.dir {
         case .Horizontal:
-            var r = w.row
-            var c = w.col
+            let r = w.row
+            let c = w.col
             for (i, letter) in w.word.enumerated() {
-                var cell = mat[r, c+i]
+                let cell = mat[r, c+i]
                 if cell.tile.hasLetter(l: letter) {
                     tileCells.append(cell)
                 } else {
@@ -77,10 +77,10 @@ struct TileBoard {
                 }
             }
         case .Vertical:
-            var r = w.row
-            var c = w.col
+            let r = w.row
+            let c = w.col
             for (i, letter) in w.word.enumerated() {
-                var cell = mat[r+i, c]
+                let cell = mat[r+i, c]
                 if cell.tile.hasLetter(l: letter) {
                     tileCells.append(cell)
                 } else {
@@ -97,13 +97,50 @@ struct TileBoard {
     func nrCols() -> Int {
         return matrix.columns
     }
+    
+    mutating func checkAndRevealWord(word: String) -> Bool {
+        for var w in words {
+            if w.word == word {
+                
+                // Reveal word in tiles
+                if w.revealed {
+                    return true
+                } else {
+                    print("Revealing \(word)")
+                    w.reveal()
+                }
+                return true
+            }
+        }
+        return false
+    }
+    
+    
 }
 
-struct TileCell: Identifiable {
+class TileCell: Identifiable {
     let id: Int
     var tile: Tile
     
+    init(id: Int, tile: Tile) {
+        self.id = id
+        self.tile = tile
+    }
+    
     static let empty: TileCell = TileCell(id: 0, tile: Tile.empty)
+    
+    func reveal() {
+        if tile.state == .hidden {
+            tile.state = .revealed
+        }
+    }
+    
+    func revealed() -> TileCell {
+        if tile.state == .hidden {
+            return TileCell(id: id, tile: Tile(letter: tile.letter, state: .revealed))
+        }
+        return self
+    }
 }
 
 struct TileRow: Identifiable {

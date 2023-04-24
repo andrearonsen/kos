@@ -15,7 +15,7 @@ struct Game {
     
     static func startNewGame() -> Game {
         print("Starting new game ...")
-        let startBoard = createBoard(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
+        var startBoard = createBoard(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
         return Game(level: 0, currentBoard: startBoard, currentColor: Color.purple)
     }
     
@@ -53,10 +53,19 @@ func createBoard(nrInputLetters: Int, gridWidth: Int, gridHeight: Int, minWords:
             b = newBoard
             currentScore = newScore
             currentNrWords = newCountWords
+            print("New Score: \(currentScore)")
         }
-    } while ((currentNrWords < minWords || currentScore < 30) && nrTries < 10)
+    } while ((currentNrWords < minWords || currentScore < 30)) //&& nrTries < 30)
     
-    print("BoardScore: \(currentScore)")
+    print("Final BoardScore: \(currentScore)")
     
-    return b.createTileBoard()
+    var tileBoard = b.createTileBoard()
+    
+    // Test reveal first word:
+    let firstWord = tileBoard.words[0].word
+    if tileBoard.checkAndRevealWord(word: firstWord) {
+        print("First word revealed: \(firstWord)")
+    }
+    
+    return tileBoard
 }

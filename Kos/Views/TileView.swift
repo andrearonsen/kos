@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct TileView: View {
-    var tileCell: TileCell
-    var tileSize: Int
-    var filledColor: Color
+    let tileCell: TileCell
+    let tileSize: Int
+    let filledColor: Color
     
     static let tileHiddenColor = Color.gray.opacity(0.5)
     
