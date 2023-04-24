@@ -8,15 +8,41 @@
 import Foundation
 import SwiftUI
 
+struct BoardConfig {
+    let nrInputLetters: Int
+    let gridWidth: Int
+    let gridHeight: Int
+    let minWords: Int
+    let maxWords: Int
+
+    static let startConfig: BoardConfig = BoardConfig(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
+}
+
+
+struct GameConfig {
+    let wordList: WordList
+    let boardConfig: BoardConfig
+    
+    static func startConfig() -> GameConfig {
+        let bcfg = BoardConfig.startConfig
+        let wl = ModelData.wordlistCatalog.wordListForNumberOfInputLetters(nrInputLetters: bcfg.nrInputLetters)
+        return GameConfig(wordList: wl, boardConfig: bcfg)
+    }
+}
+
 struct Game {
-    var level: Int
+    let currentGameConfig: GameConfig
+    var level: Int = 0
     var currentBoard: TileBoard
-    var currentColor: Color
+    var currentColor: Color = Color.purple
+    var matchedWordsNotOnBoard: [String] = []
     
     static func startNewGame() -> Game {
         print("Starting new game ...")
-        let startBoard = createBoard(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
-        var game = Game(level: 0, currentBoard: startBoard, currentColor: Color.purple)
+        let gameConfig = GameConfig.startConfig()
+        
+        let startBoard = createBoard(gameConfig: gameConfig)
+        var game = Game(currentGameConfig: gameConfig, currentBoard: startBoard)
         
         // Test reveal first word:
         let firstWord = game.currentBoard.words[0].word
@@ -27,25 +53,32 @@ struct Game {
         return game
     }
     
-//    func nextBoard() -> Board {
-//        // TODO Based on level?
-//        let nrInputLetters = 4
-//        let gridWidth = 5
-//        let gridHeight = 4
-//        let minWords = 3
-//        let maxWords = 5
-//
-//        return newBoard(nrInputLetters: nrInputLetters, gridWidth: gridWidth, gridHeight: gridHeight, minWords: minWords, maxWords: maxWords)
-//    }
+    mutating func tryWord(w: String) -> Bool {
+       let wordMatch = currentBoard.checkAndRevealWord(word: w)
+        if wordMatch {
+            return true
+        } else {
+            if !matchedWordsNotOnBoard.contains(w) && currentGameConfig.wordList.containsWord(w: w) {
+                matchedWordsNotOnBoard.append(w)
+            }
+        }
+        return false
+    }
+   
 }
 
 
-
-func createBoard(nrInputLetters: Int, gridWidth: Int, gridHeight: Int, minWords: Int, maxWords: Int) -> TileBoard {
-    let wl = ModelData.wordlistCatalog.wordListForNumberOfInputLetters(nrInputLetters: nrInputLetters)
+func createBoard(gameConfig: GameConfig) -> TileBoard {
+    let cfg = gameConfig.boardConfig
+    
     let generateNewBoard = { () -> Board in
-        let firstWord = ModelData.wordlistCatalog.randomFirstWord(nrInputLetters: nrInputLetters)
-        return generate_board2(firstWord: firstWord, wl: wl, gridWidth: gridWidth, gridHeight: gridHeight, maxWords: maxWords)
+        let firstWord = ModelData.wordlistCatalog.randomFirstWord(nrInputLetters: cfg.nrInputLetters)
+        return generate_board2(
+            firstWord: firstWord,
+            wl: gameConfig.wordList,
+            gridWidth: cfg.gridWidth,
+            gridHeight: cfg.gridHeight,
+            maxWords: cfg.maxWords)
     }
     
     var nrTries = 0
@@ -57,23 +90,15 @@ func createBoard(nrInputLetters: Int, gridWidth: Int, gridHeight: Int, minWords:
         let newBoard = generateNewBoard()
         let newScore = newBoard.score()
         let newCountWords = newBoard.countWords()
-        if (newScore > currentScore) && newCountWords >= minWords {
+        if (newScore > currentScore) && newCountWords >= cfg.minWords {
             b = newBoard
             currentScore = newScore
             currentNrWords = newCountWords
             print("New Score: \(currentScore)")
         }
-    } while ((currentNrWords < minWords || currentScore < 30)) //&& nrTries < 30)
+    } while ((currentNrWords < cfg.minWords || currentScore < 30)) //&& nrTries < 30)
     
     print("Final BoardScore: \(currentScore)")
-    
-    var tileBoard = b.createTileBoard()
-    
-    // Test reveal first word:
-//    let firstWord = tileBoard.words[0].word
-//    if tileBoard.checkAndRevealWord(word: firstWord) {
-//        print("First word revealed: \(firstWord)")
-//    }
-    
-    return tileBoard
+
+    return b.createTileBoard()
 }

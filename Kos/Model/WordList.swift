@@ -50,6 +50,15 @@ public struct WordList {
             words: self.words + other.words
         )
     }
+    
+    func containsWord(w: String) -> Bool {
+        for wordInList in words {
+            if wordInList == w {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 struct WordListCatalog {
