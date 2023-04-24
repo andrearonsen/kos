@@ -36,16 +36,46 @@ struct WordPlacement {
 struct Board {
     var matrix: Matrix<String>
     var words: [WordPlacement]
+    var revealedWords: [WordPlacement]
+    var tileRows: [TileRow]
     let letters: [Character]
     
     init(width: Int, height: Int, letters: [Character]) {
         self.matrix = Matrix<String>(rows: height, columns: width, defaultValue: emptyCell)
-        self.words = []
         self.letters = letters
+        self.words = []
+        self.revealedWords = []
+        self.tileRows = []
     }
     
     func countWords() -> Int {
         return words.count
+    }
+    
+    func checkWord(word: String) -> Bool {
+        for w in words {
+            if w.word == word {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func checkAndRevealWord(word: String) -> Bool {
+        for w in revealedWords {
+            if w.word == word {
+                // Already revealed => Finished
+                return true
+            }
+        }
+        for w in words {
+            if w.word == word {
+                // Reveal word in tiles
+                
+                return true
+            }
+        }
+        return false
     }
     
     func lastColIndex() -> Int {
@@ -291,7 +321,19 @@ struct Board {
         return b
     }
     
-    // TODO func cloneAndFit() -> Board (remove empty rows and cols)
+    // Remove empty rows and cols
+    func cloneAndFit() -> Board {
+        var b = Board(width: nrActualCols(), height: nrActualRows(), letters: letters)
+        for wp in self.words {
+            b.placeWord(wp: wp)
+        }
+        b.tileRows = b.startTileRows()
+        return b
+    }
+    
+    func createTileBoard() -> TileBoard {
+        return TileBoard.forBoard(b: self.cloneAndFit())
+    }
     
     func placeWordClone(wp: WordPlacement) -> Board {
         var b = self.clone()

@@ -14,10 +14,9 @@ struct CrosswordView: View {
         GeometryReader { geometry in
             let width = geometry.size.width
             let nrCols = game.currentBoard.nrCols()
-            let nrRows = game.currentBoard.nrRows()
             let tileSize = Int(width / Double(nrCols + 2))
             let tileColor = game.currentColor
-            let tileRows = game.currentBoard.startTileRows()
+            let tileRows = game.currentBoard.rows
             
             Grid(alignment: .top, horizontalSpacing: 1, verticalSpacing: 1) {
                 ForEach(tileRows) { tileRow in
@@ -26,16 +25,13 @@ struct CrosswordView: View {
                             TileView(tileCell: tileCell, tileSize: tileSize, filledColor: tileColor) }
                         }
                     }
-            }.padding(50)
-    //        .gridCellUnsizedAxes(.vertical)
-    //        .gridCellUnsizedAxes(.horizontal)
+            }.padding([.all], CGFloat(tileSize))
         }
     }
 }
 
 struct CrosswordView_Previews: PreviewProvider {
-    static let game = Game.startNewGame()
-
+    static var game = Game.startNewGame()
     static var previews: some View {
         CrosswordView(game: game)
 //            .environmentObject(modelData)

@@ -13,7 +13,7 @@ struct KosApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(game: modelData.currentGame)
                 .environmentObject(modelData)
         }
     }

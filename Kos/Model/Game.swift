@@ -10,29 +10,30 @@ import SwiftUI
 
 struct Game {
     var level: Int
-    var currentBoard: Board
+    var currentBoard: TileBoard
     var currentColor: Color
     
     static func startNewGame() -> Game {
-        let startBoard = newBoard(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 3, maxWords: 5)
+        print("Starting new game ...")
+        let startBoard = createBoard(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
         return Game(level: 0, currentBoard: startBoard, currentColor: Color.purple)
     }
     
-    func nextBoard() -> Board {
-        // TODO Based on level?
-        let nrInputLetters = 4
-        let gridWidth = 5
-        let gridHeight = 4
-        let minWords = 3
-        let maxWords = 5
-        
-        return newBoard(nrInputLetters: nrInputLetters, gridWidth: gridWidth, gridHeight: gridHeight, minWords: minWords, maxWords: maxWords)
-    }
+//    func nextBoard() -> Board {
+//        // TODO Based on level?
+//        let nrInputLetters = 4
+//        let gridWidth = 5
+//        let gridHeight = 4
+//        let minWords = 3
+//        let maxWords = 5
+//
+//        return newBoard(nrInputLetters: nrInputLetters, gridWidth: gridWidth, gridHeight: gridHeight, minWords: minWords, maxWords: maxWords)
+//    }
 }
 
 
 
-func newBoard(nrInputLetters: Int, gridWidth: Int, gridHeight: Int, minWords: Int, maxWords: Int) -> Board {
+func createBoard(nrInputLetters: Int, gridWidth: Int, gridHeight: Int, minWords: Int, maxWords: Int) -> TileBoard {
     let wl = ModelData.wordlistCatalog.wordListForNumberOfInputLetters(nrInputLetters: nrInputLetters)
     let generateNewBoard = { () -> Board in
         let firstWord = ModelData.wordlistCatalog.randomFirstWord(nrInputLetters: nrInputLetters)
@@ -48,12 +49,14 @@ func newBoard(nrInputLetters: Int, gridWidth: Int, gridHeight: Int, minWords: In
         let newBoard = generateNewBoard()
         let newScore = newBoard.score()
         let newCountWords = newBoard.countWords()
-        if (newScore > currentScore || currentNrWords < minWords) && newCountWords >= minWords {
+        if (newScore > currentScore) && newCountWords >= minWords {
             b = newBoard
             currentScore = newScore
             currentNrWords = newCountWords
         }
-    } while ((currentNrWords < minWords || currentScore < 30) && nrTries < 3)
+    } while ((currentNrWords < minWords || currentScore < 30) && nrTries < 10)
     
-    return b
+    print("BoardScore: \(currentScore)")
+    
+    return b.createTileBoard()
 }

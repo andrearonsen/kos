@@ -30,13 +30,3 @@ struct Tile {
     static let WHidden = Tile(character: "W", state: .hidden)
     static let WRevealed = Tile(character: "W", state: .revealed)
 }
-
-struct TileCell: Identifiable {
-    let id: Int
-    let tile: Tile
-}
-
-struct TileRow: Identifiable {
-    let id: Int
-    let tiles: [TileCell]
-}
