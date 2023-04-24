@@ -14,7 +14,7 @@ struct Tile {
         case revealed
     }
     
-    let character: String
+    let letter: String
     var state: State
     
     // TODO Immutable state?
@@ -24,9 +24,13 @@ struct Tile {
         }
     }
     
-    static let empty = Tile(character: "", state: .empty)
+    func hasLetter(l: Character) -> Bool {
+        return String(l) == letter
+    }
+    
+    static let empty = Tile(letter: "", state: .empty)
     
     // For testing
-    static let WHidden = Tile(character: "W", state: .hidden)
-    static let WRevealed = Tile(character: "W", state: .revealed)
+    static let WHidden = Tile(letter: "W", state: .hidden)
+    static let WRevealed = Tile(letter: "W", state: .revealed)
 }

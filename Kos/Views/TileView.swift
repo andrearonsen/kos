@@ -24,7 +24,7 @@ struct TileView: View {
                 let fontSize = CGFloat(Double(tileSize) * 0.75)
                 ZStack {
                     TileBackgroundView(size: tileSize, color: filledColor)
-                    Text(tileCell.tile.character)
+                    Text(tileCell.tile.letter)
                         .bold()
                         .font(.system(size: fontSize))
                         .foregroundColor(.white)

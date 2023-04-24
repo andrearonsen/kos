@@ -30,24 +30,68 @@ struct TileBoard {
     let rows: [TileRow]
     
     static func forBoard(b: Board) -> TileBoard {
-        let matrix: Matrix<TileCell> = Matrix(rows: b.nrRows(), columns: b.nrCols(), defaultValue: TileCell.empty)
-        // TODO Place words and make sure all tile cells has ids
-        let rows: [TileRow] = rows(mat: matrix)
-        let words: [TileBoardWord] = []
-        return TileBoard(letters: b.letters, matrix: matrix, words: words, rows: rows)
-    }
-    
-    static private func rows(mat: Matrix<TileCell>) -> [TileRow] {
+        var tileMatrix: Matrix<TileCell> = Matrix(rows: b.nrRows(), columns: b.nrCols(), defaultValue: TileCell.empty)
         var rows: [TileRow] = []
-        for r in 0...mat.rows-1 {
+        
+        // Convert Board -> TileBoard
+        for r in 0...b.matrix.rows-1 {
             var tiles: [TileCell] = []
-            for c in 0...mat.columns-1 {
-                var cell = mat[r, c]
+            for c in 0...b.matrix.columns-1 {
+                let tileCellId = r * 100 + c // Unique cell id in the matrix
+                if b.isEmpty(row: r, col: c) {
+                    let tile = Tile.empty
+                    tileMatrix[r, c] = TileCell(id: tileCellId, tile: tile)
+                } else {
+                    let cell = b.matrix[r, c]
+                    let tile = Tile(letter: cell, state: .hidden)
+                    tileMatrix[r, c] = TileCell(id: tileCellId, tile: tile)
+                }
+                let cell = tileMatrix[r, c]
                 tiles.append(cell)
             }
             rows.append(TileRow(id: r, tiles: tiles))
         }
-        return rows
+        
+        var words: [TileBoardWord] = []
+        for wp in b.words {
+            let tbw = collectTilesForWord(mat: tileMatrix, w: wp)
+            words.append(tbw)
+        }
+        
+        return TileBoard(letters: b.letters, matrix: tileMatrix, words: words, rows: rows)
+    }
+    
+    static private func collectTilesForWord(mat: Matrix<TileCell>, w: WordPlacement) -> TileBoardWord {
+        var tileCells: [TileCell] = []
+        
+        switch w.dir {
+        case .Horizontal:
+            var r = w.row
+            var c = w.col
+            for (i, letter) in w.word.enumerated() {
+                var cell = mat[r, c+i]
+                if cell.tile.hasLetter(l: letter) {
+                    tileCells.append(cell)
+                } else {
+                    fatalError("Letter does not appear on the right spot in the row")
+                }
+            }
+        case .Vertical:
+            var r = w.row
+            var c = w.col
+            for (i, letter) in w.word.enumerated() {
+                var cell = mat[r+i, c]
+                if cell.tile.hasLetter(l: letter) {
+                    tileCells.append(cell)
+                } else {
+                    fatalError("Letter does not appear on the right spot in the column")
+                }
+            }
+        case .NotPossible:
+            fatalError("Not possible should not be a part of a board")
+        }
+        
+        return TileBoardWord(word: w.word, letterCells: tileCells, revealed: false)
     }
     
     func nrCols() -> Int {

@@ -379,7 +379,7 @@ struct Board {
                     tiles.append(TileCell(id: tileCellId, tile: tile))
                 } else {
                     let cell = self.matrix[r, c]
-                    let tile = Tile(character: cell, state: .hidden)
+                    let tile = Tile(letter: cell, state: .hidden)
                     tiles.append(TileCell(id: tileCellId, tile: tile))
                 }
             }
