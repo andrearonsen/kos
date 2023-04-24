@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TileView: View {
+    // TODO 3 states - Empty, Hidden, Revealed
+    
     var forTile: Tile
     var tileSize: Int
     var filledColor: Color
