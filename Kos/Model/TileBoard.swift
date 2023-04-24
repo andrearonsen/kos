@@ -118,7 +118,7 @@ struct TileBoard {
     
 }
 
-class TileCell: Identifiable {
+final class TileCell: Identifiable {
     let id: Int
     var tile: Tile
     

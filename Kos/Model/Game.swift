@@ -15,8 +15,16 @@ struct Game {
     
     static func startNewGame() -> Game {
         print("Starting new game ...")
-        var startBoard = createBoard(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
-        return Game(level: 0, currentBoard: startBoard, currentColor: Color.purple)
+        let startBoard = createBoard(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
+        var game = Game(level: 0, currentBoard: startBoard, currentColor: Color.purple)
+        
+        // Test reveal first word:
+        let firstWord = game.currentBoard.words[0].word
+        if game.currentBoard.checkAndRevealWord(word: firstWord) {
+            print("First word revealed: \(firstWord)")
+        }
+        
+        return game
     }
     
 //    func nextBoard() -> Board {
@@ -62,10 +70,10 @@ func createBoard(nrInputLetters: Int, gridWidth: Int, gridHeight: Int, minWords:
     var tileBoard = b.createTileBoard()
     
     // Test reveal first word:
-    let firstWord = tileBoard.words[0].word
-    if tileBoard.checkAndRevealWord(word: firstWord) {
-        print("First word revealed: \(firstWord)")
-    }
+//    let firstWord = tileBoard.words[0].word
+//    if tileBoard.checkAndRevealWord(word: firstWord) {
+//        print("First word revealed: \(firstWord)")
+//    }
     
     return tileBoard
 }
