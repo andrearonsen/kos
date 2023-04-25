@@ -103,10 +103,10 @@ struct WordListCatalog {
 }
 
 func readWordListCatalog() -> WordListCatalog {
-    let wl3 = readWordList(wordListFile: "wl3")
-    let wl4 = readWordList(wordListFile: "wl4")
-    let wl5 = readWordList(wordListFile: "wl5")
-    let wl6 = readWordList(wordListFile: "wl6")
+    let wl3 = readWordList(wordListFile: "wlf3")
+    let wl4 = readWordList(wordListFile: "wlf4")
+    let wl5 = readWordList(wordListFile: "wlf5")
+    let wl6 = readWordList(wordListFile: "wlf6")
     return WordListCatalog(wl3: wl3, wl4: wl4, wl5: wl5, wl6: wl6)
 }
 
