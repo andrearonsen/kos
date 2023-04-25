@@ -82,7 +82,7 @@ fn create_sub_dict_humfak_ordlist(src_path: &str, dest_path: &str, word_length: 
 
     let dict: Vec<String> =
         freq_words.into_iter()
-        .take(10000)
+        .take(1500)
         .map(|(_,w)| {
             w
         })
