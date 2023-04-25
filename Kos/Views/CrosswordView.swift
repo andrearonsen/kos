@@ -14,7 +14,8 @@ struct CrosswordView: View {
         GeometryReader { geometry in
             let width = geometry.size.width
             let nrCols = game.currentBoard.nrCols()
-            let tileSize = Int(width / Double(nrCols + 2))
+            let tileSize = Int(width / Double(nrCols + 1))
+            let padding = CGFloat(tileSize / 2)
             let tileColor = game.currentColor
             let tileRows = game.currentBoard.rows
             
@@ -25,7 +26,7 @@ struct CrosswordView: View {
                             TileView(tileCell: tileCell, tileSize: tileSize, filledColor: tileColor) }
                         }
                     }
-            }.padding([.all], CGFloat(tileSize))
+            }.padding([.all], padding)
         }
     }
 }

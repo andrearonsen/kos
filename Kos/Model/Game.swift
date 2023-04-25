@@ -32,10 +32,22 @@ struct GameConfig {
 
 struct Game {
     let currentGameConfig: GameConfig
+    let inputLetters: [InputLetter]
     var level: Int = 0
     var currentBoard: TileBoard
     var currentColor: Color = Color.purple
     var matchedWordsNotOnBoard: [String] = []
+    
+    init(currentGameConfig: GameConfig, currentBoard: TileBoard) {
+        self.currentGameConfig = currentGameConfig
+        self.currentBoard = currentBoard
+        
+        var il: [InputLetter] = []
+        for (i, letter) in currentBoard.letters.enumerated() {
+            il.append(InputLetter(id: i, letter: String(letter)))
+        }
+        self.inputLetters = il
+    }
     
     static func startNewGame() -> Game {
         print("Starting new game ...")

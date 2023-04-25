@@ -12,14 +12,12 @@ struct TileView: View {
     let tileSize: Int
     let filledColor: Color
     
-    static let tileHiddenColor = Color.gray.opacity(0.5)
-    
     var body: some View {
         switch tileCell.tile.state {
             case .empty:
                 AirTileView(size: tileSize)
             case .hidden:
-                TileBackgroundView(size: tileSize, color: Self.tileHiddenColor)
+                TileBackgroundView(size: tileSize, color: GameColors.background)
             case .revealed:
                 let fontSize = CGFloat(Double(tileSize) * 0.75)
                 ZStack {
@@ -43,6 +41,7 @@ struct TileBackgroundView: View {
         RoundedRectangle(cornerRadius: radius)
             .fill(color)
             .frame(width: CGFloat(size), height: CGFloat(size))
+            .shadow(radius: 1)
     }
 }
 
