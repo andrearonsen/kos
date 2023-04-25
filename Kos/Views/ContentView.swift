@@ -16,47 +16,7 @@ struct ContentView: View {
             VStack {
                 CrosswordView(game: game)
                 Spacer()
-                ZStack {
-                    Circle()
-                        .fill(GameColors.background)
-                        .opacity(0.8)
-                        .padding()
-                    ForEach(game.inputLetters) { letter in
-                        let letterText = Text(letter.letter)
-                            .foregroundColor(GameColors.inputWheelNotSelected)
-                            .bold()
-                            .font(.system(size: 130))
-                        
-                        switch letter.id {
-                        case 0:
-                            HStack {
-                                letterText
-                                    .padding([.leading], 40)
-                                Spacer()
-                            }
-                        case 1:
-                            VStack {
-                                letterText
-                                    .padding([.top], 10)
-                                Spacer()
-                            }
-                        case 2:
-                            HStack {
-                                Spacer()
-                                letterText
-                                    .padding([.trailing], 40)
-                            }
-                        case 3:
-                            VStack {
-                                Spacer()
-                                letterText
-                            }
-                        default:
-                            fatalError("More than 4 letters not supported yet")
-                        }
-                        
-                    }
-                }
+                InputWheelView(game: game, height: geometry.size.height / 2)
             }
             .background(
                 Image("Pikachu")

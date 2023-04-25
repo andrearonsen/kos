@@ -35,7 +35,7 @@ struct Game {
     let inputLetters: [InputLetter]
     var level: Int = 0
     var currentBoard: TileBoard
-    var currentColor: Color = Color.purple
+    var currentColor: Color = GameColors.defaultGameColor
     var matchedWordsNotOnBoard: [String] = []
     
     init(currentGameConfig: GameConfig, currentBoard: TileBoard) {

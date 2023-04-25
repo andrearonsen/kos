@@ -21,6 +21,8 @@
 		65A8DDBC29F78F3000D291C3 /* InputWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDBB29F78F3000D291C3 /* InputWheelView.swift */; };
 		65A8DDBE29F7957B00D291C3 /* GameColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDBD29F7957B00D291C3 /* GameColors.swift */; };
 		65A8DDC029F79CCB00D291C3 /* InputLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDBF29F79CCB00D291C3 /* InputLetter.swift */; };
+		65A8DDC229F7B1B100D291C3 /* InputLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDC129F7B1B100D291C3 /* InputLetterView.swift */; };
+		65A8DDC429F7D11400D291C3 /* InputLettersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDC329F7D11400D291C3 /* InputLettersView.swift */; };
 		65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7AD929F5528B008FB96E /* KosApp.swift */; };
 		65DC7ADC29F5528B008FB96E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7ADB29F5528B008FB96E /* ContentView.swift */; };
 		65DC7ADE29F5528C008FB96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7ADD29F5528C008FB96E /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		65A8DDBB29F78F3000D291C3 /* InputWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWheelView.swift; sourceTree = "<group>"; };
 		65A8DDBD29F7957B00D291C3 /* GameColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameColors.swift; sourceTree = "<group>"; };
 		65A8DDBF29F79CCB00D291C3 /* InputLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLetter.swift; sourceTree = "<group>"; };
+		65A8DDC129F7B1B100D291C3 /* InputLetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLetterView.swift; sourceTree = "<group>"; };
+		65A8DDC329F7D11400D291C3 /* InputLettersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLettersView.swift; sourceTree = "<group>"; };
 		65DC7AD629F5528B008FB96E /* Kos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DC7AD929F5528B008FB96E /* KosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KosApp.swift; sourceTree = "<group>"; };
 		65DC7ADB29F5528B008FB96E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 			children = (
 				65A8DDB729F6F03100D291C3 /* InputWheelBackground.swift */,
 				65A8DDBB29F78F3000D291C3 /* InputWheelView.swift */,
+				65A8DDC129F7B1B100D291C3 /* InputLetterView.swift */,
+				65A8DDC329F7D11400D291C3 /* InputLettersView.swift */,
 			);
 			path = InputWheel;
 			sourceTree = "<group>";
@@ -302,6 +308,8 @@
 				65A8DDB229F640FB00D291C3 /* Game.swift in Sources */,
 				65A8DDBE29F7957B00D291C3 /* GameColors.swift in Sources */,
 				65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */,
+				65A8DDC429F7D11400D291C3 /* InputLettersView.swift in Sources */,
+				65A8DDC229F7B1B100D291C3 /* InputLetterView.swift in Sources */,
 				65A8DDB029F63B6100D291C3 /* ModelData.swift in Sources */,
 				65A8DDC029F79CCB00D291C3 /* InputLetter.swift in Sources */,
 				65DC7B0729F5531B008FB96E /* Board.swift in Sources */,

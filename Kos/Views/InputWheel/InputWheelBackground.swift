@@ -9,16 +9,10 @@ import SwiftUI
 
 struct InputWheelBackground: View {
     var body: some View {
-        GeometryReader { geometry in
-//            let height = geometry.size.height * 0.4
-            //let paddingSide = geometry.size.width * 0.2
-            Circle()
-                .fill(Color.gray.opacity(0.5))
-                //.padding([.leading, .trailing], paddingSide)
-                //.frame(height: height)
-                //.position(x: geometry.size.width / 2, y: geometry.size.height - height / 2)
-        }
-       
+        Circle()
+            .fill(GameColors.background)
+            .opacity(0.8)
+            .padding()
     }
 }
 

@@ -25,7 +25,7 @@ struct TileView: View {
                     Text(tileCell.tile.letter)
                         .bold()
                         .font(.system(size: fontSize))
-                        .foregroundColor(.white)
+                        .foregroundColor(GameColors.foreground)
                         
                 }
         }
