@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-extension View {
-    /// A convenience method for applying `TouchDownUpEventModifier.`
-    func onTouchDownUp(pressed: @escaping ((Bool) -> Void)) -> some View {
-        self.modifier(TouchDownUpEventModifier(pressed: pressed))
-    }
-}
-
 struct InputLetterView: View {
     var inputLetter: InputLetter
     @State var selected: Bool = false
@@ -26,24 +19,18 @@ struct InputLetterView: View {
             .bold()
             .font(.system(size: fontSize))
         
-        Button(action: {
-            selected.toggle()
-        }) {
-            if selected == true {
-                text
-                .foregroundColor(GameColors.foreground)
-                .background(
-                    Circle()
-                        .fill(GameColors.defaultGameColor)
-                        .frame(width: circleSize, height: circleSize)
-                )
-            } else {
-                text
-                .foregroundColor(GameColors.inputWheelNotSelectedForeground)
-            }
+        if selected == true {
+            text
+            .foregroundColor(GameColors.foreground)
+            .background(
+                Circle()
+                    .fill(GameColors.defaultGameColor)
+                    .frame(width: circleSize, height: circleSize)
+            )
+        } else {
+            text
+            .foregroundColor(GameColors.inputWheelNotSelectedForeground)
         }
-        
-        
     }
 }
 

@@ -23,7 +23,6 @@
 		65A8DDC029F79CCB00D291C3 /* InputLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDBF29F79CCB00D291C3 /* InputLetter.swift */; };
 		65A8DDC229F7B1B100D291C3 /* InputLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDC129F7B1B100D291C3 /* InputLetterView.swift */; };
 		65A8DDC429F7D11400D291C3 /* InputLettersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDC329F7D11400D291C3 /* InputLettersView.swift */; };
-		65A8DDC729F7DBDB00D291C3 /* TouchDownUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDC629F7DBDB00D291C3 /* TouchDownUp.swift */; };
 		65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7AD929F5528B008FB96E /* KosApp.swift */; };
 		65DC7ADC29F5528B008FB96E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7ADB29F5528B008FB96E /* ContentView.swift */; };
 		65DC7ADE29F5528C008FB96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7ADD29F5528C008FB96E /* Assets.xcassets */; };
@@ -66,7 +65,6 @@
 		65A8DDBF29F79CCB00D291C3 /* InputLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLetter.swift; sourceTree = "<group>"; };
 		65A8DDC129F7B1B100D291C3 /* InputLetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLetterView.swift; sourceTree = "<group>"; };
 		65A8DDC329F7D11400D291C3 /* InputLettersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLettersView.swift; sourceTree = "<group>"; };
-		65A8DDC629F7DBDB00D291C3 /* TouchDownUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchDownUp.swift; sourceTree = "<group>"; };
 		65DC7AD629F5528B008FB96E /* Kos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DC7AD929F5528B008FB96E /* KosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KosApp.swift; sourceTree = "<group>"; };
 		65DC7ADB29F5528B008FB96E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,14 +105,6 @@
 				65A8DDC329F7D11400D291C3 /* InputLettersView.swift */,
 			);
 			path = InputWheel;
-			sourceTree = "<group>";
-		};
-		65A8DDC529F7DBC100D291C3 /* Events */ = {
-			isa = PBXGroup;
-			children = (
-				65A8DDC629F7DBDB00D291C3 /* TouchDownUp.swift */,
-			);
-			path = Events;
 			sourceTree = "<group>";
 		};
 		65DC7ACD29F5528B008FB96E = {
@@ -184,7 +174,6 @@
 		65DC7B0429F552C2008FB96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				65A8DDC529F7DBC100D291C3 /* Events */,
 				65DC7ADB29F5528B008FB96E /* ContentView.swift */,
 				65A8DDBA29F78B9900D291C3 /* InputWheel */,
 				65A8DD9F29F56E4500D291C3 /* TileView.swift */,
@@ -310,7 +299,6 @@
 			files = (
 				65DC7ADC29F5528B008FB96E /* ContentView.swift in Sources */,
 				65DC7B0A29F5532D008FB96E /* WordList.swift in Sources */,
-				65A8DDC729F7DBDB00D291C3 /* TouchDownUp.swift in Sources */,
 				65DC7B1029F55336008FB96E /* Matrix.swift in Sources */,
 				65A8DDA229F5725D00D291C3 /* Tile.swift in Sources */,
 				65A8DDB429F6907B00D291C3 /* TileBoard.swift in Sources */,
