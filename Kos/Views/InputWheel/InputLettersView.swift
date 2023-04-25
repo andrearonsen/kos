@@ -39,6 +39,7 @@ struct InputLettersView: View {
                 VStack {
                     Spacer()
                     inputLetter
+                    .padding([.bottom], 10)
                 }
             default:
                 fatalError("More than 4 letters not supported yet")
