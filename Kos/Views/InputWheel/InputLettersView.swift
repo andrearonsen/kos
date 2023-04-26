@@ -10,53 +10,42 @@ import SwiftUI
 struct InputLettersView: View {
     var game: Game
     var height: CGFloat
-    @State var isDragging: Bool = false
-    
-    var drag: some Gesture {
-        DragGesture()
-            .onChanged { e in
-                self.isDragging = true
-                print(e.location)   
-            }
-            .onEnded { _ in self.isDragging = false }
-    }
     
     var body: some View {
-            ForEach(game.inputLetters) { letter in
-                let letterHeight = height / 3.2
-                let inputLetterView =
-                    InputLetterView(inputLetter: letter, height: letterHeight)
-                    .gesture(drag)
-                
-                switch letter.id {
-                case 0:
-                    HStack {
-                        inputLetterView
-                            .padding([.leading], 40)
-                        Spacer()
-                    }
-                case 1:
-                    VStack {
-                        inputLetterView
-                            .padding([.top], 10)
-                        Spacer()
-                    }
-                case 2:
-                    HStack {
-                        Spacer()
-                        inputLetterView
-                            .padding([.trailing], 40)
-                    }
-                case 3:
-                    VStack {
-                        Spacer()
-                        inputLetterView
-                        .padding([.bottom], 10)
-                    }
-                default:
-                    fatalError("More than 4 letters not supported yet")
+        ForEach(game.inputLetters) { letter in
+            let letterHeight = height / 3.2
+            let inputLetterView =
+            InputLetterView(inputLetter: letter, height: letterHeight)
+            
+            switch letter.id {
+            case 0:
+                HStack {
+                    inputLetterView
+                        .padding([.leading], 40)
+                    Spacer()
                 }
+            case 1:
+                VStack {
+                    inputLetterView
+                        .padding([.top], 10)
+                    Spacer()
+                }
+            case 2:
+                HStack {
+                    Spacer()
+                    inputLetterView
+                        .padding([.trailing], 40)
+                }
+            case 3:
+                VStack {
+                    Spacer()
+                    inputLetterView
+                        .padding([.bottom], 10)
+                }
+            default:
+                fatalError("More than 4 letters not supported yet")
             }
+        }
     }
 }
 

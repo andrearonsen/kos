@@ -10,4 +10,8 @@ import Foundation
 struct InputLetter: Identifiable {
     let id: Int
     let letter: String
+    
+    func coordinateSpaceName() -> String {
+        return "inputletter-\(id)-\(letter)"
+    }
 }

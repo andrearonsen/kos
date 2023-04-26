@@ -8,29 +8,39 @@
 import SwiftUI
 
 struct InputLetterView: View {
-    var inputLetter: InputLetter
-    @State var selected: Bool = false
-    var height: CGFloat
+    let inputLetter: InputLetter
     
+    @State var selected: Bool = false
+    @State var currentForegroundColor: Color = GameColors.inputWheelNotSelectedForeground
+    @State var currentBackgroundColor: Color = GameColors.background.opacity(0)
+    
+    var height: CGFloat
+   
     var body: some View {
         let fontSize = height * 0.8
         let circleSize = height
-        let text = Text(inputLetter.letter)
+        
+        Text(inputLetter.letter)
             .bold()
             .font(.system(size: fontSize))
-        
-        if selected == true {
-            text
-            .foregroundColor(GameColors.foreground)
+            .foregroundColor(currentForegroundColor)
             .background(
                 Circle()
-                    .fill(GameColors.defaultGameColor)
+                    .fill(currentBackgroundColor)
                     .frame(width: circleSize, height: circleSize)
             )
-        } else {
-            text
-            .foregroundColor(GameColors.inputWheelNotSelectedForeground)
-        }
+            .gesture(DragGesture()
+                .onChanged { value in
+                    selected = true
+                    currentForegroundColor = GameColors.foreground
+                    currentBackgroundColor = GameColors.defaultGameColor
+                }
+                .onEnded { value in
+                    selected = false
+                    currentForegroundColor = GameColors.inputWheelNotSelectedForeground
+                    currentBackgroundColor = GameColors.background.opacity(0)
+                }
+            )
     }
 }
 

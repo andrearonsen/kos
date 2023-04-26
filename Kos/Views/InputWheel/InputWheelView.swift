@@ -10,11 +10,31 @@ import SwiftUI
 struct InputWheelView: View {
     var game: Game
     var height: CGFloat
+    
+    @State var isDragging: Bool = false
+    
+    var drag: some Gesture {
+        DragGesture()
+            .onChanged { e in
+                self.isDragging = true
+                print("CHANGED (\(e.location)")
+            }
+            .onEnded { e in
+                self.isDragging = false
+                print("END (\(e.location)")
+            }
+    }
+    
     var body: some View {
+        GeometryReader { geometry in 
             ZStack {
                 InputWheelBackground()
                 InputLettersView(game: game, height: height)
-            }.frame(height: height)
+                
+            }
+            .frame(height: height)
+            .gesture(drag)
+        }
     }
 }
 
