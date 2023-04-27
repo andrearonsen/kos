@@ -11,12 +11,14 @@ import SwiftUI
 final class InputLetter: Identifiable {
     let id: Int
     let letter: String
+    var position: CGPoint
     var state: InputLetterState
     
     init(id: Int, letter: String) {
         self.id = id
         self.letter = letter
         self.state = InputLetterState()
+        self.position = .zero
     }
 }
 

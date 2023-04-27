@@ -14,37 +14,14 @@ struct InputLettersView: View {
     var body: some View {
         ForEach(modelData.game.inputLetters) { letter in
             let letterHeight = height / 3.2
-            let inputLetterView =
-            InputLetterView(inputLetter: letter, height: letterHeight)
-            
-            switch letter.id {
-            case 0:
-                HStack {
-                    inputLetterView
-                        .padding([.leading], 40)
-                    Spacer()
-                }
-            case 1:
-                VStack {
-                    inputLetterView
-                        .padding([.top], 10)
-                    Spacer()
-                }
-            case 2:
-                HStack {
-                    Spacer()
-                    inputLetterView
-                        .padding([.trailing], 40)
-                }
-            case 3:
-                VStack {
-                    Spacer()
-                    inputLetterView
-                        .padding([.bottom], 10)
-                }
-            default:
-                fatalError("More than 4 letters not supported yet")
-            }
+            let letterPosition = modelData.game.calculateInputLetterPosition(
+                inputWheelSize: height,
+                letterSize: letterHeight,
+                padding: 10,
+                letterIndex: letter.id
+            )
+
+            InputLetterView(inputLetter: letter, height: letterHeight).position(letterPosition)
         }
     }
 }

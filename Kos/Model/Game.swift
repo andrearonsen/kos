@@ -51,6 +51,33 @@ struct Game {
         self.selectedInputLetters = []
     }
     
+    func calculateInputLetterPosition(
+        inputWheelSize: CGFloat,
+        letterSize: CGFloat,
+        padding: CGFloat,
+        letterIndex: Int) -> CGPoint {
+        let countLetters = currentBoard.letters.count
+        if countLetters != 4 {
+            fatalError("not implemented yet")
+        }
+        let middle = inputWheelSize / 2
+        let offset = letterSize / 2 + padding
+        
+//        let angle = 360 / countLetters
+        switch letterIndex {
+        case 0:
+            return CGPoint(x: offset, y: middle)
+        case 1:
+            return CGPoint(x: middle, y: offset)
+        case 2:
+            return CGPoint(x: inputWheelSize - offset, y: middle)
+        case 3:
+            return CGPoint(x: middle, y: inputWheelSize - offset)
+        default:
+            return CGPoint(x: 0, y: 0)
+        }  
+    }
+    
     static func startNewGame() -> Game {
         print("Starting new game ...")
         let gameConfig = GameConfig.startConfig()
