@@ -6,12 +6,34 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct InputLetter: Identifiable {
+final class InputLetter: Identifiable {
     let id: Int
     let letter: String
+    var state: InputLetterState
     
-    func coordinateSpaceName() -> String {
-        return "inputletter-\(id)-\(letter)"
+    init(id: Int, letter: String) {
+        self.id = id
+        self.letter = letter
+        self.state = InputLetterState()
+    }
+}
+
+struct InputLetterState {
+    var selected: Bool = false
+    var currentForegroundColor: Color = GameColors.inputWheelNotSelectedForeground
+    var currentBackgroundColor: Color = GameColors.background.opacity(0)
+    
+    mutating func setSelected(sel: Bool) {
+        if sel {
+            selected = true
+            currentForegroundColor = GameColors.foreground
+            currentBackgroundColor = GameColors.defaultGameColor
+        } else {
+            selected = false
+            currentForegroundColor = GameColors.inputWheelNotSelectedForeground
+            currentBackgroundColor = GameColors.background.opacity(0)
+        }
     }
 }

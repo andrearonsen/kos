@@ -32,7 +32,8 @@ struct GameConfig {
 
 struct Game {
     let currentGameConfig: GameConfig
-    let inputLetters: [InputLetter]
+    var inputLetters: [InputLetter]
+    var selectedInputLetters: [InputLetter]
     var level: Int = 0
     var currentBoard: TileBoard
     var currentColor: Color = GameColors.defaultGameColor
@@ -47,6 +48,7 @@ struct Game {
             il.append(InputLetter(id: i, letter: String(letter)))
         }
         self.inputLetters = il
+        self.selectedInputLetters = []
     }
     
     static func startNewGame() -> Game {
@@ -77,6 +79,16 @@ struct Game {
         return false
     }
    
+    mutating func testSetAll(selected: Bool) {
+        for il in inputLetters {
+            il.state.setSelected(sel: selected)
+        }
+    }
+    
+    mutating func testOneTrue() {
+        inputLetters[3].state.setSelected(sel: true)
+        inputLetters[1].state.setSelected(sel: true)
+    }
 }
 
 
@@ -114,3 +126,4 @@ func createBoard(gameConfig: GameConfig) -> TileBoard {
 
     return b.createTileBoard()
 }
+

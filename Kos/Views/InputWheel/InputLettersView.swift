@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct InputLettersView: View {
-    var game: Game
+    @EnvironmentObject var modelData: ModelData
     var height: CGFloat
     
     var body: some View {
-        ForEach(game.inputLetters) { letter in
+        ForEach(modelData.game.inputLetters) { letter in
             let letterHeight = height / 3.2
             let inputLetterView =
             InputLetterView(inputLetter: letter, height: letterHeight)
@@ -50,15 +50,16 @@ struct InputLettersView: View {
 }
 
 struct InputLettersView_Previews: PreviewProvider {
-    static var game = Game.startNewGame()
+    static var modelData = ModelData()
     static var previews: some View {
         GeometryReader { geometry in
             let height = geometry.size.height / 2
             VStack {
                 Spacer()
             }.safeAreaInset(edge: .bottom) {
-                InputLettersView(game: game, height: height)
+                InputLettersView(height: height)
                     .frame(height: height)
+                    .environmentObject(modelData)
             }
         }
         

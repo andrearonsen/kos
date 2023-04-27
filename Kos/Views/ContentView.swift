@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var game: Game
+    @EnvironmentObject var modelData: ModelData
 //    var backgroundImage: Image
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                CrosswordView(game: game)
+                CrosswordView()
                 Spacer()
-                InputWheelView(game: game, height: geometry.size.height / 2)
+                InputWheelView(height: geometry.size.height / 2)
             }
             .background(
                 Image("Pikachu")
@@ -32,9 +32,9 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var game = Game.startNewGame()
+    static var modelData = ModelData()
     static var previews: some View {
-        ContentView(game: game)
-            .environmentObject(ModelData())
+        ContentView()
+            .environmentObject(modelData)
     }
 }

@@ -101,8 +101,8 @@
 			children = (
 				65A8DDB729F6F03100D291C3 /* InputWheelBackground.swift */,
 				65A8DDBB29F78F3000D291C3 /* InputWheelView.swift */,
-				65A8DDC129F7B1B100D291C3 /* InputLetterView.swift */,
 				65A8DDC329F7D11400D291C3 /* InputLettersView.swift */,
+				65A8DDC129F7B1B100D291C3 /* InputLetterView.swift */,
 			);
 			path = InputWheel;
 			sourceTree = "<group>";

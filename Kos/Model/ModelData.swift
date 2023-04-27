@@ -10,5 +10,6 @@ import Foundation
 final class ModelData: ObservableObject {
     static let wordlistCatalog = readWordListCatalog()
     
-    @Published var currentGame = Game.startNewGame()
+    @Published var game = Game.startNewGame()
+    
 }
