@@ -14,14 +14,11 @@ struct InputLettersView: View {
     var body: some View {
         ForEach(modelData.game.inputLetters) { letter in
             let letterHeight = height / 3.2
-            let letterPosition = modelData.game.calculateInputLetterPosition(
-                inputWheelSize: height,
-                letterSize: letterHeight,
-                padding: 10,
-                letterIndex: letter.id
-            )
+           
+            
 
-            InputLetterView(inputLetter: letter, height: letterHeight).position(letterPosition)
+            InputLetterView(inputLetter: letter, height: letterHeight)
+//                .position(letterPosition)
         }
     }
 }

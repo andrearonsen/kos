@@ -23,6 +23,13 @@ struct InputLetterView: View {
         let foreground = state.currentForegroundColor.wrappedValue
         let background = state.currentBackgroundColor.wrappedValue
         
+        let letterPosition = modelData.game.calculateInputLetterPosition(
+            inputWheelSize: UIScreen.main.bounds.size.width, // TODO
+            letterSize: height,
+            padding: 10,
+            letterIndex: inputLetterIndex
+        )
+        
         Text(inputLetter.letter)
             .bold()
             .font(.system(size: fontSize))
@@ -32,6 +39,12 @@ struct InputLetterView: View {
                     .fill(background)
                     .frame(width: circleSize, height: circleSize)
             )
+            .position(letterPosition)
+            .onAppear {
+                self.modelData.game.inputLetters[inputLetterIndex].position = letterPosition
+                self.modelData.game.inputLetters[inputLetterIndex].size = CGSize(width: height, height: height)
+            }
+        
     }
 }
 

@@ -12,4 +12,5 @@ final class ModelData: ObservableObject {
     
     @Published var game = Game.startNewGame()
     
+    var inputLetterPositions = Array(repeating: 0.0, count:4)
 }

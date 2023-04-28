@@ -12,6 +12,7 @@ final class InputLetter: Identifiable {
     let id: Int
     let letter: String
     var position: CGPoint
+    var size: CGSize
     var state: InputLetterState
     
     init(id: Int, letter: String) {
@@ -19,6 +20,11 @@ final class InputLetter: Identifiable {
         self.letter = letter
         self.state = InputLetterState()
         self.position = .zero
+        self.size = .zero
+    }
+    
+    func boundingBox() -> CGRect {
+        return CGRect(origin: CGPoint(x: position.x - size.width / 2, y: position.y - size.height / 2), size: size)
     }
 }
 

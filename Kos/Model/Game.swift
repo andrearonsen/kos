@@ -8,28 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct BoardConfig {
-    let nrInputLetters: Int
-    let gridWidth: Int
-    let gridHeight: Int
-    let minWords: Int
-    let maxWords: Int
-
-    static let startConfig: BoardConfig = BoardConfig(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
-}
-
-
-struct GameConfig {
-    let wordList: WordList
-    let boardConfig: BoardConfig
-    
-    static func startConfig() -> GameConfig {
-        let bcfg = BoardConfig.startConfig
-        let wl = ModelData.wordlistCatalog.wordListForNumberOfInputLetters(nrInputLetters: bcfg.nrInputLetters)
-        return GameConfig(wordList: wl, boardConfig: bcfg)
-    }
-}
-
 struct Game {
     let currentGameConfig: GameConfig
     var inputLetters: [InputLetter]
@@ -106,15 +84,19 @@ struct Game {
         return false
     }
    
-    mutating func testSetAll(selected: Bool) {
+    mutating func unselectAllInputLetters() {
         for il in inputLetters {
-            il.state.setSelected(sel: selected)
+            il.state.setSelected(sel: false)
         }
     }
     
     mutating func testOneTrue() {
         inputLetters[3].state.setSelected(sel: true)
         inputLetters[1].state.setSelected(sel: true)
+    }
+    
+    mutating func setInputLetterToSelected(id: Int) {
+        inputLetters[id].state.setSelected(sel: true)
     }
 }
 
@@ -154,3 +136,23 @@ func createBoard(gameConfig: GameConfig) -> TileBoard {
     return b.createTileBoard()
 }
 
+struct BoardConfig {
+    let nrInputLetters: Int
+    let gridWidth: Int
+    let gridHeight: Int
+    let minWords: Int
+    let maxWords: Int
+
+    static let startConfig: BoardConfig = BoardConfig(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
+}
+
+struct GameConfig {
+    let wordList: WordList
+    let boardConfig: BoardConfig
+    
+    static func startConfig() -> GameConfig {
+        let bcfg = BoardConfig.startConfig
+        let wl = ModelData.wordlistCatalog.wordListForNumberOfInputLetters(nrInputLetters: bcfg.nrInputLetters)
+        return GameConfig(wordList: wl, boardConfig: bcfg)
+    }
+}
