@@ -160,11 +160,11 @@
 				65A8DDAF29F63B6100D291C3 /* ModelData.swift */,
 				65A8DDBD29F7957B00D291C3 /* GameColors.swift */,
 				65A8DDB129F640FB00D291C3 /* Game.swift */,
+				65DC7B0C29F55332008FB96E /* Generator.swift */,
+				65A8DDB329F6907B00D291C3 /* TileBoard.swift */,
 				65A8DDBF29F79CCB00D291C3 /* InputLetter.swift */,
 				65DC7B0629F5531B008FB96E /* Board.swift */,
-				65A8DDB329F6907B00D291C3 /* TileBoard.swift */,
 				65DC7B0929F5532D008FB96E /* WordList.swift */,
-				65DC7B0C29F55332008FB96E /* Generator.swift */,
 				65DC7B0F29F55336008FB96E /* Matrix.swift */,
 				65A8DDA129F5725D00D291C3 /* Tile.swift */,
 			);

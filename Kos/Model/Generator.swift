@@ -9,7 +9,6 @@ import Foundation
 
 extension String {
     func shuffleLetters() -> [Character] {
-        var s = ""
         var letters: [Character] = []
         for letter in self {
             letters.append(letter)
@@ -53,6 +52,7 @@ func generate_board2(firstWord: String, wl: WordList, gridWidth: Int, gridHeight
     let letters = firstWord.shuffleLetters()
     var board = Board(width: gridWidth, height: gridHeight, letters: letters)
     var words = wl.shuffleAndFilterOnWord(word: firstWord)
+    
     board.placeFirstWordRandomDir(word: firstWord)
     var count = 1
     

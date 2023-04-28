@@ -62,18 +62,21 @@ struct Game {
         
         let startBoard = createBoard(gameConfig: gameConfig)
         var game = Game(currentGameConfig: gameConfig, currentBoard: startBoard)
-        
-        // Test reveal first word:
-        let firstWord = game.currentBoard.words[0].word
-        if game.currentBoard.checkAndRevealWord(word: firstWord) {
-            print("First word revealed: \(firstWord)")
-        }
-        
+  
         return game
     }
     
+    mutating func testRevealFirstWord() {
+        // Test reveal first word:
+        let firstWord = currentBoard.words[0].word
+        if currentBoard.checkAndRevealWord(word: firstWord) {
+            print("First word revealed: \(firstWord)")
+        }
+    }
+    
     mutating func tryWord(w: String) -> Bool {
-       let wordMatch = currentBoard.checkAndRevealWord(word: w)
+        print("Trying word: \(w)")
+        let wordMatch = currentBoard.checkAndRevealWord(word: w)
         if wordMatch {
             return true
         } else {
@@ -83,11 +86,26 @@ struct Game {
         }
         return false
     }
+    
+    mutating func trySelectedWord() -> Bool {
+        let word = selectedWord()
+        if word.isEmpty {
+            return false
+        }
+        return tryWord(w: word)
+    }
+    
+    func selectedWord() -> String {
+        return selectedInputLetters.reduce("", { word, il in
+            word + il.letter
+        })
+    }
    
     mutating func unselectAllInputLetters() {
         for il in inputLetters {
             il.state.setSelected(sel: false)
         }
+        selectedInputLetters = []
     }
     
     mutating func testOneTrue() {
@@ -95,8 +113,38 @@ struct Game {
         inputLetters[1].state.setSelected(sel: true)
     }
     
-    mutating func setInputLetterToSelected(id: Int) {
-        inputLetters[id].state.setSelected(sel: true)
+    mutating func selectInputLetter(id: Int) {
+        let il = inputLetters[id]
+        if !il.state.selected {
+            print("Selected \(il.id): \(il.letter)")
+            il.state.setSelected(sel: true)
+            
+            if selectedInputLetters.isEmpty {
+                selectedInputLetters.append(il)
+            } else {
+                let last = selectedInputLetters.last!
+                if last.id != id {
+                    selectedInputLetters.append(il)
+                }
+            }
+            print("Selected word: \(selectedWord())")
+        }
+    }
+    
+    mutating func unselectInputLetter(id: Int) {
+        let il = inputLetters[id]
+        if il.state.selected {
+            il.state.setSelected(sel: false)
+            
+            if selectedInputLetters.isEmpty {
+                return
+            }
+            
+            let last = selectedInputLetters.last!
+            if last.id == id {
+                selectedInputLetters.removeLast()
+            }
+        }
     }
 }
 
@@ -132,6 +180,7 @@ func createBoard(gameConfig: GameConfig) -> TileBoard {
     } while ((currentNrWords < cfg.minWords || currentScore < 30)) //&& nrTries < 30)
     
     print("Final BoardScore: \(currentScore)")
+    b.printBoard()
 
     return b.createTileBoard()
 }

@@ -7,22 +7,6 @@
 
 import Foundation
 
-struct TileBoardWord {
-    let word: String
-    var letterCells: [TileCell]
-    var revealed: Bool
-    
-    mutating func reveal() {
-        if revealed {
-            return
-        }
-        for lc in letterCells {
-            lc.reveal()
-        }
-        revealed = true
-    }
-}
-
 struct TileBoard {
     let letters: [Character]
     let matrix: Matrix<TileCell>
@@ -115,7 +99,32 @@ struct TileBoard {
         return false
     }
     
+}
+
+final class TileBoardWord : Identifiable {
+    var id: String
+    let word: String
+    var letterCells: [TileCell]
+    var revealed: Bool
     
+    init(word: String, letterCells: [TileCell], revealed: Bool) {
+        self.id = word
+        self.word = word
+        self.letterCells = letterCells
+        self.revealed = revealed
+    }
+
+    func reveal() {
+        if revealed {
+            return
+        }
+        // TODO Slå opp i TileRows, fordi det er det som blir rendret
+        for lc in letterCells {
+            lc.reveal()
+        }
+        revealed = true
+    }
+
 }
 
 final class TileCell: Identifiable {

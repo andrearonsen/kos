@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Kos
+import Kos
 
 final class KosTests: XCTestCase {
 
@@ -17,16 +17,25 @@ final class KosTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+//    let game = Game.startNewGame()
+//    for wp in game.currentBoard.words {
+//        print(wp.word)
+//        for letter in wp.word {
+//
+//        }
+//    }
 
     func testExample() throws {
-        let nrInputLetters = 4
-        let wlCat = Kos.readWordListCatalog()
-        let firstWord = wlCat.randomFirstWord(nrInputLetters: nrInputLetters)
-        print(firstWord)
-        let wl = wlCat.wordListForNumberOfInputLetters(nrInputLetters: nrInputLetters)
-        let board = generate_board2(firstWord: firstWord, wl: wl, gridWidth: 5, gridHeight: 4, maxWords: 5)
-        board.printBoard()
-        board.printPuzzle()
+//        let game = Game.startNewGame()
+//        let nrInputLetters = 4
+//        let wlCat = Kos.readWordListCatalog()
+//        let firstWord = wlCat.randomFirstWord(nrInputLetters: nrInputLetters)
+//        print(firstWord)
+//        let wl = wlCat.wordListForNumberOfInputLetters(nrInputLetters: nrInputLetters)
+//        let board = generate_board2(firstWord: firstWord, wl: wl, gridWidth: 5, gridHeight: 4, maxWords: 5)
+//        board.printBoard()
+//        board.printPuzzle()
         
     }
     func testPerformanceExample() throws {

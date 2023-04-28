@@ -8,11 +8,13 @@
 import Foundation
 
 extension String {
+
     func containsOnlyLettersFrom(word: String) -> Bool {
         let selfStr = self.uppercased()
         let checkStr = word.uppercased()
-        for letter in checkStr {
-            if !selfStr.contains(letter) {
+        
+        for letter in selfStr {
+            if !checkStr.contains(letter) {
                 return false
             }
         }
