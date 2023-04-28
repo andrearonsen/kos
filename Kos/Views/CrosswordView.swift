@@ -13,7 +13,7 @@ struct CrosswordView: View {
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
-            let nrCols = modelData.game.currentBoard.nrCols()
+            let nrCols = modelData.game.currentBoard.nrCols
             let tileSize = Int(width / Double(nrCols + 1))
             let padding = CGFloat(tileSize / 2)
             let tileColor = modelData.game.currentColor

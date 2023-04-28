@@ -44,6 +44,8 @@ public struct WordList {
     func shuffleAndFilterOnWord(word: String) -> [String] {
         return self.words.filter { w in
             w.containsOnlyLettersFrom(word: word) && w != word
+            // TODO Add extra condition: Frequency of each character max first word
+            // First word: NESE -> ESS and NESS illegal!
         }.shuffled()
     }
     

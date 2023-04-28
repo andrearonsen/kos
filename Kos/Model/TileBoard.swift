@@ -9,26 +9,23 @@ import Foundation
 
 struct TileBoard {
     let letters: [Character]
-    let matrix: Matrix<TileCell>
-    let words: [TileBoardWord]
-    let rows: [TileRow]
-    
+    var rows: [TileRow]
+    let nrCols: Int
+    let words: [String: TileBoardWord]
+
     static func forBoard(b: Board) -> TileBoard {
-        var tileMatrix: Matrix<TileCell> = Matrix(rows: b.nrRows(), columns: b.nrCols(), defaultValue: TileCell.empty)
+        var tileMatrix: Matrix<TileCell> = Matrix(rows: b.nrRows(), columns: b.nrCols(), defaultValue: TileCell.empty(row: 0, col: 0))
         var rows: [TileRow] = []
         
         // Convert Board -> TileBoard
         for r in 0...b.matrix.rows-1 {
             var tiles: [TileCell] = []
             for c in 0...b.matrix.columns-1 {
-                let tileCellId = r * 100 + c // Unique cell id in the matrix
                 if b.isEmpty(row: r, col: c) {
-                    let tile = Tile.empty
-                    tileMatrix[r, c] = TileCell(id: tileCellId, tile: tile)
+                    tileMatrix[r, c] = TileCell(row: r, col: c, letter: "", state: .empty)
                 } else {
                     let cell = b.matrix[r, c]
-                    let tile = Tile(letter: cell, state: .hidden)
-                    tileMatrix[r, c] = TileCell(id: tileCellId, tile: tile)
+                    tileMatrix[r, c] = TileCell(row: r, col: c, letter: cell, state: .hidden)
                 }
                 let cell = tileMatrix[r, c]
                 tiles.append(cell)
@@ -36,17 +33,16 @@ struct TileBoard {
             rows.append(TileRow(id: r, tiles: tiles))
         }
         
-        var words: [TileBoardWord] = []
+        var words: [String: TileBoardWord] = [:]
         for wp in b.words {
-            let tbw = collectTilesForWord(mat: tileMatrix, w: wp)
-            words.append(tbw)
+            words[wp.word] = collectTilesForWord(mat: tileMatrix, w: wp)
         }
         
-        return TileBoard(letters: b.letters, matrix: tileMatrix, words: words, rows: rows)
+        return TileBoard(letters: b.letters, rows: rows, nrCols: b.nrCols(), words: words)
     }
     
     static private func collectTilesForWord(mat: Matrix<TileCell>, w: WordPlacement) -> TileBoardWord {
-        var tileCells: [TileCell] = []
+        var tiles: [TileIndex] = []
         
         switch w.dir {
         case .Horizontal:
@@ -54,8 +50,8 @@ struct TileBoard {
             let c = w.col
             for (i, letter) in w.word.enumerated() {
                 let cell = mat[r, c+i]
-                if cell.tile.hasLetter(l: letter) {
-                    tileCells.append(cell)
+                if cell.hasLetter(l: letter) {
+                    tiles.append(TileIndex(row: r, col: c+i))
                 } else {
                     fatalError("Letter does not appear on the right spot in the row")
                 }
@@ -65,8 +61,8 @@ struct TileBoard {
             let c = w.col
             for (i, letter) in w.word.enumerated() {
                 let cell = mat[r+i, c]
-                if cell.tile.hasLetter(l: letter) {
-                    tileCells.append(cell)
+                if cell.hasLetter(l: letter) {
+                    tiles.append(TileIndex(row: r+i, col: c))
                 } else {
                     fatalError("Letter does not appear on the right spot in the column")
                 }
@@ -75,84 +71,97 @@ struct TileBoard {
             fatalError("Not possible should not be a part of a board")
         }
         
-        return TileBoardWord(word: w.word, letterCells: tileCells, revealed: false)
+        return TileBoardWord(word: w.word, letterCells: tiles, revealed: false)
     }
-    
-    func nrCols() -> Int {
-        return matrix.columns
-    }
-    
+
     mutating func checkAndRevealWord(word: String) -> Bool {
-        for var w in words {
-            if w.word == word {
-                
-                // Reveal word in tiles
-                if w.revealed {
-                    return true
-                } else {
-                    print("Revealing \(word)")
-                    w.reveal()
-                }
-                return true
+        let wordFound = words.contains { $0.key == word }
+        if !wordFound {
+            return false
+        }
+        
+        let w = words[word]!
+        
+        if w.revealed {
+            return true
+        } else {
+            print("Revealing \(word)")
+            for tile in w.letterCells {
+                var tileRow = rows[tile.row]
+                let tileCell = tileRow.tiles[tile.col]
+                tileRow.tiles[tileCell.col] = tileCell.revealed()
             }
+            return true
         }
-        return false
     }
     
 }
 
-final class TileBoardWord : Identifiable {
-    var id: String
-    let word: String
-    var letterCells: [TileCell]
-    var revealed: Bool
-    
-    init(word: String, letterCells: [TileCell], revealed: Bool) {
-        self.id = word
-        self.word = word
-        self.letterCells = letterCells
-        self.revealed = revealed
-    }
-
-    func reveal() {
-        if revealed {
-            return
-        }
-        // TODO Slå opp i TileRows, fordi det er det som blir rendret
-        for lc in letterCells {
-            lc.reveal()
-        }
-        revealed = true
-    }
-
-}
-
-final class TileCell: Identifiable {
+struct TileRow: Identifiable {
     let id: Int
-    var tile: Tile
+    var tiles: [TileCell]
+}
+
+enum TileCellState: CaseIterable {
+    case empty
+    case hidden
+    case revealed
+}
+
+struct TileCell: Identifiable, Equatable {
+    let row: Int
+    let col: Int
+    let id: Int
+
+    let letter: String
+    var state: TileCellState
     
-    init(id: Int, tile: Tile) {
-        self.id = id
-        self.tile = tile
+    init(row: Int, col: Int, letter: String, state: TileCellState) {
+        self.row = row
+        self.col = col
+        self.id = row * 100 + col // Unique id in the matrix
+        self.letter = letter
+        self.state = state
     }
     
-    static let empty: TileCell = TileCell(id: 0, tile: Tile.empty)
-    
-    func reveal() {
-        if tile.state == .hidden {
-            tile.state = .revealed
+    mutating func reveal() {
+        if state == .hidden {
+            state = .revealed
         }
     }
     
+    func hasLetter(l: Character) -> Bool {
+        return String(l) == letter
+    }
+    
+    static func empty(row: Int, col: Int) -> TileCell {
+        return TileCell(row: row, col: col, letter: "", state: .empty)
+    }
+
     func revealed() -> TileCell {
-        if tile.state == .hidden {
-            return TileCell(id: id, tile: Tile(letter: tile.letter, state: .revealed))
+        if state == .hidden {
+            return TileCell(row: row, col: col, letter: letter, state: .revealed)
         }
         return self
     }
 }
 
-struct TileRow: Identifiable {
-    let id: Int
-    let tiles: [TileCell]
+struct TileBoardWord : Identifiable {
+    var id: String
+    let word: String
+    var letterCells: [TileIndex]
+    var revealed: Bool
+    
+    init(word: String, letterCells: [TileIndex], revealed: Bool) {
+        self.id = word
+        self.word = word
+        self.letterCells = letterCells
+        self.revealed = revealed
+    }
 }
+
+struct TileIndex {
+    let row: Int
+    let col: Int
+}
+

@@ -61,14 +61,13 @@ struct Game {
         let gameConfig = GameConfig.startConfig()
         
         let startBoard = createBoard(gameConfig: gameConfig)
-        var game = Game(currentGameConfig: gameConfig, currentBoard: startBoard)
   
-        return game
+        return Game(currentGameConfig: gameConfig, currentBoard: startBoard)
     }
     
     mutating func testRevealFirstWord() {
         // Test reveal first word:
-        let firstWord = currentBoard.words[0].word
+        let firstWord = currentBoard.words.first!.value.word
         if currentBoard.checkAndRevealWord(word: firstWord) {
             print("First word revealed: \(firstWord)")
         }

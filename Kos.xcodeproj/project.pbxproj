@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		65A8DDA029F56E4500D291C3 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DD9F29F56E4500D291C3 /* TileView.swift */; };
-		65A8DDA229F5725D00D291C3 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDA129F5725D00D291C3 /* Tile.swift */; };
 		65A8DDA629F57E3600D291C3 /* CrosswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDA529F57E3600D291C3 /* CrosswordView.swift */; };
 		65A8DDB029F63B6100D291C3 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDAF29F63B6100D291C3 /* ModelData.swift */; };
 		65A8DDB229F640FB00D291C3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDB129F640FB00D291C3 /* Game.swift */; };
@@ -50,7 +49,6 @@
 
 /* Begin PBXFileReference section */
 		65A8DD9F29F56E4500D291C3 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
-		65A8DDA129F5725D00D291C3 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		65A8DDA529F57E3600D291C3 /* CrosswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordView.swift; sourceTree = "<group>"; };
 		65A8DDAF29F63B6100D291C3 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		65A8DDB129F640FB00D291C3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -160,13 +158,12 @@
 				65A8DDAF29F63B6100D291C3 /* ModelData.swift */,
 				65A8DDBD29F7957B00D291C3 /* GameColors.swift */,
 				65A8DDB129F640FB00D291C3 /* Game.swift */,
-				65DC7B0C29F55332008FB96E /* Generator.swift */,
 				65A8DDB329F6907B00D291C3 /* TileBoard.swift */,
 				65A8DDBF29F79CCB00D291C3 /* InputLetter.swift */,
+				65DC7B0C29F55332008FB96E /* Generator.swift */,
 				65DC7B0629F5531B008FB96E /* Board.swift */,
 				65DC7B0929F5532D008FB96E /* WordList.swift */,
 				65DC7B0F29F55336008FB96E /* Matrix.swift */,
-				65A8DDA129F5725D00D291C3 /* Tile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,7 +297,6 @@
 				65DC7ADC29F5528B008FB96E /* ContentView.swift in Sources */,
 				65DC7B0A29F5532D008FB96E /* WordList.swift in Sources */,
 				65DC7B1029F55336008FB96E /* Matrix.swift in Sources */,
-				65A8DDA229F5725D00D291C3 /* Tile.swift in Sources */,
 				65A8DDB429F6907B00D291C3 /* TileBoard.swift in Sources */,
 				65A8DDA029F56E4500D291C3 /* TileView.swift in Sources */,
 				65A8DDB829F6F03100D291C3 /* InputWheelBackground.swift in Sources */,

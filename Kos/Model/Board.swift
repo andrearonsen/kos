@@ -347,14 +347,11 @@ struct Board {
         for r in 0...self.matrix.rows-1 {
             var tiles: [TileCell] = []
             for c in 0...self.matrix.columns-1 {
-                let tileCellId = r * 100 + c
                 if isEmpty(row: r, col: c) {
-                    let tile = Tile.empty
-                    tiles.append(TileCell(id: tileCellId, tile: tile))
+                    tiles.append(TileCell.empty(row: r, col: c))
                 } else {
                     let cell = self.matrix[r, c]
-                    let tile = Tile(letter: cell, state: .hidden)
-                    tiles.append(TileCell(id: tileCellId, tile: tile))
+                    tiles.append(TileCell(row: r, col: c, letter: cell, state: .hidden))
                 }
             }
             rows.append(TileRow(id: r, tiles: tiles))
