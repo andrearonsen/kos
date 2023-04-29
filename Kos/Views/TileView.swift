@@ -8,42 +8,21 @@
 import SwiftUI
 
 struct TileView: View {
-    let tileCell: TileCell
+    var tile: TileCell
     let tileSize: Int
     let filledColor: Color
     
     var body: some View {
-        if tileCell.state == .empty {
-            AirTileView(size: tileSize)
-        } else {
-            let fontSize = CGFloat(Double(tileSize) * 0.75)
-            ZStack {
-                TileBackgroundView(size: tileSize, color: tileCell.state == .hidden ? GameColors.background : filledColor)
-                Text(tileCell.letter)
-                    .bold()
-                    .font(.system(size: fontSize))
-                    .foregroundColor(GameColors.foreground)
-                    .opacity(tileCell.state == .hidden ? 0 : 1.0)
-                    
-            }
+        let fontSize = CGFloat(Double(tileSize) * 0.75)
+        ZStack {
+            TileBackgroundView(size: tileSize, color: tile.state == .hidden ? GameColors.background : filledColor)
+                .opacity(tile.state == .empty ? 0 : 1.0)
+            Text(tile.letter)
+                .bold()
+                .font(.system(size: fontSize))
+                .foregroundColor(GameColors.foreground)
+                .opacity(tile.state == .revealed ? 1.0 : 0)
         }
-        
-//        switch tileCell.state {
-//            case .empty:
-//                AirTileView(size: tileSize)
-//            case .hidden:
-//                TileBackgroundView(size: tileSize, color: GameColors.background)
-//            case .revealed:
-//                let fontSize = CGFloat(Double(tileSize) * 0.75)
-//                ZStack {
-//                    TileBackgroundView(size: tileSize, color: filledColor)
-//                    Text(tileCell.letter)
-//                        .bold()
-//                        .font(.system(size: fontSize))
-//                        .foregroundColor(GameColors.foreground)
-//                        
-//                }
-//        }
     }
 }
 
@@ -60,18 +39,16 @@ struct TileBackgroundView: View {
     }
 }
 
-struct AirTileView: View {
-    var size: Int
-    
-    var body: some View {
-        Rectangle()
-            .opacity(0)
-            .frame(width: CGFloat(size), height: CGFloat(size))
-    }
-}
-
 struct TileView_Previews: PreviewProvider {
     static var previews: some View {
-        TileView(tileCell: TileCell(row: 0, col: 0, letter: "", state: .revealed), tileSize: 40, filledColor: Color.purple)
+        Group {
+            TileView(tile: TileCell(row: 0, col: 0, letter: "W", state: .hidden), tileSize: 40, filledColor: Color.purple)
+                .previewDisplayName("Hidden")
+            TileView(tile: TileCell(row: 0, col: 0, letter: "W", state: .revealed), tileSize: 40, filledColor: Color.purple)
+                .previewDisplayName("Revealed")
+            TileView(tile: TileCell(row: 0, col: 0, letter: "W", state: .empty), tileSize: 40, filledColor: Color.purple)
+                .previewDisplayName("Empty")
+        }
+        
     }
 }

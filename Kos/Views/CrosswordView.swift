@@ -23,7 +23,7 @@ struct CrosswordView: View {
                 ForEach(tileRows) { tileRow in
                     GridRow {
                         ForEach(tileRow.tiles) { tileCell in
-                            TileView(tileCell: tileCell, tileSize: tileSize, filledColor: tileColor) }
+                            TileView(tile: tileCell, tileSize: tileSize, filledColor: tileColor) }
                         }
                     }
             }.padding([.all], padding)
