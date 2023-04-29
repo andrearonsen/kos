@@ -15,7 +15,7 @@ struct TileView: View {
     var body: some View {
         let fontSize = CGFloat(Double(tileSize) * 0.75)
         ZStack {
-            TileBackgroundView(size: tileSize, color: tile.state == .hidden ? GameColors.background : filledColor)
+            TileBackground(size: tileSize, color: tile.state == .hidden ? GameColors.background : filledColor)
                 .opacity(tile.state == .empty ? 0 : 1.0)
             Text(tile.letter)
                 .bold()
@@ -26,18 +26,6 @@ struct TileView: View {
     }
 }
 
-struct TileBackgroundView: View {
-    var size: Int
-    var color: Color
-    
-    var body: some View {
-        let radius = Double(size) * 0.1
-        RoundedRectangle(cornerRadius: radius)
-            .fill(color)
-            .frame(width: CGFloat(size), height: CGFloat(size))
-            .shadow(radius: 1)
-    }
-}
 
 struct TileView_Previews: PreviewProvider {
     static var previews: some View {

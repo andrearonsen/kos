@@ -7,8 +7,38 @@
 
 import Foundation
 
-// https://www.baeldung.com/cs/generate-crossword-puzzle (Algorithm 1)
 func generate_board(firstWord: String, wl: WordList, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
+    let letters = firstWord.shuffleLetters()
+    var board = Board(width: gridWidth, height: gridHeight, letters: letters)
+    var words = wl.shuffleAndFilterOnWord(word: firstWord)
+    
+    board.placeFirstWordRandomDir(word: firstWord)
+    var count = 1
+    
+    while count < maxWords && !words.isEmpty {
+        let word = words.removeLast()
+        let placements = board.findAllPossibleWordPlacements(word: word)
+        var bestScore = 0.0
+        var bestBoard = board
+        for placement in placements {
+            let newBoard = board.placeWordClone(wp: placement)
+            let newScore = newBoard.score()
+            if newScore > bestScore {
+                bestScore = newScore
+                bestBoard = newBoard
+            }
+        }
+        if bestScore > 0 {
+            board = bestBoard
+            count += 1
+        }
+    }
+    
+    return board
+}
+
+// https://www.baeldung.com/cs/generate-crossword-puzzle (Algorithm 1)
+func generate_board_1(firstWord: String, wl: WordList, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     let letters = firstWord.shuffleLetters()
     var board = Board(width: gridWidth, height: gridHeight, letters: letters)
     var words = wl.shuffleAndFilterOnWord(word: firstWord)
@@ -38,33 +68,5 @@ outer: while count < maxWords && !words.isEmpty {
     return board
 }
 
-func generate_board2(firstWord: String, wl: WordList, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
-    let letters = firstWord.shuffleLetters()
-    var board = Board(width: gridWidth, height: gridHeight, letters: letters)
-    var words = wl.shuffleAndFilterOnWord(word: firstWord)
-    
-    board.placeFirstWordRandomDir(word: firstWord)
-    var count = 1
-    
-    while count < maxWords && !words.isEmpty {
-        let word = words.removeLast()
-        let placements = board.findAllPossibleWordPlacements(word: word)
-        var bestScore = 0.0
-        var bestBoard = board
-        for placement in placements {
-            let newBoard = board.placeWordClone(wp: placement)
-            let newScore = newBoard.score()
-            if newScore > bestScore {
-                bestScore = newScore
-                bestBoard = newBoard
-            }
-        }
-        if bestScore > 0 {
-            board = bestBoard
-            count += 1
-        }
-    }
-    
-    return board
-}
+
 

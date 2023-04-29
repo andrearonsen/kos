@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		65A8DDA029F56E4500D291C3 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DD9F29F56E4500D291C3 /* TileView.swift */; };
 		65A8DDA629F57E3600D291C3 /* CrosswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDA529F57E3600D291C3 /* CrosswordView.swift */; };
-		65A8DDB029F63B6100D291C3 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDAF29F63B6100D291C3 /* ModelData.swift */; };
+		65A8DDB029F63B6100D291C3 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDAF29F63B6100D291C3 /* GameData.swift */; };
 		65A8DDB229F640FB00D291C3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDB129F640FB00D291C3 /* Game.swift */; };
 		65A8DDB429F6907B00D291C3 /* TileBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDB329F6907B00D291C3 /* TileBoard.swift */; };
 		65A8DDB829F6F03100D291C3 /* InputWheelBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDB729F6F03100D291C3 /* InputWheelBackground.swift */; };
@@ -37,6 +37,8 @@
 		65A8DE2029FCFFFD00D291C3 /* wlf2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A8DE1729FCFFFD00D291C3 /* wlf2.txt */; };
 		65A8DE2129FCFFFD00D291C3 /* wlf5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A8DE1829FCFFFD00D291C3 /* wlf5.txt */; };
 		65A8DE2229FCFFFD00D291C3 /* wlf5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 65A8DE1829FCFFFD00D291C3 /* wlf5.txt */; };
+		65A8DE2429FD079C00D291C3 /* TileBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DE2329FD079C00D291C3 /* TileBackground.swift */; };
+		65A8DE2529FD079C00D291C3 /* TileBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DE2329FD079C00D291C3 /* TileBackground.swift */; };
 		65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7AD929F5528B008FB96E /* KosApp.swift */; };
 		65DC7ADC29F5528B008FB96E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7ADB29F5528B008FB96E /* ContentView.swift */; };
 		65DC7ADE29F5528C008FB96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65DC7ADD29F5528C008FB96E /* Assets.xcassets */; };
@@ -65,7 +67,7 @@
 /* Begin PBXFileReference section */
 		65A8DD9F29F56E4500D291C3 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		65A8DDA529F57E3600D291C3 /* CrosswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordView.swift; sourceTree = "<group>"; };
-		65A8DDAF29F63B6100D291C3 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		65A8DDAF29F63B6100D291C3 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		65A8DDB129F640FB00D291C3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		65A8DDB329F6907B00D291C3 /* TileBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileBoard.swift; sourceTree = "<group>"; };
 		65A8DDB729F6F03100D291C3 /* InputWheelBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWheelBackground.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		65A8DE1629FCFFFD00D291C3 /* wlf4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wlf4.txt; path = dict/wlf4.txt; sourceTree = SOURCE_ROOT; };
 		65A8DE1729FCFFFD00D291C3 /* wlf2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wlf2.txt; path = dict/wlf2.txt; sourceTree = SOURCE_ROOT; };
 		65A8DE1829FCFFFD00D291C3 /* wlf5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wlf5.txt; path = dict/wlf5.txt; sourceTree = SOURCE_ROOT; };
+		65A8DE2329FD079C00D291C3 /* TileBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileBackground.swift; sourceTree = "<group>"; };
 		65DC7AD629F5528B008FB96E /* Kos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65DC7AD929F5528B008FB96E /* KosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KosApp.swift; sourceTree = "<group>"; };
 		65DC7ADB29F5528B008FB96E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,8 +121,8 @@
 		65A8DDBA29F78B9900D291C3 /* InputWheel */ = {
 			isa = PBXGroup;
 			children = (
-				65A8DDB729F6F03100D291C3 /* InputWheelBackground.swift */,
 				65A8DDBB29F78F3000D291C3 /* InputWheelView.swift */,
+				65A8DDB729F6F03100D291C3 /* InputWheelBackground.swift */,
 				65A8DDC329F7D11400D291C3 /* InputLettersView.swift */,
 				65A8DDC129F7B1B100D291C3 /* InputLetterView.swift */,
 			);
@@ -139,6 +142,7 @@
 			children = (
 				65A8DDA529F57E3600D291C3 /* CrosswordView.swift */,
 				65A8DD9F29F56E4500D291C3 /* TileView.swift */,
+				65A8DE2329FD079C00D291C3 /* TileBackground.swift */,
 			);
 			path = Crossword;
 			sourceTree = "<group>";
@@ -238,11 +242,11 @@
 				65A8DDF229FCF9AD00D291C3 /* Generator */,
 				65A8DE0229FCFB1300D291C3 /* Crossword */,
 				65A8DE0C29FCFE4F00D291C3 /* Input */,
-				65A8DDBD29F7957B00D291C3 /* GameColors.swift */,
-				65DC7B0929F5532D008FB96E /* WordList.swift */,
-				65A8DDAF29F63B6100D291C3 /* ModelData.swift */,
+				65A8DDAF29F63B6100D291C3 /* GameData.swift */,
 				65A8DDB129F640FB00D291C3 /* Game.swift */,
 				65A8DE0D29FCFEDF00D291C3 /* GameConfig.swift */,
+				65A8DDBD29F7957B00D291C3 /* GameColors.swift */,
+				65DC7B0929F5532D008FB96E /* WordList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -378,11 +382,12 @@
 				65A8DDA629F57E3600D291C3 /* CrosswordView.swift in Sources */,
 				65A8DDB229F640FB00D291C3 /* Game.swift in Sources */,
 				65A8DDBE29F7957B00D291C3 /* GameColors.swift in Sources */,
+				65A8DE2429FD079C00D291C3 /* TileBackground.swift in Sources */,
 				65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */,
 				65A8DE0A29FCFB8200D291C3 /* TileBoardWord.swift in Sources */,
 				65A8DDC429F7D11400D291C3 /* InputLettersView.swift in Sources */,
 				65A8DDC229F7B1B100D291C3 /* InputLetterView.swift in Sources */,
-				65A8DDB029F63B6100D291C3 /* ModelData.swift in Sources */,
+				65A8DDB029F63B6100D291C3 /* GameData.swift in Sources */,
 				65A8DDC029F79CCB00D291C3 /* InputLetter.swift in Sources */,
 				65DC7B0729F5531B008FB96E /* Board.swift in Sources */,
 				65DC7B0D29F55332008FB96E /* Generator.swift in Sources */,
@@ -405,6 +410,7 @@
 				65DC7B0E29F55332008FB96E /* Generator.swift in Sources */,
 				65DC7AEB29F5528C008FB96E /* KosTests.swift in Sources */,
 				65DC7B0B29F5532D008FB96E /* WordList.swift in Sources */,
+				65A8DE2529FD079C00D291C3 /* TileBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

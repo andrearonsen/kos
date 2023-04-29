@@ -9,32 +9,32 @@ import Foundation
 import SwiftUI
 
 struct Game {
-    let currentGameConfig: GameConfig
+    let cfg: GameConfig
     var inputLetters: [InputLetter]
     var selectedInputLetters: [InputLetter]
     var level: Int = 0
-    var currentBoard: TileBoard
-    var currentColor: Color = GameColors.defaultGameColor
+    var board: TileBoard
+    var gameColor: Color = GameColors.defaultGameColor
     var matchedWordsNotOnBoard: [String] = []
     
-    init(currentGameConfig: GameConfig, currentBoard: TileBoard) {
-        self.currentGameConfig = currentGameConfig
-        self.currentBoard = currentBoard
-        
-        var il: [InputLetter] = []
-        for (i, letter) in currentBoard.letters.enumerated() {
-            il.append(InputLetter(id: i, letter: String(letter)))
-        }
-        self.inputLetters = il
+    init(cfg: GameConfig, board: TileBoard) {
+        self.cfg = cfg
+        self.board = board
+        self.inputLetters = board.inputLetters()
         self.selectedInputLetters = []
     }
+    
+//    init(currentGameConfig: GameConfig, currentBoard: TileBoard, matchedWordsNotOnBoard: [String]) {
+//        self.init(currentGameConfig: currentGameConfig, currentBoard: currentBoard)
+//        self.matchedWordsNotOnBoard = matchedWordsNotOnBoard
+//    }
     
     func calculateInputLetterPosition(
         inputWheelSize: CGFloat,
         letterSize: CGFloat,
         padding: CGFloat,
         letterIndex: Int) -> CGPoint {
-        let countLetters = currentBoard.letters.count
+        let countLetters = board.letters.count
         if countLetters != 4 {
             fatalError("not implemented yet")
         }
@@ -62,24 +62,40 @@ struct Game {
         
         let startBoard = createBoard(gameConfig: gameConfig)
   
-        return Game(currentGameConfig: gameConfig, currentBoard: startBoard)
+        return Game(cfg: gameConfig, board: startBoard)
     }
     
-    mutating func testRevealFirstWord() {
-        // Test reveal first word:
-        let firstWord = currentBoard.words.first!.value.word
-        if currentBoard.checkAndRevealWord(word: firstWord) {
-            print("First word revealed: \(firstWord)")
-        }
-    }
+//    func tryWord2(w: String) -> (Game, Bool) {
+//        print("Trying word: \(w)")
+//        let (newBoard, wordMatch) = board.checkAndRevealWord(word: w)
+//        if wordMatch {
+//            return (Game(currentGameConfig: cfg, currentBoard: newBoard), true)
+//        } else {
+//            if !matchedWordsNotOnBoard.contains(w) && cfg.wordList.containsWord(w: w) {
+//                var m = matchedWordsNotOnBoard
+//                m.append(w)
+//                return (Game(currentGameConfig: cfg, currentBoard: board, matchedWordsNotOnBoard: m), false)
+//            }
+//        }
+//        return (self, false)
+//    }
+    
+//    func trySelectedWord2() -> (Game, Bool) {
+//        let word = selectedWord()
+//        if word.isEmpty {
+//            return (self, false)
+//        }
+//        return tryWord2(w: word)
+//    }
     
     mutating func tryWord(w: String) -> Bool {
         print("Trying word: \(w)")
-        let wordMatch = currentBoard.checkAndRevealWord(word: w)
+        let (newBoard, wordMatch) = board.checkAndRevealWord(word: w)
         if wordMatch {
+            board = newBoard
             return true
         } else {
-            if !matchedWordsNotOnBoard.contains(w) && currentGameConfig.wordList.containsWord(w: w) {
+            if !matchedWordsNotOnBoard.contains(w) && cfg.wordList.containsWord(w: w) {
                 matchedWordsNotOnBoard.append(w)
             }
         }
@@ -113,8 +129,8 @@ struct Game {
     }
     
     mutating func previewRevealAllWords() {
-        for wordOnBoard in currentBoard.words.keys {
-            _ = currentBoard.checkAndRevealWord(word: wordOnBoard)
+        for wordOnBoard in board.words.keys {
+            (board, _) = board.checkAndRevealWord(word: wordOnBoard)
         }
     }
     
@@ -153,13 +169,12 @@ struct Game {
     }
 }
 
-
 func createBoard(gameConfig: GameConfig) -> TileBoard {
     let cfg = gameConfig.boardConfig
     
     let generateNewBoard = { () -> Board in
         let firstWord = WordLists.catalog.randomFirstWord(nrInputLetters: cfg.nrInputLetters)
-        return generate_board2(
+        return generate_board(
             firstWord: firstWord,
             wl: gameConfig.wordList,
             gridWidth: cfg.gridWidth,

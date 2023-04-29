@@ -17,4 +17,5 @@ struct TileRow: Identifiable {
         t[tileCell.col] = tileCell.revealed()
         return TileRow(id: id, tiles: t)
     }
+    
 }

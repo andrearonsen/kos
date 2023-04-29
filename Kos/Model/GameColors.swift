@@ -12,6 +12,5 @@ struct GameColors {
     static let foreground: Color = .white
     static let inputWheelNotSelectedForeground: Color = Color(red: 105/255, green: 105/255, blue: 105/255)
     static let inputWheelSelectedForeground: Color = Color(red: 105/255, green: 105/255, blue: 105/255)
-    
     static let defaultGameColor: Color = .purple
 }

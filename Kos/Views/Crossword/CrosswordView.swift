@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct CrosswordView: View {
-    @EnvironmentObject var modelData: ModelData
-    @EnvironmentObject var crosswordData: CrosswordData
+    @EnvironmentObject var gameData: GameData
     
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
-            let nrCols = modelData.game.currentBoard.nrCols
+            let nrCols = gameData.game.board.nrCols
             let tileSize = Int(width / Double(nrCols + 1))
             let padding = CGFloat(tileSize / 2)
-            let tileColor = modelData.game.currentColor
-            let tileRows = modelData.game.currentBoard.rows
+            let tileColor = gameData.game.gameColor
+            let tileRows = gameData.game.board.rows
             
             Grid(alignment: .top, horizontalSpacing: 1, verticalSpacing: 1) {
                 ForEach(tileRows) { tileRow in
@@ -34,22 +33,15 @@ struct CrosswordView: View {
 }
 
 struct CrosswordView_Previews: PreviewProvider {
-    static var modelData: ModelData = ModelData()
-    
-    static var modelDataRevealed: ModelData {
-        let md = ModelData()
-        md.game.previewRevealAllWords()
-        return md
-    }
+    static var gameData: GameData = GameData()
     
     static var previews: some View {
         CrosswordView()
-            .environmentObject(CrosswordData(previewReveal: false))
-            .environmentObject(modelData)
+            .environmentObject(gameData)
             .previewDisplayName("Start")
             .gesture(TapGesture()
                 .onEnded {
-                    modelData.game.previewRevealAllWords()
+                    gameData.game.previewRevealAllWords()
                 }
             )
     }

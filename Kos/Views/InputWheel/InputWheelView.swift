@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputWheelView: View {
-    @EnvironmentObject var modelData: ModelData
+    @EnvironmentObject var gameData: GameData
     var height: CGFloat
     @State var isDragging: Bool = false
     
@@ -24,23 +24,24 @@ struct InputWheelView: View {
                 .onChanged { e in
                     isDragging = true
                     //print("CHANGED (\(e.location)")
-                    for il in modelData.game.inputLetters {
+                    for il in gameData.game.inputLetters {
                         if il.boundingBox().contains(e.location) {
-                            modelData.game.selectInputLetter(id: il.id)
+                            gameData.game.selectInputLetter(id: il.id)
                             break
                         }
                     }
                 }
                 .onEnded { e in
                     isDragging = false
-                    if modelData.game.trySelectedWord() {
+                    let success = gameData.game.trySelectedWord()
+                    if success {
                         // Confetti -> Correct word
-                        if modelData.game.currentBoard.boardIsSolved() {
+                        if gameData.game.board.boardIsSolved() {
                             print("SOLVED!")
                         }
                         
                     }
-                    modelData.game.unselectAllInputLetters()
+                    gameData.game.unselectAllInputLetters()
                     //print("END (\(e.location)")
 //                    print(modelData.inputLetterPositions)
 //                    for il in modelData.game.inputLetters {
@@ -54,14 +55,14 @@ struct InputWheelView: View {
 }
 
 struct InputWheelView_Previews: PreviewProvider {
-    static var modelData = ModelData()
+    static var gameData = GameData()
     static var previews: some View {
         GeometryReader { geometry in
             VStack {
                 Spacer()
             }.safeAreaInset(edge: .bottom) {
                 InputWheelView(height: geometry.size.height / 2)
-                    .environmentObject(modelData)
+                    .environmentObject(gameData)
             }
         }
     }

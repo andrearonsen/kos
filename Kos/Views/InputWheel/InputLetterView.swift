@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputLetterView: View {
-    @EnvironmentObject var modelData: ModelData
+    @EnvironmentObject var modelData: GameData
     var inputLetter: InputLetter
     var height: CGFloat
     
@@ -49,7 +49,7 @@ struct InputLetterView: View {
 }
 
 struct InputLetterView_Previews: PreviewProvider {
-    static var modelData = ModelData()
+    static var modelData = GameData()
     static var previews: some View {
         InputLetterView(
             inputLetter: InputLetter(id: 0, letter: "W"),

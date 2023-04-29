@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InputLettersView: View {
-    @EnvironmentObject var modelData: ModelData
+    @EnvironmentObject var modelData: GameData
     var height: CGFloat
     
     var body: some View {
@@ -20,7 +20,7 @@ struct InputLettersView: View {
 }
 
 struct InputLettersView_Previews: PreviewProvider {
-    static var modelData = ModelData()
+    static var modelData = GameData()
     static var previews: some View {
         GeometryReader { geometry in
             let height = geometry.size.height / 2

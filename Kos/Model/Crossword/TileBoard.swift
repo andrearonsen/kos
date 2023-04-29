@@ -9,9 +9,9 @@ import Foundation
 
 struct TileBoard {
     let letters: [Character]
-    var rows: [TileRow]
+    let rows: [TileRow]
     let nrCols: Int
-    var words: [String: TileBoardWord]
+    let words: [String: TileBoardWord]
 
     static func forBoard(b: Board) -> TileBoard {
         var tileMatrix: Matrix<TileCell> = Matrix(rows: b.nrRows(), columns: b.nrCols(), defaultValue: TileCell.empty(row: 0, col: 0))
@@ -73,24 +73,38 @@ struct TileBoard {
         
         return TileBoardWord(word: w.word, letterCells: tiles, revealed: false)
     }
-
-    mutating func checkAndRevealWord(word: String) -> Bool { 
-        if let wordFound = words[word] {
-            if wordFound.revealed {
-                print("Word already revealed: [\(word)]")
-                return true
-            } else {
-                print("Revealing \(word)")
-                for tile in wordFound.letterCells {
-                    let tileRow = rows[tile.row]
-                    rows[tile.row] = tileRow.revealTile(tile: tile)
-                }
-                words[word] = wordFound.reveal()
-                return true
+    
+    func inputLetters() -> [InputLetter] {
+        var il: [InputLetter] = []
+        for (i, letter) in letters.enumerated() {
+            il.append(InputLetter(id: i, letter: String(letter)))
+        }
+        return il
+    }
+    
+    func revealWord(wordFound: TileBoardWord) -> TileBoard {
+        if wordFound.revealed {
+            print("Word already revealed: [\(wordFound.word)]")
+            return self
+        } else {
+            print("Revealing \(wordFound.word)")
+            var newRows = rows
+            var newWords = words
+            for tile in wordFound.letterCells {
+                let tileRow = newRows[tile.row]
+                newRows[tile.row] = tileRow.revealTile(tile: tile)
             }
+            newWords[wordFound.word] = wordFound.reveal()
+            return TileBoard(letters: letters, rows: newRows, nrCols: nrCols, words: newWords)
+        }
+    }
+    
+    func checkAndRevealWord(word: String) -> (TileBoard, Bool) {
+        if let wordFound = words[word] {
+            return (revealWord(wordFound: wordFound), true)
         } else {
             print("Word not found: [\(word)]")
-            return false
+            return (self, false)
         }
     }
     
@@ -98,5 +112,27 @@ struct TileBoard {
         words.values.allSatisfy { w in
             w.revealed
         }
+    }
+    
+    func printBoard() {
+        var s = ""
+        
+        for r in rows {
+            for c in r.tiles {
+                switch c.state {
+                case .empty:
+                    s += "*"
+                case .hidden:
+                    s += "$"
+                case .revealed:
+                    s += c.letter
+                }
+                s += " "
+            }
+            s += "\n"
+        }
+        print(s)
+        print()
+        print(words)
     }
 }

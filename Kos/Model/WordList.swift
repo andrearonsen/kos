@@ -32,7 +32,7 @@ struct WordListCatalog {
         wl6 = readWordList(wordListFile: "wlf6")
         
         wlInput3 = wl2.mergeWith(other: wl3)
-        wlInput4 = wlInput3.mergeWith(other: wl4) // TODO 4 letters -> No 2 letter words?
+        wlInput4 = wl3.mergeWith(other: wl4) // TODO 4 letters -> No 2 letter words?
         wlInput5 = wlInput4.mergeWith(other: wl5)
         wlInput6 = wlInput5.mergeWith(other: wl6)
     }

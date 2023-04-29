@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var modelData: ModelData
 //    var backgroundImage: Image
     
     var body: some View {
@@ -31,7 +30,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var modelData = ModelData()
+    static var modelData = GameData()
     static var previews: some View {
         ContentView()
             .environmentObject(modelData)
