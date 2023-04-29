@@ -7,6 +7,42 @@
 
 import Foundation
 
+func createBoard(gameConfig: GameConfig) -> TileBoard {
+    let cfg = gameConfig.boardConfig
+    
+    let generateNewBoard = { () -> Board in
+        let firstWord = WordLists.catalog.randomFirstWord(nrInputLetters: cfg.nrInputLetters)
+        return generate_board(
+            firstWord: firstWord,
+            wl: gameConfig.wordList,
+            gridWidth: cfg.gridWidth,
+            gridHeight: cfg.gridHeight,
+            maxWords: cfg.maxWords)
+    }
+    
+    var nrTries = 0
+    var b: Board = generateNewBoard()
+    var currentScore: Double = b.score()
+    var currentNrWords: Int = b.countWords()
+    repeat {
+        nrTries += 1
+        let newBoard = generateNewBoard()
+        let newScore = newBoard.score()
+        let newCountWords = newBoard.countWords()
+        if (newScore > currentScore) && newCountWords >= cfg.minWords {
+            b = newBoard
+            currentScore = newScore
+            currentNrWords = newCountWords
+            print("New Score: \(currentScore)")
+        }
+    } while ((currentNrWords < cfg.minWords || currentScore < 32)) //&& nrTries < 30)
+    
+    print("Final BoardScore: \(currentScore)")
+    b.printBoard()
+
+    return b.createTileBoard()
+}
+
 func generate_board(firstWord: String, wl: WordList, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     let letters = firstWord.shuffleLetters()
     var board = Board(width: gridWidth, height: gridHeight, letters: letters)

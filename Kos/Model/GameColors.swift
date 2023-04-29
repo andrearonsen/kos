@@ -13,4 +13,12 @@ struct GameColors {
     static let inputWheelNotSelectedForeground: Color = Color(red: 105/255, green: 105/255, blue: 105/255)
     static let inputWheelSelectedForeground: Color = Color(red: 105/255, green: 105/255, blue: 105/255)
     static let defaultGameColor: Color = .purple
+    
+    static func foregroundForInputLetterSelected(sel: Bool) -> Color {
+        return sel ? GameColors.foreground : GameColors.inputWheelNotSelectedForeground
+    }
+    
+    static func backgroundForInputLetterSelected(sel: Bool) -> Color {
+        return sel ? GameColors.defaultGameColor : GameColors.background.opacity(0)
+    }
 }

@@ -43,10 +43,9 @@ struct InputWheelView: View {
                     }
                     gameData.game.unselectAllInputLetters()
                     //print("END (\(e.location)")
-//                    print(modelData.inputLetterPositions)
-//                    for il in modelData.game.inputLetters {
-//                        print("\(il.letter): mid=\(il.position), size=\(il.size), box=\(il.boundingBox())")
-//                    }
+                    for il in gameData.game.inputLetters {
+                        print("\(il.letter): mid=\(il.position), size=\(il.size), box=\(il.boundingBox())")
+                    }
                     
                 })
         }

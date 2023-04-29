@@ -130,16 +130,18 @@ struct Game {
     }
    
     mutating func unselectAllInputLetters() {
+        var unselected: [InputLetter] = []
         for il in inputLetters {
-            il.state.setSelected(sel: false)
+            unselected.append(il.unselect())
         }
         selectedInputLetters = []
+        inputLetters = unselected
     }
     
-    mutating func testOneTrue() {
-        inputLetters[3].state.setSelected(sel: true)
-        inputLetters[1].state.setSelected(sel: true)
-    }
+//    mutating func testOneTrue() {
+//        inputLetters[3].state.setSelected(sel: true)
+//        inputLetters[1].state.setSelected(sel: true)
+//    }
     
     mutating func previewRevealAllWords() {
         for wordOnBoard in board.words.keys {
@@ -149,9 +151,9 @@ struct Game {
     
     mutating func selectInputLetter(id: Int) {
         let il = inputLetters[id]
-        if !il.state.selected {
+        if !il.selected {
             print("Selected \(il.id): \(il.letter)")
-            il.state.setSelected(sel: true)
+            inputLetters[id] = il.select()
             
             if selectedInputLetters.isEmpty {
                 selectedInputLetters.append(il)
@@ -167,8 +169,8 @@ struct Game {
     
     mutating func unselectInputLetter(id: Int) {
         let il = inputLetters[id]
-        if il.state.selected {
-            il.state.setSelected(sel: false)
+        if il.selected {
+            inputLetters[id] = il.unselect()
             
             if selectedInputLetters.isEmpty {
                 return
@@ -181,40 +183,3 @@ struct Game {
         }
     }
 }
-
-func createBoard(gameConfig: GameConfig) -> TileBoard {
-    let cfg = gameConfig.boardConfig
-    
-    let generateNewBoard = { () -> Board in
-        let firstWord = WordLists.catalog.randomFirstWord(nrInputLetters: cfg.nrInputLetters)
-        return generate_board(
-            firstWord: firstWord,
-            wl: gameConfig.wordList,
-            gridWidth: cfg.gridWidth,
-            gridHeight: cfg.gridHeight,
-            maxWords: cfg.maxWords)
-    }
-    
-    var nrTries = 0
-    var b: Board = generateNewBoard()
-    var currentScore: Double = b.score()
-    var currentNrWords: Int = b.countWords()
-    repeat {
-        nrTries += 1
-        let newBoard = generateNewBoard()
-        let newScore = newBoard.score()
-        let newCountWords = newBoard.countWords()
-        if (newScore > currentScore) && newCountWords >= cfg.minWords {
-            b = newBoard
-            currentScore = newScore
-            currentNrWords = newCountWords
-            print("New Score: \(currentScore)")
-        }
-    } while ((currentNrWords < cfg.minWords || currentScore < 32)) //&& nrTries < 30)
-    
-    print("Final BoardScore: \(currentScore)")
-    b.printBoard()
-
-    return b.createTileBoard()
-}
-

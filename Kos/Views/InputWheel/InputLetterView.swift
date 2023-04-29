@@ -8,22 +8,23 @@
 import SwiftUI
 
 struct InputLetterView: View {
-    @EnvironmentObject var modelData: GameData
+    @EnvironmentObject var gameData: GameData
     var inputLetter: InputLetter
     var height: CGFloat
     
     var inputLetterIndex: Int {
-        modelData.game.inputLetters.firstIndex(where: { $0.id == inputLetter.id })!
+        gameData.game.inputLetters.firstIndex(where: { $0.id == inputLetter.id })!
     }
    
     var body: some View {
         let fontSize = height * 0.8
         let circleSize = height
-        let state = $modelData.game.inputLetters[inputLetterIndex].state
-        let foreground = state.currentForegroundColor.wrappedValue
-        let background = state.currentBackgroundColor.wrappedValue
+//        let il = $gameData.game.inputLetters[inputLetterIndex]
+        let selected = gameData.game.inputLetters[inputLetterIndex].selected
+        let foreground = GameColors.foregroundForInputLetterSelected(sel: selected)
+        let background = GameColors.backgroundForInputLetterSelected(sel: selected)
         
-        let letterPosition = modelData.game.calculateInputLetterPosition(
+        let letterPosition = gameData.game.calculateInputLetterPosition(
             inputWheelSize: UIScreen.main.bounds.size.width, // TODO
             letterSize: height,
             padding: 10,
@@ -41,19 +42,19 @@ struct InputLetterView: View {
             )
             .position(letterPosition)
             .onAppear {
-                self.modelData.game.inputLetters[inputLetterIndex].position = letterPosition
-                self.modelData.game.inputLetters[inputLetterIndex].size = CGSize(width: height, height: height)
+                self.gameData.game.inputLetters[inputLetterIndex] =
+                inputLetter.locate(position: letterPosition, size: CGSize(width: height, height: height))
             }
         
     }
 }
 
 struct InputLetterView_Previews: PreviewProvider {
-    static var modelData = GameData()
+    static var gameData = GameData()
     static var previews: some View {
         InputLetterView(
             inputLetter: InputLetter(id: 0, letter: "W"),
             height: 100)
-        .environmentObject(modelData)
+        .environmentObject(gameData)
     }
 }

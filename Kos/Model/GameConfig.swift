@@ -47,3 +47,4 @@ struct GameConfig {
         return GameConfig(wordList: wl, boardConfig: bcfg)
     }
 }
+

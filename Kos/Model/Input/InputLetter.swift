@@ -8,41 +8,38 @@
 import Foundation
 import SwiftUI
 
-// TODO immutable struct instead?
-final class InputLetter: Identifiable {
+struct InputLetter: Identifiable {
     let id: Int
     let letter: String
-    var position: CGPoint
-    var size: CGSize
-    var state: InputLetterState
+    let position: CGPoint
+    let size: CGSize
+    let selected: Bool
     
     init(id: Int, letter: String) {
+        self.init(id: id, letter: letter, position: .zero, size: .zero, selected: false)
+    }
+    
+    init(id: Int, letter: String, position: CGPoint, size: CGSize, selected: Bool) {
         self.id = id
         self.letter = letter
-        self.state = InputLetterState()
-        self.position = .zero
-        self.size = .zero
+        self.position = position
+        self.size = size
+        self.selected = selected
     }
     
     func boundingBox() -> CGRect {
         return CGRect(origin: CGPoint(x: position.x - size.width / 2, y: position.y - size.height / 2), size: size)
     }
-}
-
-struct InputLetterState {
-    var selected: Bool = false
-    var currentForegroundColor: Color = GameColors.inputWheelNotSelectedForeground
-    var currentBackgroundColor: Color = GameColors.background.opacity(0)
     
-    mutating func setSelected(sel: Bool) {
-        if sel {
-            selected = true
-            currentForegroundColor = GameColors.foreground
-            currentBackgroundColor = GameColors.defaultGameColor
-        } else {
-            selected = false
-            currentForegroundColor = GameColors.inputWheelNotSelectedForeground
-            currentBackgroundColor = GameColors.background.opacity(0)
-        }
+    func select() -> InputLetter {
+        return InputLetter(id: id, letter: letter, position: position, size: size, selected: true)
+    }
+    
+    func unselect() -> InputLetter {
+        return InputLetter(id: id, letter: letter, position: position, size: size, selected: false)
+    }
+    
+    func locate(position: CGPoint, size: CGSize) -> InputLetter {
+        return InputLetter(id: id, letter: letter, position: position, size: size, selected: selected)
     }
 }
