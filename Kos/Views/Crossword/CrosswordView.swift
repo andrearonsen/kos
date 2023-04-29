@@ -24,6 +24,7 @@ struct CrosswordView: View {
                     GridRow {
                         ForEach(tileRow.tiles) { tileCell in
                             TileView(tile: tileCell, tileSize: tileSize, filledColor: tileColor)
+                                .animation(.spring(), value: tileCell.state)
                         }
                     }
                 }
