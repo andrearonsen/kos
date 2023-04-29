@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Game {
-    let cfg: GameConfig
+    var cfg: GameConfig
     var inputLetters: [InputLetter]
     var selectedInputLetters: [InputLetter]
     var level: Int = 0
@@ -63,6 +63,18 @@ struct Game {
         let startBoard = createBoard(gameConfig: gameConfig)
   
         return Game(cfg: gameConfig, board: startBoard)
+    }
+    
+    func isSolved() -> Bool {
+        return board.boardIsSolved()
+    }
+
+    mutating func newGame() {
+        level += 1
+        print("New game: [new level = \(level)]")
+        
+        cfg = GameConfig.configForLevel(level: level)
+        board = createBoard(gameConfig: cfg)
     }
     
 //    func tryWord2(w: String) -> (Game, Bool) {

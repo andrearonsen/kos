@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var gameData: GameData
 //    var backgroundImage: Image
     
     var body: some View {
@@ -24,15 +25,21 @@ struct ContentView: View {
                     .ignoresSafeArea()
                     .opacity(0.3)
             )
-        }
+        }.gesture(TapGesture()
+            .onEnded {
+                if gameData.game.isSolved() {
+                    gameData.game.newGame()
+                }
+            }
+        )
         
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var modelData = GameData()
+    static var gameData = GameData()
     static var previews: some View {
         ContentView()
-            .environmentObject(modelData)
+            .environmentObject(gameData)
     }
 }

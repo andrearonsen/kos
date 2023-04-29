@@ -239,14 +239,14 @@
 		65DC7B0329F5529C008FB96E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				65A8DDF229FCF9AD00D291C3 /* Generator */,
-				65A8DE0229FCFB1300D291C3 /* Crossword */,
-				65A8DE0C29FCFE4F00D291C3 /* Input */,
 				65A8DDAF29F63B6100D291C3 /* GameData.swift */,
 				65A8DDB129F640FB00D291C3 /* Game.swift */,
 				65A8DE0D29FCFEDF00D291C3 /* GameConfig.swift */,
 				65A8DDBD29F7957B00D291C3 /* GameColors.swift */,
 				65DC7B0929F5532D008FB96E /* WordList.swift */,
+				65A8DDF229FCF9AD00D291C3 /* Generator */,
+				65A8DE0229FCFB1300D291C3 /* Crossword */,
+				65A8DE0C29FCFE4F00D291C3 /* Input */,
 			);
 			path = Model;
 			sourceTree = "<group>";
