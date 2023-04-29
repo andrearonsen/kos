@@ -24,7 +24,7 @@ struct CrosswordView: View {
                 ForEach(tileRows) { tileRow in
                     GridRow {
                         ForEach(tileRow.tiles) { tileCell in
-                                TileView(tile: tileCell, tileSize: tileSize, filledColor: tileColor)
+                            TileView(tile: tileCell, tileSize: tileSize, filledColor: tileColor)
                         }
                     }
                 }

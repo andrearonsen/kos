@@ -158,7 +158,7 @@ func createBoard(gameConfig: GameConfig) -> TileBoard {
     let cfg = gameConfig.boardConfig
     
     let generateNewBoard = { () -> Board in
-        let firstWord = ModelData.wordlistCatalog.randomFirstWord(nrInputLetters: cfg.nrInputLetters)
+        let firstWord = WordLists.catalog.randomFirstWord(nrInputLetters: cfg.nrInputLetters)
         return generate_board2(
             firstWord: firstWord,
             wl: gameConfig.wordList,
@@ -182,7 +182,7 @@ func createBoard(gameConfig: GameConfig) -> TileBoard {
             currentNrWords = newCountWords
             print("New Score: \(currentScore)")
         }
-    } while ((currentNrWords < cfg.minWords || currentScore < 30)) //&& nrTries < 30)
+    } while ((currentNrWords < cfg.minWords || currentScore < 32)) //&& nrTries < 30)
     
     print("Final BoardScore: \(currentScore)")
     b.printBoard()
@@ -206,7 +206,7 @@ struct GameConfig {
     
     static func startConfig() -> GameConfig {
         let bcfg = BoardConfig.startConfig
-        let wl = ModelData.wordlistCatalog.wordListForNumberOfInputLetters(nrInputLetters: bcfg.nrInputLetters)
+        let wl = WordLists.catalog.wordListForNumberOfInputLetters(nrInputLetters: bcfg.nrInputLetters)
         return GameConfig(wordList: wl, boardConfig: bcfg)
     }
 }

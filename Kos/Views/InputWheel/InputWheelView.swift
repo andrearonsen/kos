@@ -17,6 +17,7 @@ struct InputWheelView: View {
             ZStack {
                 InputWheelBackground()
                 InputLettersView(height: height)
+                // TODO Draw path
             }
             .frame(height: height)
             .gesture(DragGesture()
@@ -33,7 +34,11 @@ struct InputWheelView: View {
                 .onEnded { e in
                     isDragging = false
                     if modelData.game.trySelectedWord() {
-                        // Confetti
+                        // Confetti -> Correct word
+                        if modelData.game.currentBoard.boardIsSolved() {
+                            print("SOLVED!")
+                        }
+                        
                     }
                     modelData.game.unselectAllInputLetters()
                     //print("END (\(e.location)")

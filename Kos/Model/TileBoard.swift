@@ -95,6 +95,12 @@ struct TileBoard {
             return false
         }
     }
+    
+    func boardIsSolved() -> Bool {
+        words.values.allSatisfy { w in
+            w.revealed
+        }
+    }
 }
 
 struct TileRow: Identifiable {

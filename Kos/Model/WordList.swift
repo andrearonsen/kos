@@ -180,3 +180,6 @@ func readWordList(wordListFile: String) -> WordList {
     return WordList(words: words)
 }
 
+final class WordLists {
+    static let catalog = readWordListCatalog()
+}
