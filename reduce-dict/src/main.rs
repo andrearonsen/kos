@@ -6,10 +6,11 @@ fn main() {
     let dest_path = "/Users/andre/src/kos/dict/";
 
     let src_freq_path = "/Users/andre/src/kos/dict/ordliste-frekvens.txt";
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 3);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 4);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 5);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 6);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 2, 200);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 3, 500);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 4, 1000);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 5, 1000);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 6, 1000);
 
 
     // let args: Vec<String> = env::args().collect();
@@ -41,7 +42,7 @@ fn main() {
     // create_sub_dict(src_path, dest_path, 6, 6, "wl6.txt");
 }
 
-fn create_sub_dict_humfak_ordlist(src_path: &str, dest_path: &str, word_length: usize) {
+fn create_sub_dict_humfak_ordlist(src_path: &str, dest_path: &str, word_length: usize, word_list_size: usize) {
     let freq_word_lines = read_dict(src_path);
 
     // lazy_static! {
@@ -82,7 +83,7 @@ fn create_sub_dict_humfak_ordlist(src_path: &str, dest_path: &str, word_length: 
 
     let dict: Vec<String> =
         freq_words.into_iter()
-        .take(1500)
+        .take(word_list_size)
         .map(|(_,w)| {
             w
         })
