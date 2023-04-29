@@ -18,7 +18,9 @@ struct BoardConfig {
     
     static func configForLevel(level: Int) -> BoardConfig {
         if level >= 0 && level < 10 {
-            return BoardConfig(nrInputLetters: 3, gridWidth: 5, gridHeight: 4, minWords: 3, maxWords: 5)
+            // TODO 3 letters
+            //return BoardConfig(nrInputLetters: 3, gridWidth: 4, gridHeight: 3, minWords: 2, maxWords: 5)
+            return BoardConfig(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
         } else if level >= 10 && level < 30 {
             return BoardConfig(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
         } else if level >= 30 && level < 50 {

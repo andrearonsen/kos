@@ -17,11 +17,12 @@ struct Game {
     var gameColor: Color = GameColors.defaultGameColor
     var matchedWordsNotOnBoard: [String] = []
     
-    init(cfg: GameConfig, board: TileBoard) {
+    init(cfg: GameConfig, board: TileBoard, level: Int) {
         self.cfg = cfg
         self.board = board
         self.inputLetters = board.inputLetters()
         self.selectedInputLetters = []
+        self.level = level
     }
     
 //    init(currentGameConfig: GameConfig, currentBoard: TileBoard, matchedWordsNotOnBoard: [String]) {
@@ -58,23 +59,23 @@ struct Game {
     
     static func startNewGame() -> Game {
         print("Starting new game ...")
-        let gameConfig = GameConfig.startConfig()
-        
-        let startBoard = createBoard(gameConfig: gameConfig)
-  
-        return Game(cfg: gameConfig, board: startBoard)
+//        let gameConfig = GameConfig.startConfig()
+//        let startBoard = createBoard(gameConfig: gameConfig)
+//        return Game(cfg: gameConfig, board: startBoard, level: 0)
+        return nextGame(currentLevel: 0)
     }
     
     func isSolved() -> Bool {
         return board.boardIsSolved()
     }
 
-    mutating func newGame() {
-        level += 1
-        print("New game: [new level = \(level)]")
+    static func nextGame(currentLevel: Int) -> Game {
+        let level = currentLevel + 1
+        print("New game on level=[\(level)]")
         
-        cfg = GameConfig.configForLevel(level: level)
-        board = createBoard(gameConfig: cfg)
+        let gameConfig = GameConfig.configForLevel(level: level)
+        let board = createBoard(gameConfig: gameConfig)
+        return Game(cfg: gameConfig, board: board, level: level)
     }
     
 //    func tryWord2(w: String) -> (Game, Bool) {

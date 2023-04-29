@@ -27,9 +27,10 @@ struct ContentView: View {
             )
         }.gesture(TapGesture()
             .onEnded {
-                if gameData.game.isSolved() {
-                    gameData.game.newGame()
-                }
+                //if gameData.game.isSolved() {
+                    // TODO Kryssordet funker, men ikke inputwheel!
+                    gameData.game = Game.nextGame(currentLevel: gameData.game.level)
+                //}
             }
         )
         

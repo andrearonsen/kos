@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// TODO immutable struct instead?
 final class InputLetter: Identifiable {
     let id: Int
     let letter: String
