@@ -9,6 +9,14 @@ import Foundation
 
 extension String {
     
+    func shuffleLetters() -> [Character] {
+        var letters: [Character] = []
+        for letter in self {
+            letters.append(letter)
+        }
+        return letters.shuffled()
+    }
+    
     func characterFrequencies() -> [Character:Int] {
         var freq: [Character:Int] = [:]
         for letter in self {

@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import Kos
+@testable import Kos
 
 final class KosTests: XCTestCase {
 
@@ -27,6 +27,7 @@ final class KosTests: XCTestCase {
 //    }
 
     func testExample() throws {
+        Game.startNewGame()
 //        let game = Game.startNewGame()
 //        let nrInputLetters = 4
 //        let wlCat = Kos.readWordListCatalog()

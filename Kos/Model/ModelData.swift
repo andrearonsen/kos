@@ -38,10 +38,8 @@ final class CrosswordData: ObservableObject {
             } else {
                 print("Revealing \(word)")
                 for tile in wordFound.letterCells {
-                    var tileRow = rows[tile.row]
-                    let tileCell = tileRow.tiles[tile.col]
-                    tileRow.tiles[tileCell.col] = tileCell.revealed()
-                    rows[tile.row] = tileRow
+                    let tileRow = rows[tile.row]
+                    rows[tile.row] = tileRow.revealTile(tile: tile)
                 }
                 words[word] = wordFound.reveal()
                 return true

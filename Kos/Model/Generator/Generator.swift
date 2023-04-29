@@ -7,16 +7,6 @@
 
 import Foundation
 
-extension String {
-    func shuffleLetters() -> [Character] {
-        var letters: [Character] = []
-        for letter in self {
-            letters.append(letter)
-        }
-        return letters.shuffled()
-    }
-}
-
 // https://www.baeldung.com/cs/generate-crossword-puzzle (Algorithm 1)
 func generate_board(firstWord: String, wl: WordList, gridWidth: Int, gridHeight: Int, maxWords: Int) -> Board {
     let letters = firstWord.shuffleLetters()
@@ -57,7 +47,7 @@ func generate_board2(firstWord: String, wl: WordList, gridWidth: Int, gridHeight
     var count = 1
     
     while count < maxWords && !words.isEmpty {
-        let word = words.removeLast().uppercased()
+        let word = words.removeLast()
         let placements = board.findAllPossibleWordPlacements(word: word)
         var bestScore = 0.0
         var bestBoard = board
