@@ -26,9 +26,6 @@ struct ContentView: View {
                     .opacity(0.3)
             )
         }
-//        .onAppear {
-//            self.modelData.game.testRevealFirstWord()
-//        }
         
     }
 }

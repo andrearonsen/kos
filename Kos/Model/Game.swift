@@ -112,6 +112,12 @@ struct Game {
         inputLetters[1].state.setSelected(sel: true)
     }
     
+    mutating func previewRevealAllWords() {
+        for wordOnBoard in currentBoard.words.keys {
+            _ = currentBoard.checkAndRevealWord(word: wordOnBoard)
+        }
+    }
+    
     mutating func selectInputLetter(id: Int) {
         let il = inputLetters[id]
         if !il.state.selected {

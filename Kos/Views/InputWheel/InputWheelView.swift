@@ -21,9 +21,6 @@ struct InputWheelView: View {
             .frame(height: height)
             .gesture(DragGesture()
                 .onChanged { e in
-                    if !isDragging {
-                        self.modelData.game.testRevealFirstWord()
-                    }
                     isDragging = true
                     //print("CHANGED (\(e.location)")
                     for il in modelData.game.inputLetters {

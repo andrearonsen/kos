@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CrosswordView: View {
     @EnvironmentObject var modelData: ModelData
+    @EnvironmentObject var crosswordData: CrosswordData
     
     var body: some View {
         GeometryReader { geometry in
@@ -23,18 +24,33 @@ struct CrosswordView: View {
                 ForEach(tileRows) { tileRow in
                     GridRow {
                         ForEach(tileRow.tiles) { tileCell in
-                            TileView(tile: tileCell, tileSize: tileSize, filledColor: tileColor) }
+                                TileView(tile: tileCell, tileSize: tileSize, filledColor: tileColor)
                         }
                     }
+                }
             }.padding([.all], padding)
         }
     }
 }
 
 struct CrosswordView_Previews: PreviewProvider {
-    static var modelData = ModelData()
+    static var modelData: ModelData = ModelData()
+    
+    static var modelDataRevealed: ModelData {
+        let md = ModelData()
+        md.game.previewRevealAllWords()
+        return md
+    }
+    
     static var previews: some View {
         CrosswordView()
+            .environmentObject(CrosswordData(previewReveal: false))
             .environmentObject(modelData)
+            .previewDisplayName("Start")
+            .gesture(TapGesture()
+                .onEnded {
+                    modelData.game.previewRevealAllWords()
+                }
+            )
     }
 }
