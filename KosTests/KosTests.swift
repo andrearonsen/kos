@@ -27,7 +27,6 @@ final class KosTests: XCTestCase {
 //    }
 
     func testExample() throws {
-        GameData()
 //        let game = Game.startNewGame()
 //        let nrInputLetters = 4
 //        let wlCat = Kos.readWordListCatalog()

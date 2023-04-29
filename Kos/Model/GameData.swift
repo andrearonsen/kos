@@ -10,3 +10,4 @@ import Foundation
 final class GameData: ObservableObject { 
     @Published var game = Game.startNewGame()
 }
+
