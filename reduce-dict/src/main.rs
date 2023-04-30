@@ -7,10 +7,10 @@ fn main() {
 
     let src_freq_path = "/Users/andre/src/kos/dict/ordliste-frekvens.txt";
     create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 2, 200);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 3, 500);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 4, 1000);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 5, 1000);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 6, 1000);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 3, 1500);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 4, 1500);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 5, 1500);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 6, 1500);
 
 
     // let args: Vec<String> = env::args().collect();
