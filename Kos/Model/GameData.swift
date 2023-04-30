@@ -35,7 +35,6 @@ final class GameData: ObservableObject {
     func startNextGame() {
         let nextGame = Game.newGame(currentLevel: level)
         updateData(game: nextGame)
-        objectWillChange.send() // TODO needed?
     }
     
     func inputLetters() -> [InputLetter] {

@@ -14,22 +14,26 @@ struct InputWord {
     let matchedWordsNotOnBoard: [String]
     
     static func startInput(letters: [InputLetter]) -> InputWord {
+        let countLetters = letters.count
         // TODO Testing hardcoded position
         var ls: [InputLetter] = []
         var i = 0
         for l in letters {
-            let (pos, size) = InputWord.hardcodedLetterPosition(letterIndex: i)
+            let (pos, size) = InputWord.hardcodedLetterPosition(countLetters: countLetters, letterIndex: i)
             ls.append(l.locate(position: pos, size: size))
             i += 1
         }
         return InputWord(letters: ls, selected: SelectedWord.empty, matchedWordsNotOnBoard: [])
     }
    
-    static func hardcodedLetterPosition(letterIndex: Int) -> (CGPoint, CGSize) {
+    static func hardcodedLetterPosition(countLetters: Int, letterIndex: Int) -> (CGPoint, CGSize) {
+        if letterIndex >= countLetters {
+            fatalError("Letter index out of bounds")
+        }
         let wheelSize =  UIScreen.main.bounds.size.width
         let letterSize = wheelSize / 3.2
         return (InputWord.calculateInputLetterPosition(
-            countLetters: 4,
+            countLetters: countLetters,
             inputWheelSize: wheelSize, // TODO
             letterSize: letterSize,
             padding: 10,
