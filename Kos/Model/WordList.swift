@@ -73,7 +73,8 @@ struct WordList {
     
     func pickRandomWord() -> String {
         // Words are ordered by frequency desc
-        return self.words[0...200].shuffled().first!
+//        return self.words[0...200].shuffled().first!
+        return shuffleWords().first!
     }
     
     func shuffleAndFilterOnWord(word: String) -> [String] {

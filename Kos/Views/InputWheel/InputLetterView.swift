@@ -19,8 +19,7 @@ struct InputLetterView: View {
     var body: some View {
         let fontSize = height * 0.8
         let circleSize = height
-//        let il = $gameData.game.inputLetters[inputLetterIndex]
-        let selected = gameData.game.inputLetters[inputLetterIndex].selected
+        let selected = inputLetter.selected
         let foreground = GameColors.foregroundForInputLetterSelected(sel: selected)
         let background = GameColors.backgroundForInputLetterSelected(sel: selected)
         
@@ -42,7 +41,8 @@ struct InputLetterView: View {
             )
             .position(letterPosition)
             .onAppear {
-                self.gameData.game.inputLetters[inputLetterIndex] =
+                print("InputLetter Render: \(inputLetterIndex) \(inputLetter.letter)")
+                gameData.game.inputLetters[inputLetterIndex] =
                 inputLetter.locate(position: letterPosition, size: CGSize(width: height, height: height))
             }
         

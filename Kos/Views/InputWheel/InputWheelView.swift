@@ -16,7 +16,11 @@ struct InputWheelView: View {
         GeometryReader { geometry in 
             ZStack {
                 InputWheelBackground()
-                InputLettersView(height: height)
+//                InputLettersView(height: height)
+                ForEach(gameData.game.inputLetters) { letter in
+                    let letterHeight = height / 3.2
+                    InputLetterView(inputLetter: letter, height: letterHeight)
+                }
                 // TODO Draw path
             }
             .frame(height: height)
