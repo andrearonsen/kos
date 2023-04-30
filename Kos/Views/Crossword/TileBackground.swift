@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TileBackground: View {
-    var size: Int
-    var color: Color
+    let size: Int
+    let color: Color
     
     var body: some View {
         let radius = Double(size) * 0.1

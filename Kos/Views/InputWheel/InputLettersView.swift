@@ -9,10 +9,11 @@ import SwiftUI
 
 struct InputLettersView: View {
     @EnvironmentObject var gameData: GameData
-    var height: CGFloat
+    
+    let height: CGFloat
     
     var body: some View {
-        ForEach(gameData.game.inputLetters) { letter in
+        ForEach(gameData.inputLetters()) { letter in
             let letterHeight = height / 3.2
             InputLetterView(inputLetter: letter, height: letterHeight)
         }

@@ -13,11 +13,11 @@ struct CrosswordView: View {
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
-            let nrCols = gameData.game.board.nrCols
+            let nrCols = gameData.board.nrCols
             let tileSize = Int(width / Double(nrCols + 1))
             let padding = CGFloat(tileSize / 2)
-            let tileColor = gameData.game.gameColor
-            let tileRows = gameData.game.board.rows
+            let tileColor = gameData.gameColor
+            let tileRows = gameData.board.rows
             
             Grid(alignment: .top, horizontalSpacing: 1, verticalSpacing: 1) {
                 ForEach(tileRows) { tileRow in
@@ -42,7 +42,7 @@ struct CrosswordView_Previews: PreviewProvider {
             .previewDisplayName("Start")
             .gesture(TapGesture()
                 .onEnded {
-                    gameData.game.previewRevealAllWords()
+                    gameData.previewRevealAllWords()
                 }
             )
     }

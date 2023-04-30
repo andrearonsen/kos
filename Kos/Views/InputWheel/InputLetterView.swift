@@ -9,11 +9,12 @@ import SwiftUI
 
 struct InputLetterView: View {
     @EnvironmentObject var gameData: GameData
-    var inputLetter: InputLetter
-    var height: CGFloat
+    
+    let inputLetter: InputLetter
+    let height: CGFloat
     
     var inputLetterIndex: Int {
-        gameData.game.inputLetters.firstIndex(where: { $0.id == inputLetter.id })!
+        gameData.inputWord.indexOfLetterWithId(letterId: inputLetter.id)
     }
    
     var body: some View {
@@ -23,7 +24,8 @@ struct InputLetterView: View {
         let foreground = GameColors.foregroundForInputLetterSelected(sel: selected)
         let background = GameColors.backgroundForInputLetterSelected(sel: selected)
         
-        let letterPosition = gameData.game.calculateInputLetterPosition(
+        let letterPosition = InputWord.calculateInputLetterPosition(
+            countLetters: gameData.countInputLetters(),
             inputWheelSize: UIScreen.main.bounds.size.width, // TODO
             letterSize: height,
             padding: 10,
@@ -42,8 +44,7 @@ struct InputLetterView: View {
             .position(letterPosition)
             .onAppear {
                 print("InputLetter Render: \(inputLetterIndex) \(inputLetter.letter)")
-                gameData.game.inputLetters[inputLetterIndex] =
-                inputLetter.locate(position: letterPosition, size: CGSize(width: height, height: height))
+                gameData.updateLetterLocation(letterId: inputLetter.id, position: letterPosition, letterSize: height)
             }
         
     }

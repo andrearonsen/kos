@@ -9,7 +9,8 @@ import SwiftUI
 
 struct InputWheelView: View {
     @EnvironmentObject var gameData: GameData
-    var height: CGFloat
+    
+    let height: CGFloat
     @State var isDragging: Bool = false
     
     var body: some View {
@@ -17,7 +18,7 @@ struct InputWheelView: View {
             ZStack {
                 InputWheelBackground()
 //                InputLettersView(height: height)
-                ForEach(gameData.game.inputLetters) { letter in
+                ForEach(gameData.inputLetters()) { letter in
                     let letterHeight = height / 3.2
                     InputLetterView(inputLetter: letter, height: letterHeight)
                 }
@@ -28,26 +29,26 @@ struct InputWheelView: View {
                 .onChanged { e in
                     isDragging = true
                     //print("CHANGED (\(e.location)")
-                    for il in gameData.game.inputLetters {
+                    for il in gameData.inputLetters() {
                         if il.boundingBox().contains(e.location) {
-                            gameData.game.selectInputLetter(id: il.id)
+                            gameData.selectInputLetter(id: il.id)
                             break
                         }
                     }
                 }
                 .onEnded { e in
                     isDragging = false
-                    let success = gameData.game.trySelectedWord()
+                    let success = gameData.trySelectedWord()
                     if success {
                         // Confetti -> Correct word
-                        if gameData.game.board.boardIsSolved() {
+                        if gameData.isSolved() {
                             print("SOLVED!")
                         }
                         
                     }
-                    gameData.game.unselectAllInputLetters()
+                    gameData.unselectAllLetters()
                     //print("END (\(e.location)")
-                    for il in gameData.game.inputLetters {
+                    for il in gameData.inputLetters() {
                         print("\(il.letter): mid=\(il.position), size=\(il.size), box=\(il.boundingBox())")
                     }
                     

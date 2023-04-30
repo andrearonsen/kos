@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TileView: View {
-    var tile: TileCell
+    let tile: TileCell
     let tileSize: Int
     let filledColor: Color
     

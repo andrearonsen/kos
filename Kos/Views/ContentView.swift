@@ -29,7 +29,7 @@ struct ContentView: View {
             .onEnded {
                 //if gameData.game.isSolved() {
                     // TODO Kryssordet funker, men ikke inputwheel!
-                    gameData.game = Game.nextGame(currentLevel: gameData.game.level)
+                    gameData.startNextGame()
                 //}
             }
         )
