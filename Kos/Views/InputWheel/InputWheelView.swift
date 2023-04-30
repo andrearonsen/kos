@@ -14,6 +14,7 @@ struct InputWheelView: View {
     
     @State var isDragging: Bool = false
     @State var currentPoint: CGPoint = .zero
+    @Binding var isSolved: Bool
     
     var body: some View {
         GeometryReader { geometry in 
@@ -44,6 +45,7 @@ struct InputWheelView: View {
                         // Confetti -> Correct word
                         if gameData.isSolved() {
                             print("SOLVED!")
+                            isSolved = true
                         }
                         
                     }
@@ -66,7 +68,7 @@ struct InputWheelView_Previews: PreviewProvider {
             VStack {
                 Spacer()
             }.safeAreaInset(edge: .bottom) {
-                InputWheelView(height: geometry.size.height / 2)
+                InputWheelView(height: geometry.size.height / 2, isSolved: .constant(false))
                     .environmentObject(gameData)
             }
         }

@@ -15,6 +15,8 @@ final class GameData: ObservableObject {
     @Published var gameColor: Color
     var cfg: GameConfig
     
+    var confettis: [ConfettiItem]
+    
     init() {
         let game = Game.startNewGame()
         inputWord = game.inputWord
@@ -22,6 +24,7 @@ final class GameData: ObservableObject {
         board = game.board
         gameColor = game.gameColor
         cfg = game.cfg
+        confettis = Self.createConfettiItems()
     }
     
     private func updateData(game: Game) {
@@ -30,6 +33,7 @@ final class GameData: ObservableObject {
         board = game.board
         gameColor = game.gameColor
         cfg = game.cfg
+        confettis = Self.createConfettiItems()
     }
     
     func startNextGame() {
@@ -122,5 +126,35 @@ final class GameData: ObservableObject {
         }
     }
     
+    static func createConfettiItems() -> [ConfettiItem] {
+        let emojis = "👻🎉😻"
+        var cxs: [ConfettiItem] = []
+        let countConfettiSets: Int = 10
+        let countSingleConfettis: Int = countConfettiSets * emojis.count
+        for i in 0...countConfettiSets {
+            for (j, e) in emojis.enumerated() {
+                cxs.append(ConfettiItem(
+                    id: i * 100 + j,
+                    posX: CGFloat(UIScreen.main.bounds.width / CGFloat(countSingleConfettis)),
+                    text: String(e)
+                ))
+            }
+        }
+        return cxs
+        
+//        return 0...20.map { i in
+//            return ConfettiItem(
+//                id: i,
+//                posX: UIScreen.main.bounds.width / 20,
+//                text: i % 3 == 0 ? "👻" : i % 2: "🎉" : "😻"
+//            )
+//        }
+    }
+    
 }
 
+struct ConfettiItem: Identifiable, Hashable {
+    let id: Int
+    let posX: CGFloat
+    let text: String
+}
