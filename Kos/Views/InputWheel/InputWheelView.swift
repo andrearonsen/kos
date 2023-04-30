@@ -11,6 +11,7 @@ struct InputWheelView: View {
     @EnvironmentObject var gameData: GameData
     
     let height: CGFloat
+    
     @State var isDragging: Bool = false
     @State var currentPoint: CGPoint = .zero
     
@@ -18,21 +19,13 @@ struct InputWheelView: View {
         GeometryReader { geometry in 
             ZStack {
                 InputWheelBackground()
+                if isDragging && gameData.inputWord.selected.letters.count > 0 {
+                    let points = gameData.inputWord.linesBetweenLetters()
+                    SelectedWordLines(currentPoint: currentPoint, points: points)
+                }
                 ForEach(gameData.inputLetters()) { letter in
                     let letterHeight = height / 3.2
                     InputLetterView(inputLetter: letter, height: letterHeight)
-                }
-                // TODO Draw path
-                if isDragging && gameData.inputWord.selected.letters.count > 0 {
-                    let points = gameData.inputWord.linesBetweenLetters()
-                    Path { path in
-                        path.move(to: points[0])
-                        
-                        points[1...].forEach { p in
-                            path.addLine(to: p)
-                        }
-                        path.addLine(to: currentPoint)
-                    }
                 }
             }
             .frame(height: height)
