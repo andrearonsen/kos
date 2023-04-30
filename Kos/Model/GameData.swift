@@ -61,16 +61,18 @@ final class GameData: ObservableObject {
     
     func selectInputLetter(id: Int) {
         inputWord = inputWord.selectLetter(id: id)
-        //objectWillChange.send()
     }
     
     func unselectAllLetters() {
         inputWord = inputWord.unselectAll()
-        objectWillChange.send()
+    }
+    
+    func selectedWord() -> String {
+        return inputWord.selectedWord()
     }
     
     func trySelectedWord() -> Bool {
-        let word = inputWord.selectedWord()
+        let word = selectedWord()
         if word.count >= 3 { // min length
             return tryWord(w: word)
         }
@@ -89,7 +91,6 @@ final class GameData: ObservableObject {
                 inputWord = inputWord.addMatchedWordNotOnBoard(word: w)
             }
         }
-        objectWillChange.send()
         return false
     }
     

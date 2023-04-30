@@ -13,7 +13,7 @@ struct InputLetter: Identifiable {
     let letter: String
     let position: CGPoint
     let size: CGSize
-    let selected: Bool
+    let selected: Bool  
     
     init(id: Int, letter: String) {
         self.init(id: id, letter: letter, position: .zero, size: .zero, selected: false)
@@ -40,6 +40,23 @@ struct InputLetter: Identifiable {
     }
     
     func locate(position: CGPoint, size: CGSize) -> InputLetter {
+        print("Locate [\(id)]: \(position) \(size)")
         return InputLetter(id: id, letter: letter, position: position, size: size, selected: selected)
+    }
+    
+    func foregroundColor() -> Color {
+        return GameColors.foregroundForInputLetterSelected(sel: selected)
+    }
+    
+    func backgroundColor() -> Color {
+        return GameColors.backgroundForInputLetterSelected(sel: selected)
+    }
+    
+    func fontSize() -> CGFloat {
+        return size.height * 0.8
+    }
+    
+    func circleSize() -> CGFloat {
+        return size.height
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct InputWord {
     let letters: [InputLetter]
@@ -13,9 +14,29 @@ struct InputWord {
     let matchedWordsNotOnBoard: [String]
     
     static func startInput(letters: [InputLetter]) -> InputWord {
-        return InputWord(letters: letters, selected: SelectedWord.empty, matchedWordsNotOnBoard: [])
+        // TODO Testing hardcoded position
+        var ls: [InputLetter] = []
+        var i = 0
+        for l in letters {
+            let (pos, size) = InputWord.hardcodedLetterPosition(letterIndex: i)
+            ls.append(l.locate(position: pos, size: size))
+            i += 1
+        }
+        return InputWord(letters: ls, selected: SelectedWord.empty, matchedWordsNotOnBoard: [])
     }
    
+    static func hardcodedLetterPosition(letterIndex: Int) -> (CGPoint, CGSize) {
+        let wheelSize =  UIScreen.main.bounds.size.width
+        let letterSize = wheelSize / 3.2
+        return (InputWord.calculateInputLetterPosition(
+            countLetters: 4,
+            inputWheelSize: wheelSize, // TODO
+            letterSize: letterSize,
+            padding: 10,
+            letterIndex: letterIndex
+        ), CGSize(width: letterSize, height: letterSize))
+    }
+    
     static func calculateInputLetterPosition(
         countLetters: Int,
         inputWheelSize: CGFloat,

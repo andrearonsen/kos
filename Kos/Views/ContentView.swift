@@ -15,6 +15,11 @@ struct ContentView: View {
         GeometryReader { geometry in
             VStack {
                 CrosswordView()
+                // TODO
+                Text(gameData.selectedWord())
+                    .bold()
+                    .foregroundColor(.green)
+                    .font(.system(size: 20))
                 Spacer()
                 InputWheelView(height: geometry.size.height / 2)
             }

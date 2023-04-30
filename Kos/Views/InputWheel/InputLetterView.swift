@@ -12,40 +12,20 @@ struct InputLetterView: View {
     
     let inputLetter: InputLetter
     let height: CGFloat
-    
-    var inputLetterIndex: Int {
-        gameData.inputWord.indexOfLetterWithId(letterId: inputLetter.id)
-    }
-   
+ 
     var body: some View {
-        let fontSize = height * 0.8
-        let circleSize = height
-        let selected = inputLetter.selected
-        let foreground = GameColors.foregroundForInputLetterSelected(sel: selected)
-        let background = GameColors.backgroundForInputLetterSelected(sel: selected)
-        
-        let letterPosition = InputWord.calculateInputLetterPosition(
-            countLetters: gameData.countInputLetters(),
-            inputWheelSize: UIScreen.main.bounds.size.width, // TODO
-            letterSize: height,
-            padding: 10,
-            letterIndex: inputLetterIndex
-        )
-        
+        let circleSize = inputLetter.circleSize()
+
         Text(inputLetter.letter)
             .bold()
-            .font(.system(size: fontSize))
-            .foregroundColor(foreground)
+            .font(.system(size: inputLetter.fontSize()))
+            .foregroundColor(inputLetter.foregroundColor())
             .background(
                 Circle()
-                    .fill(background)
+                    .fill(inputLetter.backgroundColor())
                     .frame(width: circleSize, height: circleSize)
             )
-            .position(letterPosition)
-            .onAppear {
-                print("InputLetter Render: \(inputLetterIndex) \(inputLetter.letter)")
-                gameData.updateLetterLocation(letterId: inputLetter.id, position: letterPosition, letterSize: height)
-            }
+            .position(inputLetter.position)
         
     }
 }
