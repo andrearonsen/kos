@@ -61,7 +61,7 @@ final class GameData: ObservableObject {
     
     func selectInputLetter(id: Int) {
         inputWord = inputWord.selectLetter(id: id)
-        objectWillChange.send()
+        //objectWillChange.send()
     }
     
     func unselectAllLetters() {

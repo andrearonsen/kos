@@ -54,10 +54,9 @@ struct InputWord {
     
     func selectedWord() -> String {
         var word = ""
-        for (i, letter) in letters.enumerated() {
-            if selected.isLetterSelected(id: letter.id, inputLetterIndex: i) {
-                word += letter.letter
-            }
+        for sel in selected.letters {
+            let l = letters[sel.letterIndex]
+            word += l.letter
         }
         return word
     }
@@ -76,12 +75,13 @@ struct InputWord {
         let indexOfLetter = indexOfLetterWithId(letterId: id)
         let il = ils[indexOfLetter]
         if !il.selected {
-            let selectedLetter = SelectedLetter(letterId: id, letterIndex: indexOfLetter)
             print("Selected \(il.id): \(il.letter)")
-            ils[id] = il.select()
+            ils[indexOfLetter] = il.select()
             sel = sel.selectLetter(id: id, index: indexOfLetter)
-            print("Selected word: \(selectedWord())")
-            return InputWord(letters: ils, selected: sel, matchedWordsNotOnBoard: matchedWordsNotOnBoard)
+            
+            let iw = InputWord(letters: ils, selected: sel, matchedWordsNotOnBoard: matchedWordsNotOnBoard)
+            print("Selected word: \(iw.selectedWord())")
+            return iw
         }
         return self
     }
