@@ -62,6 +62,10 @@ final class GameData: ObservableObject {
         inputWord = inputWord.selectLetter(id: id)
     }
     
+    func unselectInputLetter(id: Int) {
+        inputWord = inputWord.unselectLetter(id: id)
+    }
+    
     func unselectAllLetters() {
         inputWord = inputWord.unselectAll()
     }
@@ -88,6 +92,7 @@ final class GameData: ObservableObject {
         } else {
             if cfg.wordList.containsWord(w: w) {
                 inputWord = inputWord.addMatchedWordNotOnBoard(word: w)
+                print("Word not on board but in list: \(w)")
             }
         }
         return false
@@ -95,6 +100,26 @@ final class GameData: ObservableObject {
     
     func updateLetterLocation(letterId: Int, position: CGPoint, letterSize: CGFloat) {
         inputWord = inputWord.updateLocation(id: letterId, position: position, size: CGSize(width: letterSize, height: letterSize))
+    }
+    
+    func updateSelectedLetters(currentPoint: CGPoint) {
+        if let currentLetter = inputLetters().first(where: { letter in
+            letter.boundingBox().contains(currentPoint)
+        }) {
+            let currentLetterIndex = inputWord.indexOfLetter(letter: currentLetter)
+            let currentLetterId = currentLetter.id
+            let currentLetterIsSelected = inputWord.selected.isLetterSelected(id: currentLetterId, inputLetterIndex: currentLetterIndex)
+            
+            if currentLetterIsSelected {
+                if let lastSelected = inputWord.selected.letters.last {
+                    if lastSelected.letterId != currentLetterId {
+                        unselectInputLetter(id: lastSelected.letterId)
+                    }
+                }
+            } else {
+                selectInputLetter(id: currentLetterId)
+            }
+        }
     }
     
 }

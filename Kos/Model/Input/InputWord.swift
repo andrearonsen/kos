@@ -139,4 +139,18 @@ struct InputWord {
         }
         return self
     }
+    
+    func linesBetweenLetters() -> [CGPoint] {
+        var points: [CGPoint] = []
+        if selected.letters.isEmpty {
+            return points
+        }
+        
+        for l in selected.letters {
+            let letter = letters[l.letterIndex]
+            points.append(letter.position)
+        }
+//        points.append(currentPoint)
+        return points
+    }
 }

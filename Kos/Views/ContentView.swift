@@ -18,7 +18,7 @@ struct ContentView: View {
                 // TODO
                 Text(gameData.selectedWord())
                     .bold()
-                    .foregroundColor(.green)
+                    .foregroundColor(.blue)
                     .font(.system(size: 20))
                 Spacer()
                 InputWheelView(height: geometry.size.height / 2)
