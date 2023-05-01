@@ -20,6 +20,11 @@ func createBoard(gameConfig: GameConfig) -> TileBoard {
             maxWords: cfg.maxWords)
     }
     
+    var minScore = Double(32)
+    if cfg.nrInputLetters == 5 {
+        minScore = Double(20)
+    }
+    
     var nrTries = 0
     var b: Board = generateNewBoard()
     var currentScore: Double = b.score()
@@ -35,7 +40,7 @@ func createBoard(gameConfig: GameConfig) -> TileBoard {
             currentNrWords = newCountWords
             print("New Score: \(currentScore)")
         }
-    } while ((currentNrWords < cfg.minWords || currentScore < 32)) //&& nrTries < 30)
+    } while ((currentNrWords < cfg.minWords || currentScore < minScore)) //&& nrTries < 30)
     
     print("Final BoardScore: \(currentScore)")
     b.printBoard()

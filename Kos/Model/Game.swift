@@ -26,6 +26,8 @@ struct Game {
         
         let gameConfig = GameConfig.configForLevel(level: level)
         let board = createBoard(gameConfig: gameConfig)
+        board.printBoard()
+        
         return Game(
             cfg: gameConfig,
             inputWord: InputWord.startInput(letters: board.inputLetters()),

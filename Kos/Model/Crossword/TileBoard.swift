@@ -133,6 +133,7 @@ struct TileBoard {
         }
         print(s)
         print()
+        print("Letters: \(letters)")
         print(words)
     }
 }

@@ -13,13 +13,6 @@ struct SelectedWord {
     static let empty: SelectedWord = SelectedWord(letters: [])
     
     func isLetterSelected(id: Int, inputLetterIndex: Int) -> Bool {
-//        for letter in letters {
-//            print(letter)
-//            if letter.letterId == id && letter.letterIndex == inputLetterIndex {
-//                return true
-//            }
-//        }
-//        return false
         return letters.contains(where: { letter in
             letter.letterIndex == inputLetterIndex && letter.letterId == id
         })
@@ -37,8 +30,6 @@ struct SelectedWord {
         } else {
             let last = letters.last!
             if last.letterId != id {
-//                var s = letters
-//                s.append(selectedLetter)
                 return SelectedWord(letters: letters + [selectedLetter])
             }
         }

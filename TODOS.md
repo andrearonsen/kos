@@ -2,6 +2,8 @@ TODOS Kos
 =========
 
 [ ] InputWheel: Support 3, 5, 6 input letters
+[ ] InputWheel: 5 letters -> Top letter on 90 deg
+[ ] Letter size smaller for 5 and 6 letters
 [ ] Crossword solved: Show sheet with celebration and button to go to next puzzle
 [ ] ContentView: Change background each game
 [ ] Support more game colors
@@ -12,3 +14,5 @@ TODOS Kos
 [ ] Add animation to tile on last word
 [ ] Big emoji as background?
 [ ] More emoji-sets
+[ ] Cool app icon
+[ ] Sounds

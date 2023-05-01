@@ -47,26 +47,63 @@ struct InputWord {
         letterSize: CGFloat,
         padding: CGFloat,
         letterIndex: Int) -> CGPoint {
-            
-        if countLetters != 4 {
-            fatalError("not implemented yet")
-        }
+
         let middle = inputWheelSize / 2
         let offset = letterSize / 2 + padding
         
-//        let angle = 360 / countLetters
+//        if countLetters == 4 {
+//            switch letterIndex {
+//            case 0:
+//                return CGPoint(x: offset, y: middle)
+//            case 1:
+//                return CGPoint(x: middle, y: offset)
+//            case 2:
+//                return CGPoint(x: inputWheelSize - offset, y: middle)
+//            case 3:
+//                return CGPoint(x: middle, y: inputWheelSize - offset)
+//            default:
+//                return CGPoint(x: 0, y: 0)
+//            }
+//        }
+//
+//        if countLetters != 5 {
+//            fatalError("Only 4 and 5 are supported")
+//        }
+    
+        let angleDegrees = CGFloat(360 / CGFloat(countLetters)) * CGFloat(letterIndex)
+        let angle = angleDegrees * .pi / 180
+        let r = (inputWheelSize - offset * 2) / 2
+        let x = middle + (middle - offset) * cos(angle)
+        let y = middle - (middle - offset) * sin(angle)
+        print("Letterindex: \(letterIndex)")
+        print("Inputwheelsize: \(inputWheelSize)")
+        print("Middle: \(middle)")
+        print("Offset: \(offset)")
+        print("Angle: \(angle)")
+        print("r: \(r)")
+        print("x: \(x)")
+        print("-sin: \(-sin(angle))")
+        print("cos: \(cos(angle))")
+        print("y: \(y)")
+        let correctIndex = countLetters - ((2 + letterIndex) % countLetters)
+        let correctValue = testCorrectValueFor4Letters(inputWheelSize: inputWheelSize, offset: offset, middle: middle, letterIndex: correctIndex)
+        print("Correct value: \(correctValue)")
+        return CGPoint(x: x, y: y)
+    }
+    
+    static func testCorrectValueFor4Letters(inputWheelSize: CGFloat, offset: CGFloat, middle: CGFloat, letterIndex: Int) -> CGPoint {
         switch letterIndex {
-        case 0:
-            return CGPoint(x: offset, y: middle)
-        case 1:
-            return CGPoint(x: middle, y: offset)
-        case 2:
-            return CGPoint(x: inputWheelSize - offset, y: middle)
-        case 3:
-            return CGPoint(x: middle, y: inputWheelSize - offset)
-        default:
-            return CGPoint(x: 0, y: 0)
-        }
+            case 0:
+                return CGPoint(x: offset, y: middle)
+            case 1:
+                return CGPoint(x: middle, y: offset)
+            case 2:
+                return CGPoint(x: inputWheelSize - offset, y: middle)
+            case 3:
+                return CGPoint(x: middle, y: inputWheelSize - offset)
+            default:
+                return CGPoint(x: 0, y: 0)
+            }
     }
     
     func indexOfLetter(letter: InputLetter) -> Int {
@@ -150,7 +187,6 @@ struct InputWord {
             let letter = letters[l.letterIndex]
             points.append(letter.position)
         }
-//        points.append(currentPoint)
         return points
     }
 }

@@ -22,7 +22,8 @@ struct BoardConfig {
             //return BoardConfig(nrInputLetters: 3, gridWidth: 4, gridHeight: 3, minWords: 2, maxWords: 5)
             return BoardConfig(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
         } else if level >= 10 && level < 30 {
-            return BoardConfig(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
+            return BoardConfig(nrInputLetters: 5, gridWidth: 9, gridHeight: 6, minWords: 4, maxWords: 6)
+            //return BoardConfig(nrInputLetters: 4, gridWidth: 5, gridHeight: 4, minWords: 4, maxWords: 5)
         } else if level >= 30 && level < 50 {
             return BoardConfig(nrInputLetters: 5, gridWidth: 9, gridHeight: 6, minWords: 6, maxWords: 10)
         } else {
