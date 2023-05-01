@@ -19,17 +19,13 @@ struct ContentView: View {
         GeometryReader { geometry in
             ZStack {
                 VStack {
-                    Text("Level: \(gameData.level)")
-                        .bold()
-                        .foregroundColor(.purple)
-                        .font(.system(size: 20))
-                    
+                    LevelDisplay(level: gameData.level)
                     CrosswordView()
                     // TODO word view
                     Text(gameData.selectedWord())
                         .bold()
                         .foregroundColor(.blue)
-                        .font(.system(size: 20))
+                        .font(.system(size: 10))
                     Spacer()
                     InputWheelView(height: geometry.size.height / 2, isSolved: $isSolved)
                 }

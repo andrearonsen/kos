@@ -10,6 +10,7 @@
 		650506B729FF67960009AB1E /* ConfettiItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650506B629FF67960009AB1E /* ConfettiItemView.swift */; };
 		650506BA29FF68FD0009AB1E /* Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650506B929FF68FD0009AB1E /* Confetti.swift */; };
 		650506BC29FF6A1A0009AB1E /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650506BB29FF6A1A0009AB1E /* ConfettiView.swift */; };
+		650506BE29FFCB490009AB1E /* LevelDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650506BD29FFCB490009AB1E /* LevelDisplay.swift */; };
 		6555416A29FD24E100F44DBC /* TileBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDB329F6907B00D291C3 /* TileBoard.swift */; };
 		6555416C29FD24F100F44DBC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDB129F640FB00D291C3 /* Game.swift */; };
 		6555416D29FD24F100F44DBC /* GameColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDBD29F7957B00D291C3 /* GameColors.swift */; };
@@ -85,6 +86,7 @@
 		650506B629FF67960009AB1E /* ConfettiItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiItemView.swift; sourceTree = "<group>"; };
 		650506B929FF68FD0009AB1E /* Confetti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
 		650506BB29FF6A1A0009AB1E /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		650506BD29FFCB490009AB1E /* LevelDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDisplay.swift; sourceTree = "<group>"; };
 		6555417029FD258100F44DBC /* WordListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListTest.swift; sourceTree = "<group>"; };
 		6555417229FD263800F44DBC /* TileBoardTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileBoardTest.swift; sourceTree = "<group>"; };
 		6555417629FE1FF300F44DBC /* InputWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWord.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				65A8DDF129FCF98000D291C3 /* Crossword */,
 				65A8DDBA29F78B9900D291C3 /* InputWheel */,
 				650506B829FF68D20009AB1E /* Confetti */,
+				650506BD29FFCB490009AB1E /* LevelDisplay.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65DC7ADC29F5528B008FB96E /* ContentView.swift in Sources */,
+				650506BE29FFCB490009AB1E /* LevelDisplay.swift in Sources */,
 				65A8DE0E29FCFEDF00D291C3 /* GameConfig.swift in Sources */,
 				650506BC29FF6A1A0009AB1E /* ConfettiView.swift in Sources */,
 				65DC7B0A29F5532D008FB96E /* WordList.swift in Sources */,
