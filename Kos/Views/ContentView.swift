@@ -40,7 +40,7 @@ struct ContentView: View {
                         .ignoresSafeArea()
                         .opacity(0.3)
                 )
-                ConfettiView(start: $isSolved, stop: $gameData.stopConfetti, level: gameData.level)
+                ConfettiView(start: isSolved, stop: gameData.stopConfetti, level: gameData.level)
             }
         }
         .gesture(TapGesture()

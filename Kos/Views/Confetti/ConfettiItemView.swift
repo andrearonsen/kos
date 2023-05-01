@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ConfettiItemView: View {
     let item: ConfettiItem
-    @Binding var start: Bool
-    @Binding var stop: Bool
+    let start: Bool
+    let stop: Bool
     
     var body: some View {
         if !stop {
@@ -32,6 +32,6 @@ struct ConfettiItemView_Previews: PreviewProvider {
     static let midX: CGFloat = UIScreen.main.bounds.midX
     static let confetti: ConfettiItem = ConfettiItem(id: 1, posX: midX, text: "🥳")
     static var previews: some View {
-        ConfettiItemView(item: confetti, start: .constant(true), stop: .constant(false))
+        ConfettiItemView(item: confetti, start: true, stop: false)
     }
 }

@@ -23,24 +23,29 @@ struct ConfettiItem: Identifiable, Hashable {
 }
 
 struct ConfettiEmojis {
+    static let misc: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
     static let stars: [String] = ["✨", "⭐", "🌟", "🤩", "💫"]
     static let hearts: [String] = ["❤️‍🔥", "🧡", "💗", "💓", "💔", "💚", "💝", "💜", "🫀", "🫶", "💑", "💞", "💛", "💕", "💘", "💖"]
     static let halloween: [String] = ["👻", "😱", "🎃", "🦇", "🕯️", "⚰️", "💀", "🕷️", "🕸️", "☠️", "😈"]
-    static let level4: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
-    static let level5: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
-    static let level6: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
-    static let level7: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
-    static let level8: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
-    static let level9: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
-    static let level10: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
+    static let hands: [String] = ["✌️", "👌", "🤙", "👍"]
+    static let fruit: [String] = ["🥝", "🍓", "🍍", "🍊", "🍋", "🍑", "🍉", "🍇", "🍌", "🍐", "🍒", "🍎", "🍏"]
+    static let vegetables: [String] = ["🍆", "🍅", "🥔", "🥒", "🥕", "🫑", "🥬"]
+    
+    // TODO LIST
+    // Jul
+    // Påske
+    // ...
     
     static func emojisForLevel(level: Int) -> [String] {
         switch level % 10 {
         case 1: return stars
         case 2: return hearts
         case 3: return halloween
+        case 4: return hands
+        case 5: return fruit
+        case 6: return vegetables
         default:
-            return level4
+            return misc
         }
     }
 }
