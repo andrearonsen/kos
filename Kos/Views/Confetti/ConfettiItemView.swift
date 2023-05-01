@@ -15,6 +15,7 @@ struct ConfettiItemView: View {
     var body: some View {
         if !stop {
             Text(item.text)
+                .font(.system(size: 40))
                 .shadow(radius: 1)
                 .position(CGPoint(x: item.posX, y: UIScreen.main.bounds.minY))
                 .offset(y: start ? UIScreen.main.bounds.maxY : -100)

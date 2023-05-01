@@ -1,16 +1,20 @@
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::{prelude::*, BufReader};
 use regex::Regex;
 
 fn main() {
+    let src_path = "/Users/andre/src/kos/dict/nsf2022.txt";
+    let master_list = read_master_wordlist(src_path, 2, 6);
+
     let dest_path = "/Users/andre/src/kos/dict/";
 
     let src_freq_path = "/Users/andre/src/kos/dict/ordliste-frekvens.txt";
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 2, 200);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 3, 1500);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 4, 1500);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 5, 1500);
-    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 6, 1500);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 2, 200, &master_list);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 3, 1500, &master_list);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 4, 2000, &master_list);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 5, 2000, &master_list);
+    create_sub_dict_humfak_ordlist(src_freq_path, dest_path, 6, 2000, &master_list);
 
 
     // let args: Vec<String> = env::args().collect();
@@ -42,7 +46,7 @@ fn main() {
     // create_sub_dict(src_path, dest_path, 6, 6, "wl6.txt");
 }
 
-fn create_sub_dict_humfak_ordlist(src_path: &str, dest_path: &str, word_length: usize, word_list_size: usize) {
+fn create_sub_dict_humfak_ordlist(src_path: &str, dest_path: &str, word_length: usize, word_list_size: usize, master_map: &HashMap<String, bool>) {
     let freq_word_lines = read_dict(src_path);
 
     // lazy_static! {
@@ -73,7 +77,11 @@ fn create_sub_dict_humfak_ordlist(src_path: &str, dest_path: &str, word_length: 
         .filter(|(_, w)| {
             let len = w.chars().count();
             len == word_length
-        }).for_each(|fw| {
+        })
+        .filter(|(_, w)| {
+            master_map.contains_key(w)
+        })
+        .for_each(|fw| {
         freq_words.push(fw);
     });
 
@@ -105,17 +113,28 @@ fn create_sub_dict_humfak_ordlist(src_path: &str, dest_path: &str, word_length: 
 //     write_dict(&dict_path, dict);
 // }
 
-// fn sub_dict(dict: Vec<String>, min_word_length: usize, max_word_length: usize) -> Vec<String> {
-//     dict.into_iter()
-//         .filter(|w| {
-//             let len = w.chars().count();
-//             len >= min_word_length && len <= max_word_length
-//         })
-//         .map(|w| {
-//             w.to_uppercase()
-//         })
-//         .collect()
-// }
+fn read_master_wordlist(src_path: &str, min_word_length: usize, max_word_length: usize) -> HashMap<String, bool> {
+    let mut dict = read_dict(src_path);
+    dict.sort_by_key(|w| w.chars().count());
+    println!("Total dict size {}", dict.len());
+
+    let d = sub_dict(dict, min_word_length, max_word_length);
+    let map_names_by_id: HashMap<String, bool> = d.iter().map(|w| (w.clone(), true)).collect();
+
+    map_names_by_id
+}
+
+fn sub_dict(dict: Vec<String>, min_word_length: usize, max_word_length: usize) -> Vec<String> {
+    dict.into_iter()
+        .filter(|w| {
+            let len = w.chars().count();
+            len >= min_word_length && len <= max_word_length
+        })
+        .map(|w| {
+            w.to_uppercase()
+        })
+        .collect()
+}
 
 fn read_dict(dict_file_path: &str) -> Vec<String>  {
     let file = File::open(dict_file_path).expect("Couldnt open file");
