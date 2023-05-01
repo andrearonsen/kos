@@ -8,9 +8,14 @@
 import Foundation
 import SwiftUI
 
-final class GameData: ObservableObject { 
+struct AppStorageKeys {
+    static let level: String = "level"
+}
+
+final class GameData: ObservableObject {
+    var level: Int
+    
     @Published var inputWord: InputWord
-    @Published var level: Int
     @Published var board: TileBoard
     @Published var gameColor: Color
     @Published var stopConfetti: Bool
@@ -18,9 +23,10 @@ final class GameData: ObservableObject {
     var cfg: GameConfig
     
     init() {
-        let game = Game.startNewGame()
-        inputWord = game.inputWord
+        let currentLevel = UserDefaults.standard.integer(forKey: AppStorageKeys.level)
+        let game = Game.newGame(currentLevel: currentLevel)
         level = game.level
+        inputWord = game.inputWord
         board = game.board
         gameColor = game.gameColor
         cfg = game.cfg
@@ -33,6 +39,7 @@ final class GameData: ObservableObject {
         board = game.board
         gameColor = game.gameColor
         cfg = game.cfg
+        UserDefaults.standard.set(game.level, forKey: AppStorageKeys.level)
     }
     
     func startNextGame() {

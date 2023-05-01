@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct KosApp: App {
     @StateObject private var gameData = GameData()
-    
+   
     var body: some Scene {
         WindowGroup {
             ContentView()
