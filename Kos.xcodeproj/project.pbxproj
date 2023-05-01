@@ -70,6 +70,7 @@
 		65DC7B0E29F55332008FB96E /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7B0C29F55332008FB96E /* Generator.swift */; };
 		65DC7B1029F55336008FB96E /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7B0F29F55336008FB96E /* Matrix.swift */; };
 		65DC7B1129F55336008FB96E /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7B0F29F55336008FB96E /* Matrix.swift */; };
+		65E04B2C29FFD8C500565A16 /* SelectedWordDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E04B2B29FFD8C500565A16 /* SelectedWordDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		65DC7B0929F5532D008FB96E /* WordList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		65DC7B0C29F55332008FB96E /* Generator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		65DC7B0F29F55336008FB96E /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		65E04B2B29FFD8C500565A16 /* SelectedWordDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedWordDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				65A8DDBB29F78F3000D291C3 /* InputWheelView.swift */,
 				65A8DDB729F6F03100D291C3 /* InputWheelBackground.swift */,
 				6555418029FE748000F44DBC /* SelectedWordLines.swift */,
+				65E04B2B29FFD8C500565A16 /* SelectedWordDisplay.swift */,
 				65A8DDC329F7D11400D291C3 /* InputLettersView.swift */,
 				65A8DDC129F7B1B100D291C3 /* InputLetterView.swift */,
 			);
@@ -443,6 +446,7 @@
 				65A8DDC029F79CCB00D291C3 /* InputLetter.swift in Sources */,
 				65DC7B0729F5531B008FB96E /* Board.swift in Sources */,
 				650506BA29FF68FD0009AB1E /* Confetti.swift in Sources */,
+				65E04B2C29FFD8C500565A16 /* SelectedWordDisplay.swift in Sources */,
 				65DC7B0D29F55332008FB96E /* Generator.swift in Sources */,
 				65A8DDBC29F78F3000D291C3 /* InputWheelView.swift in Sources */,
 				6555417929FE2D2A00F44DBC /* Selection.swift in Sources */,

@@ -21,11 +21,6 @@ struct ContentView: View {
                 VStack {
                     LevelDisplay(level: gameData.level)
                     CrosswordView()
-                    // TODO word view
-                    Text(gameData.selectedWord())
-                        .bold()
-                        .foregroundColor(.blue)
-                        .font(.system(size: 10))
                     Spacer()
                     InputWheelView(height: geometry.size.height / 2, isSolved: $isSolved)
                 }
@@ -36,6 +31,8 @@ struct ContentView: View {
                         .ignoresSafeArea()
                         .opacity(0.3)
                 )
+                
+                SelectedWordDisplay(selectedWord: gameData.selectedWord())
                 ConfettiView(start: isSolved, stop: gameData.stopConfetti, level: gameData.level)
             }
         }
