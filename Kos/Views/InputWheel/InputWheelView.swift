@@ -42,7 +42,6 @@ struct InputWheelView: View {
                     isDragging = false
                     let success = gameData.trySelectedWord()
                     if success {
-                        // Confetti -> Correct word
                         if gameData.isSolved() {
                             print("SOLVED!")
                             isSolved = true

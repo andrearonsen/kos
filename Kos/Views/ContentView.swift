@@ -12,6 +12,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var gameData: GameData
     @State private var isSolved: Bool = false
+    
 //    var backgroundImage: Image
    
     var body: some View {
@@ -19,7 +20,7 @@ struct ContentView: View {
             ZStack {
                 VStack {
                     CrosswordView()
-                    // TODO
+                    // TODO word view
                     Text(gameData.selectedWord())
                         .bold()
                         .foregroundColor(.blue)
@@ -34,22 +35,23 @@ struct ContentView: View {
                         .ignoresSafeArea()
                         .opacity(0.3)
                 )
-                
-                ForEach(gameData.confettis) { cf in
-                    Text(cf.text)
-                       // .position(isSolved ? CGPoint(x: 0, y: geometry.size.height + 20) : CGPoint(x: 0, y: 0))
-                        .opacity(isSolved ? 1.0 : 0.0)
-                        .offset(x: isSolved ? cf.posX : 0)
-                        .animation(.easeIn(duration: 10), value: isSolved)
-                }
+                ConfettiView(start: $isSolved, stop: $gameData.stopConfetti)
             }
         }
         .gesture(TapGesture()
             .onEnded {
-                //if gameData.game.isSolved() {
-                    // TODO Kryssordet funker, men ikke inputwheel!
+                print("Solved: \(isSolved)")
+                print("StopConfetti: \($gameData.stopConfetti)")
+                if isSolved {
+                    gameData.stopConfetti = true
+                    isSolved.toggle()
                     gameData.startNextGame()
-                //}
+                }
+            }
+        )
+        .gesture(LongPressGesture()
+            .onEnded { _ in
+                //stopConfetti.toggle()
             }
         )
         

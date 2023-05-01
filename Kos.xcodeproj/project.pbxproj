@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650506B729FF67960009AB1E /* ConfettiItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650506B629FF67960009AB1E /* ConfettiItemView.swift */; };
+		650506BA29FF68FD0009AB1E /* Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650506B929FF68FD0009AB1E /* Confetti.swift */; };
+		650506BC29FF6A1A0009AB1E /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650506BB29FF6A1A0009AB1E /* ConfettiView.swift */; };
 		6555416A29FD24E100F44DBC /* TileBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDB329F6907B00D291C3 /* TileBoard.swift */; };
 		6555416C29FD24F100F44DBC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDB129F640FB00D291C3 /* Game.swift */; };
 		6555416D29FD24F100F44DBC /* GameColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8DDBD29F7957B00D291C3 /* GameColors.swift */; };
@@ -79,6 +82,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		650506B629FF67960009AB1E /* ConfettiItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiItemView.swift; sourceTree = "<group>"; };
+		650506B929FF68FD0009AB1E /* Confetti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
+		650506BB29FF6A1A0009AB1E /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		6555417029FD258100F44DBC /* WordListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListTest.swift; sourceTree = "<group>"; };
 		6555417229FD263800F44DBC /* TileBoardTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileBoardTest.swift; sourceTree = "<group>"; };
 		6555417629FE1FF300F44DBC /* InputWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWord.swift; sourceTree = "<group>"; };
@@ -139,6 +145,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		650506B829FF68D20009AB1E /* Confetti */ = {
+			isa = PBXGroup;
+			children = (
+				650506BB29FF6A1A0009AB1E /* ConfettiView.swift */,
+				650506B629FF67960009AB1E /* ConfettiItemView.swift */,
+			);
+			path = Confetti;
+			sourceTree = "<group>";
+		};
 		65A8DDBA29F78B9900D291C3 /* InputWheel */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +287,7 @@
 				65A8DE0D29FCFEDF00D291C3 /* GameConfig.swift */,
 				65A8DDBD29F7957B00D291C3 /* GameColors.swift */,
 				65DC7B0929F5532D008FB96E /* WordList.swift */,
+				650506B929FF68FD0009AB1E /* Confetti.swift */,
 				65A8DDF229FCF9AD00D291C3 /* Generator */,
 				65A8DE0229FCFB1300D291C3 /* Crossword */,
 				65A8DE0C29FCFE4F00D291C3 /* Input */,
@@ -285,6 +301,7 @@
 				65DC7ADB29F5528B008FB96E /* ContentView.swift */,
 				65A8DDF129FCF98000D291C3 /* Crossword */,
 				65A8DDBA29F78B9900D291C3 /* InputWheel */,
+				650506B829FF68D20009AB1E /* Confetti */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -401,6 +418,7 @@
 			files = (
 				65DC7ADC29F5528B008FB96E /* ContentView.swift in Sources */,
 				65A8DE0E29FCFEDF00D291C3 /* GameConfig.swift in Sources */,
+				650506BC29FF6A1A0009AB1E /* ConfettiView.swift in Sources */,
 				65DC7B0A29F5532D008FB96E /* WordList.swift in Sources */,
 				65DC7B1029F55336008FB96E /* Matrix.swift in Sources */,
 				65A8DDB429F6907B00D291C3 /* TileBoard.swift in Sources */,
@@ -420,10 +438,12 @@
 				65A8DDB029F63B6100D291C3 /* GameData.swift in Sources */,
 				65A8DDC029F79CCB00D291C3 /* InputLetter.swift in Sources */,
 				65DC7B0729F5531B008FB96E /* Board.swift in Sources */,
+				650506BA29FF68FD0009AB1E /* Confetti.swift in Sources */,
 				65DC7B0D29F55332008FB96E /* Generator.swift in Sources */,
 				65A8DDBC29F78F3000D291C3 /* InputWheelView.swift in Sources */,
 				6555417929FE2D2A00F44DBC /* Selection.swift in Sources */,
 				65A8DDF029FCF62900D291C3 /* StringExtensions.swift in Sources */,
+				650506B729FF67960009AB1E /* ConfettiItemView.swift in Sources */,
 				65A8DE0729FCFB5300D291C3 /* TileCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
