@@ -19,6 +19,11 @@ struct ContentView: View {
         GeometryReader { geometry in
             ZStack {
                 VStack {
+                    Text("Level: \(gameData.level)")
+                        .bold()
+                        .foregroundColor(.purple)
+                        .font(.system(size: 20))
+                    
                     CrosswordView()
                     // TODO word view
                     Text(gameData.selectedWord())
@@ -35,7 +40,7 @@ struct ContentView: View {
                         .ignoresSafeArea()
                         .opacity(0.3)
                 )
-                ConfettiView(start: $isSolved, stop: $gameData.stopConfetti)
+                ConfettiView(start: $isSolved, stop: $gameData.stopConfetti, level: gameData.level)
             }
         }
         .gesture(TapGesture()

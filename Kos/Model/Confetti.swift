@@ -22,8 +22,31 @@ struct ConfettiItem: Identifiable, Hashable {
     }
 }
 
-func generateEmojis(count: Int) -> [String] {
-    let emojis: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"] // TODO More emojis
+struct ConfettiEmojis {
+    static let stars: [String] = ["✨", "⭐", "🌟", "🤩", "💫"]
+    static let hearts: [String] = ["❤️‍🔥", "🧡", "💗", "💓", "💔", "💚", "💝", "💜", "🫀", "🫶", "💑", "💞", "💛", "💕", "💘", "💖"]
+    static let halloween: [String] = ["👻", "😱", "🎃", "🦇", "🕯️", "⚰️", "💀", "🕷️", "🕸️", "☠️", "😈"]
+    static let level4: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
+    static let level5: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
+    static let level6: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
+    static let level7: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
+    static let level8: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
+    static let level9: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
+    static let level10: [String] = ["👻", "🎉", "😻", "🤠", "🥳", "✨", "🥰", "⭐"]
+    
+    static func emojisForLevel(level: Int) -> [String] {
+        switch level % 10 {
+        case 1: return stars
+        case 2: return hearts
+        case 3: return halloween
+        default:
+            return level4
+        }
+    }
+}
+
+
+func generateEmojis(emojis: [String], count: Int) -> [String] {
     let countEmojis = emojis.count
     
     var res: [String] = []
@@ -35,10 +58,10 @@ func generateEmojis(count: Int) -> [String] {
     return res
 }
 
-func createConfetti() -> [ConfettiItem] {
+func createConfetti(level: Int) -> [ConfettiItem] {
     var cxs: [ConfettiItem] = []
     let countConfettiItems: Int = 50
-    let emojis = generateEmojis(count: countConfettiItems)
+    let emojis = generateEmojis(emojis: ConfettiEmojis.emojisForLevel(level: level), count: countConfettiItems)
     
     let offsetPerItem = UIScreen.main.bounds.width / CGFloat(countConfettiItems-1)
     let padding: CGFloat = 5
