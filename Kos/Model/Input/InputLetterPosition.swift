@@ -15,7 +15,7 @@ struct InputLetterPosition {
             fatalError("Letter index out of bounds")
         }
         
-        let padding: CGFloat = 10
+        let padding: CGFloat = InputWheel.padding
         let letterSize = inputWheelSize / letterSizeAdjust(countLetters: countLetters)
         let middle = inputWheelSize / 2
         let offset = letterSize / 2 + padding

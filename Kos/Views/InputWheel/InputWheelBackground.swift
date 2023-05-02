@@ -12,7 +12,7 @@ struct InputWheelBackground: View {
         Circle()
             .fill(GameColors.background)
             .opacity(0.8)
-            .padding()
+            .padding(InputWheel.padding)
     }
 }
 

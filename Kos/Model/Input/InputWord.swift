@@ -30,7 +30,7 @@ struct InputWord {
         let wheelSize =  UIScreen.main.bounds.size.width
         
         return InputLetterPosition.calculate(
-            inputWheelSize: UIScreen.main.bounds.size.width,
+            inputWheelSize: wheelSize,
             countLetters: countLetters,
             letterIndex: letterIndex
         )

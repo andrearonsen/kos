@@ -12,16 +12,25 @@ struct LevelDisplay: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "brain.head.profile")
-                .bold()
-                .foregroundColor(.purple)
-                .padding(.leading, 10)
-            Text("\(level)")
-                .bold()
-                .foregroundColor(.purple)
-                .font(.system(size: 20))
+            HStack {
+                Image(systemName: "brain.head.profile")
+                    .bold()
+                    .foregroundColor(GameColors.foreground)
+                Text("\(level)")
+                    .bold()
+                    .foregroundColor(GameColors.foreground)
+                    .font(.system(size: 20))
+            }
+            .padding([.leading, .trailing], 10)
+            .padding([.top, .bottom], 5)
+            .background(
+                RoundedRectangle(cornerRadius: 20, style: .circular)
+                    .fill(GameColors.defaultGameColor)
+            )
+            
             Spacer()
         }
+        .padding([.leading], 20)
     }
 }
 

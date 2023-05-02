@@ -71,6 +71,7 @@
 		65DC7B1129F55336008FB96E /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC7B0F29F55336008FB96E /* Matrix.swift */; };
 		65E04B2C29FFD8C500565A16 /* SelectedWordDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E04B2B29FFD8C500565A16 /* SelectedWordDisplay.swift */; };
 		65E04B2E2A00CB6E00565A16 /* InputLetterPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E04B2D2A00CB6E00565A16 /* InputLetterPosition.swift */; };
+		65E04B302A00D08D00565A16 /* InputWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E04B2F2A00D08D00565A16 /* InputWheel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		65DC7B0F29F55336008FB96E /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		65E04B2B29FFD8C500565A16 /* SelectedWordDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedWordDisplay.swift; sourceTree = "<group>"; };
 		65E04B2D2A00CB6E00565A16 /* InputLetterPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLetterPosition.swift; sourceTree = "<group>"; };
+		65E04B2F2A00D08D00565A16 /* InputWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWheel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 		65A8DE0C29FCFE4F00D291C3 /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				65E04B2F2A00D08D00565A16 /* InputWheel.swift */,
 				6555417629FE1FF300F44DBC /* InputWord.swift */,
 				65A8DDBF29F79CCB00D291C3 /* InputLetter.swift */,
 				65E04B2D2A00CB6E00565A16 /* InputLetterPosition.swift */,
@@ -304,10 +307,10 @@
 			isa = PBXGroup;
 			children = (
 				65DC7ADB29F5528B008FB96E /* ContentView.swift */,
+				650506BD29FFCB490009AB1E /* LevelDisplay.swift */,
 				65A8DDF129FCF98000D291C3 /* Crossword */,
 				65A8DDBA29F78B9900D291C3 /* InputWheel */,
 				650506B829FF68D20009AB1E /* Confetti */,
-				650506BD29FFCB490009AB1E /* LevelDisplay.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				6555417729FE1FF300F44DBC /* InputWord.swift in Sources */,
 				65A8DDB229F640FB00D291C3 /* Game.swift in Sources */,
 				65A8DDBE29F7957B00D291C3 /* GameColors.swift in Sources */,
+				65E04B302A00D08D00565A16 /* InputWheel.swift in Sources */,
 				65A8DE2429FD079C00D291C3 /* TileBackground.swift in Sources */,
 				65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */,
 				65A8DE0A29FCFB8200D291C3 /* TileBoardWord.swift in Sources */,
