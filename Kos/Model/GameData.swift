@@ -85,7 +85,7 @@ final class GameData: ObservableObject {
     
     func trySelectedWord() -> Bool {
         let word = selectedWord()
-        if word.count >= 3 { // min length
+        if word.count >= 2 { // min length
             return tryWord(w: word)
         }
         return false

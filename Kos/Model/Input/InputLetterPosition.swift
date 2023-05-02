@@ -32,7 +32,7 @@ struct InputLetterPosition {
     
     static private func letterSizeAdjust(countLetters: Int) -> CGFloat {
         switch countLetters {
-        case 3: return 2.5
+        case 3: return 3
         case 4: return 3.2
         case 5: return 4.2
         case 6: return 4.5
@@ -43,7 +43,7 @@ struct InputLetterPosition {
     
     static private func angleAdjust(countLetters: Int) -> CGFloat {
         switch countLetters {
-        case 3: return 0 // TODO
+        case 3: return 90 // TODO
         case 4: return 0
         case 5: return 18
         case 6: return 30
