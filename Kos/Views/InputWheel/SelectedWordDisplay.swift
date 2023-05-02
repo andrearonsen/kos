@@ -15,6 +15,7 @@ struct SelectedWordDisplay: View {
             .bold()
             .foregroundColor(GameColors.foreground)
             .font(.system(size: 30))
+            .padding([.leading, .trailing], selectedWord.count > 0 ? 10 : 0)
             .background(
                 RoundedRectangle(cornerRadius: 15, style: .circular)
                     .fill(GameColors.defaultGameColor)

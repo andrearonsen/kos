@@ -11,7 +11,6 @@ struct InputLetterView: View {
     @EnvironmentObject var gameData: GameData
     
     let inputLetter: InputLetter
-    let height: CGFloat
  
     var body: some View {
         let circleSize = inputLetter.circleSize()
@@ -33,9 +32,7 @@ struct InputLetterView: View {
 struct InputLetterView_Previews: PreviewProvider {
     static var gameData = GameData()
     static var previews: some View {
-        InputLetterView(
-            inputLetter: InputLetter(id: 0, letter: "W"),
-            height: 100)
+        InputLetterView(inputLetter: InputLetter(id: 0, letter: "W"))
         .environmentObject(gameData)
     }
 }

@@ -20,10 +20,14 @@ func createBoard(gameConfig: GameConfig) -> TileBoard {
             maxWords: cfg.maxWords)
     }
     
-    var minScore = Double(32)
-    if cfg.nrInputLetters == 5 {
-        minScore = Double(20)
-    }
+    let minScores: [Int:Double] = [
+        3: 25.0,
+        4: 32,
+        5: 20,
+        6: 20
+    ]
+    
+    let minScore = minScores[cfg.nrInputLetters]!
     
     var nrTries = 0
     var b: Board = generateNewBoard()

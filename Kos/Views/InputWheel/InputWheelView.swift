@@ -25,8 +25,7 @@ struct InputWheelView: View {
                     SelectedWordLines(currentPoint: currentPoint, points: points)
                 }
                 ForEach(gameData.inputLetters()) { letter in
-                    let letterHeight = height / 3.2
-                    InputLetterView(inputLetter: letter, height: letterHeight)
+                    InputLetterView(inputLetter: letter)
                 }
             }
             .frame(height: height)
