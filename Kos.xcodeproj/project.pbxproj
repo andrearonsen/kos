@@ -72,6 +72,7 @@
 		65E04B2C29FFD8C500565A16 /* SelectedWordDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E04B2B29FFD8C500565A16 /* SelectedWordDisplay.swift */; };
 		65E04B2E2A00CB6E00565A16 /* InputLetterPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E04B2D2A00CB6E00565A16 /* InputLetterPosition.swift */; };
 		65E04B302A00D08D00565A16 /* InputWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E04B2F2A00D08D00565A16 /* InputWheel.swift */; };
+		65E04B332A0222CE00565A16 /* Wiggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E04B322A0222CE00565A16 /* Wiggle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		65E04B2B29FFD8C500565A16 /* SelectedWordDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedWordDisplay.swift; sourceTree = "<group>"; };
 		65E04B2D2A00CB6E00565A16 /* InputLetterPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLetterPosition.swift; sourceTree = "<group>"; };
 		65E04B2F2A00D08D00565A16 /* InputWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputWheel.swift; sourceTree = "<group>"; };
+		65E04B322A0222CE00565A16 /* Wiggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wiggle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 		65DC7B0429F552C2008FB96E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				65E04B312A0222B000565A16 /* Helpers */,
 				65DC7ADB29F5528B008FB96E /* ContentView.swift */,
 				650506BD29FFCB490009AB1E /* LevelDisplay.swift */,
 				65A8DDF129FCF98000D291C3 /* Crossword */,
@@ -313,6 +316,14 @@
 				650506B829FF68D20009AB1E /* Confetti */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		65E04B312A0222B000565A16 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				65E04B322A0222CE00565A16 /* Wiggle.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +452,7 @@
 				6555417729FE1FF300F44DBC /* InputWord.swift in Sources */,
 				65A8DDB229F640FB00D291C3 /* Game.swift in Sources */,
 				65A8DDBE29F7957B00D291C3 /* GameColors.swift in Sources */,
+				65E04B332A0222CE00565A16 /* Wiggle.swift in Sources */,
 				65E04B302A00D08D00565A16 /* InputWheel.swift in Sources */,
 				65A8DE2429FD079C00D291C3 /* TileBackground.swift in Sources */,
 				65DC7ADA29F5528B008FB96E /* KosApp.swift in Sources */,

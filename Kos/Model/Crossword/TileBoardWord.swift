@@ -23,6 +23,12 @@ struct TileBoardWord : Identifiable {
     func reveal() -> TileBoardWord {
         return TileBoardWord(word: word, letterCells: letterCells, revealed: true)
     }
+    
+    func containsTileCell(tileCell: TileCell) -> Bool {
+        return letterCells.contains(where: { lc in
+            tileCell.hasIndex(index: lc)
+        })
+    }
 }
 
 struct TileIndex {

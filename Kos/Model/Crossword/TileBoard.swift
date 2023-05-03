@@ -121,6 +121,12 @@ struct TileBoard {
         return words.count - solvedCount == 1
     }
     
+    func unsolvedWords() -> [TileBoardWord] {
+       return words.values.filter { w in
+            !w.revealed
+       }
+    }
+    
     func printBoard() {
         var s = ""
         

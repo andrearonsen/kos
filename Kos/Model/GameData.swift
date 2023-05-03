@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct AppStorageKeys {
-    static let level: String = "level"
+    static let level: String = "level-03052023"
 }
 
 final class GameData: ObservableObject {

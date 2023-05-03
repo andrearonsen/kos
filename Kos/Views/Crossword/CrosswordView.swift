@@ -10,6 +10,10 @@ import SwiftUI
 struct CrosswordView: View {
     @EnvironmentObject var gameData: GameData
     
+    var lastWord: TileBoardWord? {
+        return gameData.oneWordLeft ? .some(gameData.board.unsolvedWords()[0]) : .none
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
@@ -23,8 +27,14 @@ struct CrosswordView: View {
                 ForEach(tileRows) { tileRow in
                     GridRow {
                         ForEach(tileRow.tiles) { tileCell in
-                            TileView(tile: tileCell, tileSize: tileSize, filledColor: tileColor)
-                                .animation(.spring(), value: tileCell.state)
+                            let partOfLastWord = lastWord?.containsTileCell(tileCell: tileCell) == true
+                            TileView(
+                                tile: tileCell,
+                                tileSize: tileSize,
+                                filledColor: tileColor,
+                                partOfLastWord: partOfLastWord
+                            )
+                            .animation(.spring(), value: tileCell.state)
                         }
                     }
                 }

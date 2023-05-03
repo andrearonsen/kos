@@ -46,4 +46,8 @@ struct TileCell: Identifiable, Equatable {
         }
         return self
     }
+    
+    func hasIndex(index: TileIndex) -> Bool {
+        return index.col == col && index.row == row
+    }
 }
