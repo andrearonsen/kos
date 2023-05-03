@@ -17,7 +17,7 @@ extension View {
 struct WiggleModifier: ViewModifier {
     let shouldWiggle: Bool
     
-    @State private var isWiggling = false
+    @State private var wiggleValue: Double = 0.0
     
     private static func randomize(interval: TimeInterval, withVariance variance: Double) -> TimeInterval {
         let random = (Double(arc4random_uniform(1000)) - 500.0) / 500.0
@@ -31,8 +31,8 @@ struct WiggleModifier: ViewModifier {
                 withVariance: 0.025
             )
         )
-    //        .repeatForever(autoreverses: true)
-        .repeatCount(5, autoreverses: true)
+        .repeatForever(autoreverses: true)
+        //.repeatCount(5, autoreverses: true)
     
     private let bounceAnimation = Animation
         .easeInOut(
@@ -47,12 +47,17 @@ struct WiggleModifier: ViewModifier {
     func body(content: Content) -> some View {
         if shouldWiggle {
             content
-                .rotationEffect(.degrees(isWiggling ? 2.0 : 0))
-                .animation(rotateAnimation, value: shouldWiggle)
-                .offset(x: 0, y: isWiggling ? 2.0 : 0)
-                .animation(bounceAnimation, value: shouldWiggle)
+                .rotationEffect(.degrees(wiggleValue))
+                .animation(rotateAnimation, value: wiggleValue)
+                .offset(x: 0, y: wiggleValue)
+                .animation(bounceAnimation, value: wiggleValue)
                 .onAppear() {
-                    isWiggling.toggle()
+                    if wiggleValue == 0.0 {
+                        wiggleValue = 2.0
+                    } else {
+                        wiggleValue = 0.0
+                    }
+                        
                 }
         } else {
             content
