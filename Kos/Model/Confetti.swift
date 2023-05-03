@@ -14,7 +14,7 @@ struct ConfettiItem: Identifiable, Hashable {
     let text: String
     
     func speed() -> Double {
-        return Double.random(in: 3...5)
+        return Double.random(in: 2...4)
     }
     
     func delay() -> Double {

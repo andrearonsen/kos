@@ -19,6 +19,7 @@ final class GameData: ObservableObject {
     @Published var board: TileBoard
     @Published var gameColor: Color
     @Published var stopConfetti: Bool
+    @Published var oneWordLeft: Bool
     
     var cfg: GameConfig
     
@@ -31,6 +32,7 @@ final class GameData: ObservableObject {
         gameColor = game.gameColor
         cfg = game.cfg
         stopConfetti = false
+        oneWordLeft = false
     }
     
     private func updateData(game: Game) {
@@ -100,6 +102,11 @@ final class GameData: ObservableObject {
             
             print("Word match: stopConfetti=\(stopConfetti)")
             stopConfetti = false
+            
+            oneWordLeft = newBoard.oneWordLeft()
+            if oneWordLeft {
+                print("One word left!")
+            }
             
             return true
         } else {

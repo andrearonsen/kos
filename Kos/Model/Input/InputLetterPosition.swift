@@ -20,7 +20,7 @@ struct InputLetterPosition {
         let middle = inputWheelSize / 2
         let offset = letterSize / 2 + padding
         let angleDegrees = CGFloat(360 / CGFloat(countLetters)) * CGFloat(letterIndex)
-        let angle = (angleDegrees + angleAdjust(countLetters: countLetters)) * .pi / 180
+        let angle = (angleDegrees + 90) * .pi / 180
         let x = middle + (middle - offset) * cos(angle)
         let y = middle - (middle - offset) * sin(angle)
         
@@ -40,30 +40,4 @@ struct InputLetterPosition {
             fatalError("incorrect countLetters")
         }
     }
-    
-    static private func angleAdjust(countLetters: Int) -> CGFloat {
-        switch countLetters {
-        case 3: return 90 // TODO
-        case 4: return 0
-        case 5: return 18
-        case 6: return 30
-        default:
-            fatalError("incorrect countLetters")
-        }
-    }
-    
-//    static func testCorrectValueFor4Letters(inputWheelSize: CGFloat, offset: CGFloat, middle: CGFloat, letterIndex: Int) -> CGPoint {
-//        switch letterIndex {
-//            case 0:
-//                return CGPoint(x: offset, y: middle)
-//            case 1:
-//                return CGPoint(x: middle, y: offset)
-//            case 2:
-//                return CGPoint(x: inputWheelSize - offset, y: middle)
-//            case 3:
-//                return CGPoint(x: middle, y: inputWheelSize - offset)
-//            default:
-//                return CGPoint(x: 0, y: 0)
-//            }
-//    }
 }
