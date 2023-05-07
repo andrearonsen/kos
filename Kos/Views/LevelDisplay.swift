@@ -13,8 +13,7 @@ struct LevelDisplay: View {
     var body: some View {
         HStack {
             HStack {
-                Image(systemName: "brain.head.profile")
-                    .bold()
+                Image(systemName: "graduationcap")
                     .foregroundColor(GameColors.foreground)
                 Text("\(level)")
                     .bold()
