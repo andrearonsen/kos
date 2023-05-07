@@ -25,11 +25,12 @@ struct ContentView: View {
                     InputWheelView(height: geometry.size.height / 2, isSolved: $isSolved)
                 }
                 .background(
-                    Image("Pikachu")
+                    Image(isSolved ? "Pikachu" : "CatCircle")
                         .resizable()
                         .scaledToFill()
                         .ignoresSafeArea()
-                        .opacity(0.3)
+                        .animation(.easeIn(duration: 1), value: isSolved)
+                        //.opacity(0.5)
                 )
                 
                 SelectedWordDisplay(selectedWord: gameData.selectedWord())
@@ -47,12 +48,6 @@ struct ContentView: View {
                 }
             }
         )
-        .gesture(LongPressGesture()
-            .onEnded { _ in
-                //stopConfetti.toggle()
-            }
-        )
-        
     }
 }
 
