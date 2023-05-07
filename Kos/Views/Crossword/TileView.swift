@@ -25,9 +25,9 @@ struct TileView: View {
                 size : tileSize,
                 color: tile.state == .hidden ? GameColors.background : filledColor)
                 .opacity(tile.state == .empty ? 0 : 1.0)
-                .rotationEffect(shouldSignalLastWord ? Angle(degrees: -5) : Angle(degrees: 0))
+                //.rotationEffect(shouldSignalLastWord ? Angle(degrees: -5) : Angle(degrees: 0))
                 //.animation(.spring(), value: shouldSignalLastWord)
-                .wiggling(shouldWiggle: shouldSignalLastWord)
+                //.wiggling(shouldWiggle: shouldSignalLastWord)
             Text(tile.letter)
                 .bold()
                 .font(.system(size: fontSize))

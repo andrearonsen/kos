@@ -54,6 +54,8 @@ struct WiggleModifier: ViewModifier {
                 .onAppear() {
                     if wiggleValue == 0.0 {
                         wiggleValue = 2.0
+                    } else if wiggleValue == 2.0 {
+                        wiggleValue = -2.0
                     } else {
                         wiggleValue = 0.0
                     }

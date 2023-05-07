@@ -1,3 +1,5 @@
+#![warn(clippy::all, clippy::pedantic)]
+
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::{prelude::*, BufReader};
