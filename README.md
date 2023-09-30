@@ -1,2 +1,3 @@
 # kos
-Klone av WoW app på norsk uten reklame
+
+Et koselig kryssordspill for iOS
